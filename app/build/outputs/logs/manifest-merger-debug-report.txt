@@ -18,6 +18,7 @@ MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:16:1-23:12
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/7434f660ba370743462188cb5e10780d/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/970e6b5f92c71c1913e0633ea12e49b8/AndroidManifest.xml:17:1-28:12
@@ -84,6 +85,8 @@ MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinr
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:19:5-21:19
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/7434f660ba370743462188cb5e10780d/AndroidManifest.xml:22:5-26:19
@@ -172,6 +175,8 @@ MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinr
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:17:5-43
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/7434f660ba370743462188cb5e10780d/AndroidManifest.xml:20:5-44
@@ -210,6 +215,8 @@ MERGED from [com.android.support:transition:26.1.0] /Users/xabinrodriguez/.gradl
 MERGED from [com.android.support:transition:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c9ea6e8a6938a6b5946cc5a44ed56277/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a12eb204a8723dec5510a62107c36fec/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/57adfe77922e89eee59df82964207111/AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/7434f660ba370743462188cb5e10780d/AndroidManifest.xml:23:9-25:38

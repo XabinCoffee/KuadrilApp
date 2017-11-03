@@ -1860,6 +1860,10 @@
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_event_row.xml.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/event_row.xml"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_light.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/color/abc_primary_text_material_light.xml"
     },

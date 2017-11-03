@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 
@@ -27,16 +28,16 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
+
         mAuth = FirebaseAuth.getInstance();
 
 
         //TODO Konpontzeko, settings-etik irten ondoren NullPointer???
         if (getIntent().getBooleanExtra("settings",false)){
-
             navigation.setSelectedItemId(R.id.nav_settings);
         } else {
-
             navigation.setSelectedItemId(R.id.nav_events);
+
         }
     }
 
@@ -58,7 +59,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                 return true;
             case R.id.nav_settings:
 
-                getSupportFragmentManager().beginTransaction().hide(mCurrentFragment).commit();
+                if (mCurrentFragment!=null) getSupportFragmentManager().beginTransaction().hide(mCurrentFragment).commit();
                 pf = new PrefFragment();
                 getFragmentManager().beginTransaction().replace(R.id.fragment, pf).commit();
 

@@ -81,7 +81,7 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
                 res.updateConfiguration(conf, dm);
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.putExtra("settings", true);
+                intent.putExtra("settings", "true");
                 startActivity(intent);
                 getActivity().finish();
 
@@ -95,7 +95,7 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
 
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.putExtra("settings", true);
+                intent.putExtra("settings", "true");
                 startActivity(intent);
                 getActivity().finish();
             }
