@@ -1,0 +1,354 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-core:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/218845aaa3e512381feda6d418202b3a/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/acb1405e8027a059c9d9e7247ba2e172/AndroidManifest.xml:16:1-21:12
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:16:1-50:12
+MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:17:1-31:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:5:5-21:19
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/218845aaa3e512381feda6d418202b3a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/218845aaa3e512381feda6d418202b3a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/acb1405e8027a059c9d9e7247ba2e172/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/acb1405e8027a059c9d9e7247ba2e172/AndroidManifest.xml:19:5-20:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:26:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:29:5-20
+	android:supportsRtl
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.kapp.rxabin.kuadrilapp.EmailPasswordActivity
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:12:19-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:16:27-74
+activity#com.kapp.rxabin.kuadrilapp.SignupActivity
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:19:9-52
+	android:name
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:19:19-49
+activity#com.kapp.rxabin.kuadrilapp.MainActivity
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:20:9-59
+	android:name
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:20:19-47
+uses-sdk
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-core:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/218845aaa3e512381feda6d418202b3a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/218845aaa3e512381feda6d418202b3a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/acb1405e8027a059c9d9e7247ba2e172/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/acb1405e8027a059c9d9e7247ba2e172/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/5bcdbfaadcc70ad8aa107e9efe0970a2/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:21:5-23:58
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0-alpha1.aar/ec339e5a040d8a3595cc11bac56a069c/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0-alpha1.aar/fc38b9a81aa6f33933cb148505de2fe2/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0-alpha1.aar/15eea477dcd471feb586dd4a6ca00fb6/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0-alpha1.aar/71de0560d0872bf47c8f06c838f35547/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0-alpha1.aar/99b118fa0b4db74ad1032babadcbcc11/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0-alpha1.aar/77645db687870c02b5eff85582f6454b/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0-alpha1.aar/fc26509103695f2a17c9c0edc8d5ddc1/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0-alpha1.aar/c9172b8c2885c003cb9d2db07e4e4411/AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/AndroidManifest.xml:26:9-47
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:20:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:21:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:27:162-184
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:27:185-208
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/a6089cb49020730b9a31242d85928960/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:32:16-87
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:33:7-197
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:33:148-170
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:33:171-195
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:33:91-147
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/b1829ebc0f1659e933ada6be48335320/AndroidManifest.xml:33:16-90
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/AndroidManifest.xml:19:19-85
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:17-71
+permission#com.kapp.rxabin.kuadrilapp.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:26:22-76
+uses-permission#com.kapp.rxabin.kuadrilapp.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:31:13-34:29
+intent-filter#com.google.android.c2dm.intent.RECEIVE+com.kapp.rxabin.kuadrilapp
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:33:27-58
+category#com.kapp.rxabin.kuadrilapp
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/71e6c41d587daf13b88febb673bcbb6c/AndroidManifest.xml:45:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/d9fd74bbe9da3cdcaa778dcc8f943318/AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/056769b6c347e8dae3c63869ee9b5f32/AndroidManifest.xml:20:20-65
