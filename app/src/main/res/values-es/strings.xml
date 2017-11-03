@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KuadrilApp</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="noaccountyet">¿No tienes cuenta? Crea una</string>
+    <string name="member">¿Ya estás registrad@? Inicia sesión</string>
+
+</resources>

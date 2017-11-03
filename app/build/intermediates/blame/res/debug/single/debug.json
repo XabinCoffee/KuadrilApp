@@ -608,6 +608,10 @@
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_activity_frontpage.xml.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/activity_frontpage.xml"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/res/drawable-xxhdpi-v4/googleg_standard_color_18.png"
     },

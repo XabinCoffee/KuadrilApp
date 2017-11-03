@@ -31,7 +31,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.kapp.rxabin.kuadrilapp.EmailPasswordActivity" >
+        <activity android:name="com.kapp.rxabin.kuadrilapp.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.kapp.rxabin.kuadrilapp.SignupActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.MainActivity" />
+        <activity android:name="com.kapp.rxabin.kuadrilapp.EmailPasswordActivity" />
+        <activity android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
