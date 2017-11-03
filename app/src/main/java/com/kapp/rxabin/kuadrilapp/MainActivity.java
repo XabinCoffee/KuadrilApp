@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null)
+
+        if (getIntent().getBooleanExtra("settings",false)){
+            Intent i = new Intent(this, FrontpageActivity.class);
+            i.putExtra("settings",true);
+            startActivity(i);
+            finish();
+        }
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser!=null){
             openFrontpage();

@@ -7,5 +7,17 @@
     <string name="login">Iniciar sesión</string>
     <string name="noaccountyet">¿No tienes cuenta? Crea una</string>
     <string name="member">¿Ya estás registrad@? Inicia sesión</string>
+    <string name="language">Idioma</string>
+    <string name="logout">Cerrar sesión</string>
+
+    <string-array name="list_preference_entry_titles">
+        <item>Euskera</item>
+        <item>Español</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>eu</item>
+        <item>es</item>
+    </string-array>
 
 </resources>

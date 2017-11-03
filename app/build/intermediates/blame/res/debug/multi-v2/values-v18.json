@@ -4,7 +4,7 @@
             "outputFile": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0-alpha1.aar/7f5f59d5d5dda445a6b63f65603615ed/res/values-v18/values-v18.xml",
+                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
