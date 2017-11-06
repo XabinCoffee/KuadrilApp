@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Nov 06 12:48:09 CET 2017
+#Mon Nov 06 13:08:55 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/color-v11/abc_background_cache_hint_selector_material_dark.xml
 14.set=ANDROID_RESOURCE

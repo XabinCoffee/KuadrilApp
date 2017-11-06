@@ -36,7 +36,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.kapp.rxabin.kuadrilapp.SignupActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.EmailPasswordActivity" />
         <activity android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity" />
 
         <meta-data

@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser!=null){
-            openFrontpage();
+            if (currentUser.isEmailVerified())
+                openFrontpage();
         }
         mLoading.setVisibility(View.GONE);
     }

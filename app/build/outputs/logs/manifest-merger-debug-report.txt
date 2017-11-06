@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:design:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/71243fb3ef3386b788ca658840bd2305/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4f46a5eb57e3408d39001be7a08aa976/AndroidManifest.xml:2:1-11:12
@@ -30,20 +30,20 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /Users/xabinrodrig
 MERGED from [com.android.support:support-core-utils:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/0998560f024671f596a17f5e22bd00e5/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5bf9722dfeeb5104d92fd03117709077/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/0834cca07c43c4e6dd452581b2cfa7d6/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:2:11-69
@@ -58,7 +58,7 @@ MERGED from [com.google.firebase:firebase-iid:11.0.4] /Users/xabinrodriguez/.gra
 	android:name
 		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:7:5-24:19
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:7:5-23:19
 MERGED from [com.android.support:design:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/71243fb3ef3386b788ca658840bd2305/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/71243fb3ef3386b788ca658840bd2305/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/AndroidManifest.xml:25:5-29:19
@@ -137,14 +137,10 @@ activity#com.kapp.rxabin.kuadrilapp.SignupActivity
 ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:21:9-52
 	android:name
 		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:21:19-49
-activity#com.kapp.rxabin.kuadrilapp.EmailPasswordActivity
-ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:22:9-59
-	android:name
-		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:22:19-56
 activity#com.kapp.rxabin.kuadrilapp.FrontpageActivity
-ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:23:9-64
+ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:22:9-64
 	android:name
-		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:23:19-52
+		ADDED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml:22:19-52
 uses-sdk
 INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/AndroidManifest.xml
