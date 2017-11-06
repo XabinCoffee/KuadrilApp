@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -52,7 +51,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String email = mEmail.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mEmail.setError("Required.");
+            mEmail.setError(getResources().getString(R.string.errorEmpty));
             valid = false;
         } else {
             mEmail.setError(null);
@@ -60,7 +59,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String password = mPass.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mPass.setError("Required.");
+            mPass.setError(getResources().getString(R.string.errorEmpty));
             valid = false;
         } else {
             mPass.setError(null);
@@ -90,7 +89,7 @@ public class SignupActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             user.sendEmailVerification();
-                            Toast.makeText(SignupActivity.this, "User created, verification email sent.",
+                            Toast.makeText(SignupActivity.this, getResources().getString(R.string.verificationSent),
                                     Toast.LENGTH_SHORT).show();
 
                             //Erabiltzailea sortu ondoren honen izena aldatu.

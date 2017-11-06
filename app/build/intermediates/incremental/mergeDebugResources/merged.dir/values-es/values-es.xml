@@ -56,6 +56,10 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Iniciar sesión con Google"</string>
     <string name="desc">Descripción</string>
     <string name="email">Email</string>
+    <string name="errorCredentials">El uruario y contraseña no coinciden</string>
+    <string name="errorEmpty">¡No lo dejes vacío!</string>
+    <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
+    <string name="errorUnverified">Cuenta sin verificar, se le ha enviado otro email</string>
     <string name="events">Eventos</string>
     <string name="language">Idioma</string>
     <string name="login">Iniciar sesión</string>
@@ -71,4 +75,5 @@
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
     <string name="title">Titulo</string>
     <string name="typeEvent">Tipo de evento</string>
+    <string name="verificationSent">Se ha enviado un correo de verificación a ese correo electrónico</string>
 </resources>

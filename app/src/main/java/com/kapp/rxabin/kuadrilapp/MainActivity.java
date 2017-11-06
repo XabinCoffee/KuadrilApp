@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null)
 
         if (getIntent().getBooleanExtra("settings",false)){
-            Intent i = new Intent(this, FrontpageActivity.class);
-            i.putExtra("settings",true);
+            Intent i = new Intent(getApplicationContext(), FrontpageActivity.class);
+            i.putExtra("gotosettings",true);
             startActivity(i);
             finish();
         }
@@ -80,14 +80,14 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user.isEmailVerified()) openFrontpage();
                             else {
-                                Toast.makeText(MainActivity.this, "User is not verified, verification resent.",
+                                Toast.makeText(MainActivity.this, getResources().getString(R.string.errorUnverified),
                                         Toast.LENGTH_SHORT).show();
                                 user.sendEmailVerification();
                             }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                            Toast.makeText(MainActivity.this, getResources().getString(R.string.errorCredentials),
                                     Toast.LENGTH_SHORT).show();
                         }
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         String email = mEmail.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mEmail.setError("Required.");
+            mEmail.setError(getResources().getString(R.string.errorEmpty));
             valid = false;
         } else {
             mEmail.setError(null);
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
         String password = mPass.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mPass.setError("Required.");
+            mPass.setError(getResources().getString(R.string.errorEmpty));
             valid = false;
         } else {
             mPass.setError(null);

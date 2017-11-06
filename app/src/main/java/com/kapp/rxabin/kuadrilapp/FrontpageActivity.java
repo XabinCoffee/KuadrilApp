@@ -21,26 +21,19 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     private Button mSignOut;
     private Fragment mCurrentFragment;
     private PrefFragment pf;
+    private BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frontpage);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
 
         mAuth = FirebaseAuth.getInstance();
 
-
-        //TODO Konpontzeko, settings-etik irten ondoren NullPointer???
-        if (getIntent().getBooleanExtra("settings",false)){
-            navigation.setSelectedItemId(R.id.nav_settings);
-        } else {
-            navigation.setSelectedItemId(R.id.nav_events);
-
-        }
     }
 
 
@@ -86,6 +79,16 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         super.onStart();
         // Check if user is signed in (non-null)
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        Boolean f = getIntent().getBooleanExtra("gotosettings",false);
+
+        if (!f) Log.d("KUADRILAPP", "FAAAAAAAAAAAAAAAAAALS");
+
+        if (f){
+            navigation.setSelectedItemId(R.id.nav_settings);
+        } else {
+            navigation.setSelectedItemId(R.id.nav_events);
+        }
     }
 
 

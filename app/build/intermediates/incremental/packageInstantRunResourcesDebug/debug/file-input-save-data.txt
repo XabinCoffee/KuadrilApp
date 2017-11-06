@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Nov 06 15:49:02 CET 2017
+#Mon Nov 06 16:31:49 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/drawable/navigation_empty_icon.xml
 14.set=ANDROID_RESOURCE

@@ -17,6 +17,13 @@
     <string name="title">Titulo</string>
     <string name="desc">Descripción</string>
     <string name="typeEvent">Tipo de evento</string>
+    <string name="verificationSent">Se ha enviado un correo de verificación a ese correo electrónico</string>
+
+
+    <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
+    <string name="errorCredentials">El uruario y contraseña no coinciden</string>
+    <string name="errorUnverified">Cuenta sin verificar, se le ha enviado otro email</string>
+    <string name="errorEmpty">¡No lo dejes vacío!</string>
 
     <string-array name="eventType">
         <item>Comida</item>

@@ -15,6 +15,13 @@
     <string name="title">Titulua</string>
     <string name="desc">Deskripzioa</string>
     <string name="typeEvent">Ekintza mota</string>
+    <string name="verificationSent">Helbide elektronikora berifikazio mezu bat bidali da</string>
+
+
+    <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>
+    <string name="errorCredentials">Erabiltzaile / pasahitz okerra</string>
+    <string name="errorUnverified">Kontua berifikatu gabe duzu, beste email bat bidali zaizu</string>
+    <string name="errorEmpty">Ez laga hutsik!</string>
 
 
     <string-array name="eventType">
