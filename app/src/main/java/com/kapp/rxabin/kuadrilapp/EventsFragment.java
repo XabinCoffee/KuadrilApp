@@ -32,7 +32,7 @@ public class EventsFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         eAdapter = new EventAdapter();
         ArrayList<Event> el = new ArrayList();
-        Event e = new Event("a","a","aaaaaaaaaaaaaaa","");
+        Event e = new Event("a","a","aaaaaaaaaaaaaaa","Have you heard of the high elves elveselveselveselveselveselveselves elves elves elveselves elves elves?");
         el.add(e);
         eAdapter.setEvents(el);
         recyclerView.setAdapter(eAdapter);

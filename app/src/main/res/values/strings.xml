@@ -7,6 +7,10 @@
     <string name="member">Dagoeneko kidea zara? Hasi saioa</string>
     <string name="language">Hizkuntza</string>
     <string name="logout">Saioa itxi</string>
+    <string name="events">Ekintzak</string>
+    <string name="newevent">Berria</string>
+    <string name="settings">Ezarpenak</string>
+    <string name="name">Izen-Abizenak</string>
 
     <string-array name="list_preference_entry_titles">
         <item>Euskera</item>

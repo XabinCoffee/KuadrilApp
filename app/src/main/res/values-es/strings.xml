@@ -9,6 +9,10 @@
     <string name="member">¿Ya estás registrad@? Inicia sesión</string>
     <string name="language">Idioma</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="events">Eventos</string>
+    <string name="newevent">Nuevo</string>
+    <string name="settings">Ajustes</string>
+    <string name="name">Nombre-Apellidos</string>
 
     <string-array name="list_preference_entry_titles">
         <item>Euskera</item>

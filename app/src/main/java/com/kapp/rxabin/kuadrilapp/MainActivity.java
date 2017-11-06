@@ -60,9 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
-        /*if (!validateForm()) {
+
+        if (!validateForm()) {
+            Toast.makeText(MainActivity.this, "Fill all the fields correctly.",
+                    Toast.LENGTH_SHORT).show();
             return;
-        }*/
+        }
 
 
         // [START sign_in_with_email]
@@ -74,7 +77,11 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            openFrontpage();
+                            if (user.isEmailVerified()) openFrontpage();
+                            else {
+                                Toast.makeText(MainActivity.this, "User is not verified, check email and spam folder.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -92,32 +99,28 @@ public class MainActivity extends AppCompatActivity {
         // [END sign_in_with_email]
     }
 
-    private void signOut() {
-        mAuth.signOut();
-        //updateUI(null);
-    }
 
-    /*private boolean validateForm() {
+    private boolean validateForm() {
         boolean valid = true;
 
-        String email = mEmailField.getText().toString();
+        String email = mEmail.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mEmailField.setError("Required.");
+            mEmail.setError("Required.");
             valid = false;
         } else {
-            mEmailField.setError(null);
+            mEmail.setError(null);
         }
 
-        String password = mPasswordField.getText().toString();
+        String password = mPass.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mPasswordField.setError("Required.");
+            mPass.setError("Required.");
             valid = false;
         } else {
-            mPasswordField.setError(null);
+            mPass.setError(null);
         }
 
         return valid;
-    }*/
+    }
 
     public void openFrontpage(){
         Intent i = new Intent(MainActivity.this,FrontpageActivity.class);
@@ -125,18 +128,22 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    public void openSignup(View v){
-        Intent i = new Intent(MainActivity.this,SignupActivity.class);
-        startActivity(i);
-    }
 
     public void onClick(View v) {
         int i = v.getId();
-        if (i == R.id.btn_login) {
-            mLoading.setVisibility(View.VISIBLE);
-            if (!mEmail.getText().toString().equals("") && !mPass.getText().toString().equals(""))
-            signIn(mEmail.getText().toString(), mPass.getText().toString());
-            mLoading.setVisibility(View.GONE);
+
+        switch(i){
+            case R.id.btn_login:
+                mLoading.setVisibility(View.VISIBLE);
+                signIn(mEmail.getText().toString(), mPass.getText().toString());
+                mLoading.setVisibility(View.GONE);
+                break;
+
+            case R.id.link_signup:
+                Intent intent = new Intent(MainActivity.this,SignupActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 }
