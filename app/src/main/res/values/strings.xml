@@ -11,6 +11,9 @@
     <string name="newevent">Berria</string>
     <string name="settings">Ezarpenak</string>
     <string name="name">Izen-Abizenak</string>
+    <string name="signupheader">Kontua sortu</string>
+    <string name="verifyagain">Berifikazioarekin arazoak?</string>
+    <string name="verifyheader">Berbidali berifikazioa</string>
 
     <string-array name="list_preference_entry_titles">
         <item>Euskera</item>

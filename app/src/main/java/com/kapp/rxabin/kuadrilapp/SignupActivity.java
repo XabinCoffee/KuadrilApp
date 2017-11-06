@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,8 @@ public class SignupActivity extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPass;
     private EditText mName;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +129,6 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -149,6 +151,7 @@ public class SignupActivity extends AppCompatActivity {
             case R.id.link_login:
                 Intent intent = new Intent(SignupActivity.this,MainActivity.class);
                 startActivity(intent);
+                finish();
                 break;
 
         }

@@ -13,6 +13,9 @@
     <string name="newevent">Nuevo</string>
     <string name="settings">Ajustes</string>
     <string name="name">Nombre-Apellidos</string>
+    <string name="signupheader">Crear cuenta</string>
+    <string name="verifyagain">¿Problemas con la verificación?</string>
+    <string name="verifyheader">Reenviar verificación</string>
 
     <string-array name="list_preference_entry_titles">
         <item>Euskera</item>

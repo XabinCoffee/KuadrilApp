@@ -79,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user.isEmailVerified()) openFrontpage();
                             else {
-                                Toast.makeText(MainActivity.this, "User is not verified, check email and spam folder.",
+                                Toast.makeText(MainActivity.this, "User is not verified, verification resent.",
                                         Toast.LENGTH_SHORT).show();
+                                user.sendEmailVerification();
                             }
                         } else {
                             // If sign in fails, display a message to the user.

@@ -3886,17 +3886,18 @@ public final class R {
     public static final int transition_transform=0x7f0900cf;
     public static final int tvDate=0x7f0900d0;
     public static final int tvDescription=0x7f0900d1;
-    public static final int tvTitle=0x7f0900d2;
-    public static final int uniform=0x7f0900d3;
-    public static final int up=0x7f0900d4;
-    public static final int useLogo=0x7f0900d5;
-    public static final int verify_email_button=0x7f0900d6;
-    public static final int view_offset_helper=0x7f0900d7;
-    public static final int visible=0x7f0900d8;
-    public static final int wide=0x7f0900d9;
-    public static final int withText=0x7f0900da;
-    public static final int wrap=0x7f0900db;
-    public static final int wrap_content=0x7f0900dc;
+    public static final int tvMessage=0x7f0900d2;
+    public static final int tvTitle=0x7f0900d3;
+    public static final int uniform=0x7f0900d4;
+    public static final int up=0x7f0900d5;
+    public static final int useLogo=0x7f0900d6;
+    public static final int verify_email_button=0x7f0900d7;
+    public static final int view_offset_helper=0x7f0900d8;
+    public static final int visible=0x7f0900d9;
+    public static final int wide=0x7f0900da;
+    public static final int withText=0x7f0900db;
+    public static final int wrap=0x7f0900dc;
+    public static final int wrap_content=0x7f0900dd;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;
@@ -4115,17 +4116,20 @@ public final class R {
     public static final int sign_out=0x7f0e007a;
     public static final int signed_in=0x7f0e007b;
     public static final int signed_out=0x7f0e007c;
-    public static final int start_phone_auth=0x7f0e007d;
-    public static final int status_bar_notification_info_overflow=0x7f0e007e;
-    public static final int status_code_sent=0x7f0e007f;
-    public static final int status_sign_in_failed=0x7f0e0080;
-    public static final int status_verification_failed=0x7f0e0081;
-    public static final int status_verification_succeeded=0x7f0e0082;
-    public static final int token_null=0x7f0e0083;
-    public static final int twitter_status_fmt=0x7f0e0084;
-    public static final int twitter_title_text=0x7f0e0085;
-    public static final int verify_email=0x7f0e0086;
-    public static final int verify_phone_auth=0x7f0e0087;
+    public static final int signupheader=0x7f0e007d;
+    public static final int start_phone_auth=0x7f0e007e;
+    public static final int status_bar_notification_info_overflow=0x7f0e007f;
+    public static final int status_code_sent=0x7f0e0080;
+    public static final int status_sign_in_failed=0x7f0e0081;
+    public static final int status_verification_failed=0x7f0e0082;
+    public static final int status_verification_succeeded=0x7f0e0083;
+    public static final int token_null=0x7f0e0084;
+    public static final int twitter_status_fmt=0x7f0e0085;
+    public static final int twitter_title_text=0x7f0e0086;
+    public static final int verify_email=0x7f0e0087;
+    public static final int verify_phone_auth=0x7f0e0088;
+    public static final int verifyagain=0x7f0e0089;
+    public static final int verifyheader=0x7f0e008a;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;
