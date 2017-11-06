@@ -128,7 +128,6 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -146,12 +145,6 @@ public class SignupActivity extends AppCompatActivity {
         switch(i){
             case R.id.btn_signup:
                 createAccount(mEmail.getText().toString(), mPass.getText().toString(), mName.getText().toString());
-                break;
-
-            case R.id.link_login:
-                Intent intent = new Intent(SignupActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
                 break;
 
         }

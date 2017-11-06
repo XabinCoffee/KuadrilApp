@@ -5,7 +5,7 @@
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
-    <string name="noaccountyet">¿No tienes cuenta? Crea una</string>
+    <string name="noaccountyet"><u>¿No tienes cuenta? Crea una</u></string>
     <string name="member">¿Ya estás registrad@? Inicia sesión</string>
     <string name="language">Idioma</string>
     <string name="logout">Cerrar sesión</string>
@@ -14,8 +14,19 @@
     <string name="settings">Ajustes</string>
     <string name="name">Nombre-Apellidos</string>
     <string name="signupheader">Crear cuenta</string>
-    <string name="verifyagain">¿Problemas con la verificación?</string>
-    <string name="verifyheader">Reenviar verificación</string>
+    <string name="title">Titulo</string>
+    <string name="desc">Descripción</string>
+    <string name="typeEvent">Tipo de evento</string>
+
+    <string-array name="eventType">
+        <item>Comida</item>
+        <item>Partido</item>
+        <item>Videojuegos</item>
+        <item>Deporte</item>
+        <item>Bar</item>
+        <item>Traguito</item>
+        <item>Muchos tragos</item>
+    </string-array>
 
     <string-array name="list_preference_entry_titles">
         <item>Euskera</item>

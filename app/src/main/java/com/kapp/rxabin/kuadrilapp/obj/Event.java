@@ -14,17 +14,19 @@ public class Event {
     private ArrayList<String> members;
     private String name;
     private String description;
-    private String date;
+    private ArrayList<DateVote> dateVotes;
+    private String location;
     private String icon;
     private HashMap<String,String> userRole;
 
 
-    public Event(String id, String owner, String name, String description){
+    public Event(String id, String owner, String name, String description, String location){
         this.id = id;
         this.owner = owner;
         this.name = name;
         this.description = description;
-        this.date="1900/01/01 00:00:00";
+        this.dateVotes=new ArrayList<>();
+        this.location = location;
         this.members = new ArrayList<>();
         this.icon = "restaurant";
         this.userRole = new HashMap<>();
@@ -51,15 +53,6 @@ public class Event {
 
     public String getName() {
         return name;
-    }
-
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getDescription() {
@@ -92,5 +85,21 @@ public class Event {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ArrayList<DateVote> getDateVotes() {
+        return dateVotes;
+    }
+
+    public void setDateVotes(ArrayList<DateVote> dateVotes) {
+        this.dateVotes = dateVotes;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

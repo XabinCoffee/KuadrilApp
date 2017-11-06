@@ -40,7 +40,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             evh.e = e;
             evh.title.setText(e.getName());
             evh.description.setText(e.getDescription());
-            evh.date.setText(e.getDate());
+            //evh.date.setText(e.getDate());
 
         }
     }
@@ -56,13 +56,13 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         private Event e;
         private TextView title;
         private TextView description;
-        private TextView date;
+        //private TextView date;
 
         public EventViewHolder(View v){
             super(v);
             title = v.findViewById(R.id.tvTitle);
             description = v.findViewById(R.id.tvDescription);
-            date = v.findViewById(R.id.tvDate);
+            //date = v.findViewById(R.id.tvDate);
 
         }
 

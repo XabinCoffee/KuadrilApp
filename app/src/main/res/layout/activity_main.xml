@@ -82,7 +82,8 @@
                 android:gravity="center"
                 android:onClick="onClick"
                 android:text="@string/noaccountyet"
-                android:textSize="16sp" />
+                android:color="@color/link"
+                android:textSize="16sp"/>
 
         </LinearLayout>
     </ScrollView>
