@@ -16,6 +16,8 @@
     <string name="desc">Deskripzioa</string>
     <string name="typeEvent">Ekintza mota</string>
     <string name="verificationSent">Helbide elektronikora berifikazio mezu bat bidali da</string>
+    <string name="location">Lekua</string>
+    <string name="save">Gorde</string>
 
 
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

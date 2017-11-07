@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,10 +26,11 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
-    private Button mSignOut;
     private Fragment mCurrentFragment;
     private PrefFragment pf;
     private BottomNavigationView navigation;
+    private CreateEventFragment cef;
+    private EventsFragment ef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +42,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
 
         mAuth = FirebaseAuth.getInstance();
-
-        DbManager.createEvent("nice","is good",mAuth.getCurrentUser().getUid(),"restaurante","Burgos");
-        Log.d("Database","DONE");
 
 
         if (getIntent().getBooleanExtra("gotosettings",false)){
@@ -58,13 +59,15 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             case R.id.nav_events:
 
                 if (pf!=null) getFragmentManager().beginTransaction().hide(pf).commit();
-                switchContent(new EventsFragment());
+                ef = new EventsFragment();
+                switchContent(ef);
 
                 return true;
             case R.id.nav_new:
 
                 if (pf!=null) getFragmentManager().beginTransaction().hide(pf).commit();
-                switchContent(new CreateEventFragment());
+                cef = new CreateEventFragment();
+                switchContent(cef);
 
                 return true;
             case R.id.nav_settings:
@@ -103,14 +106,25 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
         switch(i){
             case R.id.btn_create_event:
-                Log.d("KUADRILAPP","EVENT CREATED??");
+                if (cef!=null){
+                    EditText title =(EditText) cef.getView().findViewById(R.id.etTitle);
+                    EditText desc = (EditText) cef.getView().findViewById(R.id.etDesc);
+                    EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
+                    Spinner spinner = (Spinner) cef.getView().findViewById(R.id.spinner);
+
+                    DbManager.createEvent(title.getText().toString(),
+                            desc.getText().toString(),
+                            mAuth.getCurrentUser().getUid(),
+                            spinner.getSelectedItem().toString(),
+                            location.getText().toString());
+
+                    Toast.makeText(FrontpageActivity.this, "Event created.",
+                            Toast.LENGTH_SHORT).show();
+
+                    navigation.setSelectedItemId(R.id.nav_events);
+                }
+
                 break;
-
         }
-    }
-
-    private void signOut() {
-        mAuth.signOut();
-        //updateUI(null);
     }
 }

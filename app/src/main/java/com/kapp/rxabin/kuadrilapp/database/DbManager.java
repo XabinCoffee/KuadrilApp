@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
@@ -23,21 +24,18 @@ public class DbManager {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
-        //TODO
-        /*Event e = new Event(mDatabase.child("events").push().getKey(),useruid,name,desc,location);
-        e.setIcon(type);
+        Event e = new Event(mDatabase.child("events").push().getKey(),useruid,name,desc,location);
+        e.setIcon(EventHelper.getType(type));
         ArrayList<String> users = new ArrayList<>();
         users.add(useruid);
         e.setMembers(users);
 
-        ArrayList<DateVote> dv = new ArrayList<>();
+        /*ArrayList<DateVote> dv = new ArrayList<>();
         DateVote dtvt = new DateVote(useruid,"1990-00-00","00:00:00","2","3");
         dv.add(dtvt);
         e.setDateVotes(dv);*/
 
-
-        //mDatabase.child("events").child(e.getId()).setValue(e);
+        mDatabase.child("events").child(e.getId()).setValue(e);
 
 
         return true;

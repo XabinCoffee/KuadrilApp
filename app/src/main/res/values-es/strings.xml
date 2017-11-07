@@ -18,6 +18,7 @@
     <string name="desc">Descripción</string>
     <string name="typeEvent">Tipo de evento</string>
     <string name="verificationSent">Se ha enviado un correo de verificación a ese correo electrónico</string>
+    <string name="save">Guardar</string>
 
 
     <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
@@ -44,5 +45,6 @@
         <item>eu</item>
         <item>es</item>
     </string-array>
+    <string name="location">Lugar</string>
 
 </resources>
