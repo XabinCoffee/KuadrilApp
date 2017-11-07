@@ -1,10 +1,14 @@
 package com.kapp.rxabin.kuadrilapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.kapp.rxabin.kuadrilapp.database.DbManager;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        loadLang();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -79,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            if (user.isEmailVerified()) openFrontpage();
+                            if (user.isEmailVerified()){
+                                DbManager.storeUser(user.getUid(),user.getDisplayName(), user.getEmail());
+                                openFrontpage();
+                            }
                             else {
                                 Toast.makeText(MainActivity.this, getResources().getString(R.string.errorUnverified),
                                         Toast.LENGTH_SHORT).show();
@@ -129,6 +144,17 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this,FrontpageActivity.class);
         startActivity(i);
         finish();
+    }
+
+
+    public void loadLang(){
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String lang = pref.getString("listLang", "");
+        Resources res = getApplicationContext().getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.setLocale(new Locale(lang));
+        res.updateConfiguration(conf, dm);
     }
 
 

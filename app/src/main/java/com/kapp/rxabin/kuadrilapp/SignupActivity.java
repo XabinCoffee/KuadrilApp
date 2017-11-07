@@ -18,6 +18,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.obj.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SIGNUP";
@@ -78,6 +88,8 @@ public class SignupActivity extends AppCompatActivity {
 
         }
 
+        final String nam, ema;
+        nam = name; ema = email;
 
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -88,6 +100,7 @@ public class SignupActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseUser u = user;
                             user.sendEmailVerification();
                             Toast.makeText(SignupActivity.this, getResources().getString(R.string.verificationSent),
                                     Toast.LENGTH_SHORT).show();
