@@ -35,6 +35,10 @@ public class Event {
         this.userRole = new HashMap<>();
     }
 
+    public boolean hasMember(String uid){
+        if (this.members.contains(uid)) return true;
+        else return false;
+    }
 
     public ArrayList<String> getMembers() {
         return members;

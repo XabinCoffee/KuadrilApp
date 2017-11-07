@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class DbManager {
 
     private static DatabaseReference mDatabase;
-    private static final ArrayList<Event> events = new ArrayList<>();
+    private static ArrayList<Event> events = new ArrayList<>();
 
     public static ArrayList<Event> getEvents(){return events;}
 
@@ -47,26 +47,6 @@ public class DbManager {
     }
 
 
-    public static void reloadEvents(){
-        mDatabase = FirebaseDatabase.getInstance().getReference("events");
-        final ArrayList<Event> el = new ArrayList<>();
-        mDatabase.addValueEventListener(new ValueEventListener()
-        {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
-                    Event e = eventDataSnapshot.getValue(Event.class);
-                    el.add(e);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("onCancelled","DataBase error");
-            }
-        });
-    }
 
     public static void storeUser(String uid, String name, String email){
 
