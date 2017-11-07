@@ -19,6 +19,7 @@
     <string name="location">Lekua</string>
     <string name="save">Gorde</string>
     <string name="eventCreated">Ekintza gorde egin da</string>
+    <string name="noEvents">Oraindik ez duzu ekintzarik, zerren zai zaude? Sortu bat!</string>
 
 
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +33,8 @@ public class EventsFragment extends Fragment {
     private EventAdapter eAdapter;
     private RecyclerView recyclerView;
     private FirebaseAuth mAuth;
+    private ProgressBar mLoading;
+    private TextView mEmpty;
 
     @Nullable
     @Override
@@ -38,6 +42,10 @@ public class EventsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.rv);
+        mLoading = (ProgressBar) view.findViewById(R.id.loading);
+        mEmpty = (TextView) view.findViewById(R.id.empty);
+
+
         mAuth = FirebaseAuth.getInstance();
 
         fillRecyclerView();
@@ -70,8 +78,16 @@ public class EventsFragment extends Fragment {
                     }
 
                 }
+                if (el.size()==0) {
+                    mLoading.setVisibility(View.GONE);
+                    mEmpty.setVisibility(View.VISIBLE);
+                }
+                else{
                 eAdapter.setEvents(el);
                 recyclerView.setAdapter(eAdapter);
+                mLoading.setVisibility(View.GONE);
+                }
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
