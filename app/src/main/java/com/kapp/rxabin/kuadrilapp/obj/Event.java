@@ -19,6 +19,9 @@ public class Event {
     private ArrayList<String> members;
     private HashMap<String,String> userRole;
 
+    public Event(){
+        //
+    }
 
     public Event(String id, String owner, String name, String description, String location){
         this.id = id;
