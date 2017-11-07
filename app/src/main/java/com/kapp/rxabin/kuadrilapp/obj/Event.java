@@ -11,12 +11,12 @@ public class Event {
 
     private String id;
     private String owner;
-    private ArrayList<String> members;
     private String name;
     private String description;
-    private ArrayList<DateVote> dateVotes;
     private String location;
     private String icon;
+    private ArrayList<DateVote> dateVotes;
+    private ArrayList<String> members;
     private HashMap<String,String> userRole;
 
 

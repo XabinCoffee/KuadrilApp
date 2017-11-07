@@ -15,11 +15,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     private Button mSignOut;
     private Fragment mCurrentFragment;
@@ -36,6 +38,9 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
 
         mAuth = FirebaseAuth.getInstance();
+
+        DbManager.createEvent("nice","is good",mAuth.getCurrentUser().getUid(),"restaurante","Burgos");
+        Log.d("Database","DONE");
 
 
         if (getIntent().getBooleanExtra("gotosettings",false)){
@@ -88,7 +93,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null)
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
 
     }
 
