@@ -34,6 +34,13 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
         mAuth = FirebaseAuth.getInstance();
 
+
+        if (getIntent().getBooleanExtra("gotosettings",false)){
+            navigation.setSelectedItemId(R.id.nav_settings);
+        } else {
+            navigation.setSelectedItemId(R.id.nav_events);
+        }
+
     }
 
 
@@ -80,15 +87,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         // Check if user is signed in (non-null)
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        Boolean f = getIntent().getBooleanExtra("gotosettings",false);
-
-        if (!f) Log.d("KUADRILAPP", "FAAAAAAAAAAAAAAAAAALS");
-
-        if (f){
-            navigation.setSelectedItemId(R.id.nav_settings);
-        } else {
-            navigation.setSelectedItemId(R.id.nav_events);
-        }
     }
 
 

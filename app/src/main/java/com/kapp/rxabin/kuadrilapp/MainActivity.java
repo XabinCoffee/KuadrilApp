@@ -36,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         mLoading = (ProgressBar) findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
+
+        if (getIntent().getBooleanExtra("settings",false)){
+            Intent i = new Intent(MainActivity.this, FrontpageActivity.class);
+            i.putExtra("gotosettings",true);
+            startActivity(i);
+            finish();
+        }
+
     }
 
 
@@ -43,13 +51,6 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null)
-
-        if (getIntent().getBooleanExtra("settings",false)){
-            Intent i = new Intent(getApplicationContext(), FrontpageActivity.class);
-            i.putExtra("gotosettings",true);
-            startActivity(i);
-            finish();
-        }
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser!=null){
