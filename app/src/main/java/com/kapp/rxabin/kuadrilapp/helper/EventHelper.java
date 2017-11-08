@@ -15,6 +15,12 @@ public class EventHelper {
         if (type.equalsIgnoreCase("comida") || type.equalsIgnoreCase("jatordua")){
             return "restaurant";
         }
+        else if (type.equalsIgnoreCase("lana") || type.equalsIgnoreCase("trabajo")){
+            return "work";
+        }
+        else if (type.equalsIgnoreCase("ikasketa") || type.equalsIgnoreCase("estudio")){
+            return "study";
+        }
         else if (type.equalsIgnoreCase("partido") || type.equalsIgnoreCase("partidua")){
             return "match";
         }
@@ -41,6 +47,7 @@ public class EventHelper {
         Map<String,Integer> map = new HashMap<String,Integer>();
         map.put("restaurant", R.drawable.ico_restaurant); map.put("match",R.drawable.ico_football); map.put("gaming",R.drawable.ico_gaming); map.put("sports",R.drawable.ico_sports);
         map.put("coffee",R.drawable.ico_coffee); map.put("drink",R.drawable.ico_beer); map.put("heavy drink",R.drawable.ico_bigbeer); map.put("unknown",R.drawable.ico_unknown);
+        map.put("work",R.drawable.ico_work); map.put("study",R.drawable.ico_study);
 
         return map.get(type);
 

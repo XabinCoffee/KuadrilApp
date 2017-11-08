@@ -19,22 +19,30 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_margin="10dp"
+                android:layout_weight="0"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imgLogo"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="Event logo"
-                    app:srcCompat="@drawable/ico_restaurant" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgLogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Event logo"
+                        app:srcCompat="@drawable/ico_gaming" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="10"
+                android:layout_weight="4"
                 android:orientation="vertical"
                 android:paddingBottom="8dp"
                 android:paddingTop="8dp">
@@ -47,24 +55,16 @@
                         android:id="@+id/tvTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Title" />
-
-                    <TextView
-                        android:id="@+id/tvDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/tvDescription"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="true"
-                        android:paddingRight="8dp"
-                        android:text="Date" />
+                        android:text="Title"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                     <TextView
                         android:id="@+id/tvDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tvTitle"
-                        android:text="Desc." />
+                        android:text="Desc."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
                 </RelativeLayout>
 
             </LinearLayout>

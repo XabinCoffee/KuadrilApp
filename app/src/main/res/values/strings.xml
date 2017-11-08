@@ -30,6 +30,8 @@
 
     <string-array name="eventType">
         <item>Jatordua</item>
+        <item>Lana</item>
+        <item>Ikasketa</item>
         <item>Partidua</item>
         <item>Bideojokoak</item>
         <item>Kirolak</item>

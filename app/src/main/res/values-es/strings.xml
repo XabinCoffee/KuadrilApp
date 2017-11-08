@@ -30,6 +30,8 @@
 
     <string-array name="eventType">
         <item>Comida</item>
+        <item>Trabajo</item>
+        <item>Estudio</item>
         <item>Partido</item>
         <item>Videojuegos</item>
         <item>Deporte</item>
