@@ -92,7 +92,13 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                 return true;
             case R.id.nav_settings:
 
-                if (mCurrentFragment!=null) getSupportFragmentManager().beginTransaction().hide(mCurrentFragment).commit();
+
+
+                if (mCurrentFragment!=null) getSupportFragmentManager()
+                        .beginTransaction()
+                        .remove(mCurrentFragment)
+                        .commit();
+
                 pf = new PrefFragment();
                 getFragmentManager().beginTransaction().replace(R.id.fragment, pf).commit();
 
