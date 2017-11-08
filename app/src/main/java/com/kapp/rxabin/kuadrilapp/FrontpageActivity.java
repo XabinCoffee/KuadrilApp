@@ -1,6 +1,8 @@
 package com.kapp.rxabin.kuadrilapp;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -15,10 +17,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +35,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -126,12 +131,26 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     EditText desc = (EditText) cef.getView().findViewById(R.id.etDesc);
                     EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
                     TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
+                    TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
+
+
+                    boolean good = true;
+
+                    if (!cef.isDatetimeSet()){
+                        date.setError(getResources().getString(R.string.errorEmpty));
+                        good = false;
+                    } else {
+                        date.setError(null);
+                    }
 
                     if (TextUtils.isEmpty(title.getText())) {
                         title.setError(getResources().getString(R.string.errorEmpty));
-                    } else {
+                        good = false;
+                    }  else {
                         title.setError(null);
+                    }
 
+                    if (good){
                         DbManager.createEvent(title.getText().toString(),
                                 desc.getText().toString(),
                                 mAuth.getCurrentUser().getUid(),
@@ -164,6 +183,50 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             }
         });
         builder.show();
+    }
+
+    public void setDate(View v){
+        final Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        cef.setDate(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        Log.d("DATE",cef.getDate());
+                        //*************Call Time Picker Here ********************
+                        timePicker();
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+    }
+
+    public void timePicker(){
+        // Get Current Time
+        final Calendar c = Calendar.getInstance();
+        final int mHour = c.get(Calendar.HOUR_OF_DAY);
+        final int mMinute = c.get(Calendar.MINUTE);
+
+        // Launch Time Picker Dialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        cef.setTime(String.format("%02d",hourOfDay) + ":" + String.format("%02d",minute));
+                        Log.d("DATE",cef.getTime());
+                        cef.setDatetimeSet(true);
+                        TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
+                        TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
+                        date.setText(cef.getDate());
+                        time.setText(cef.getTime());
+                    }
+                }, mHour, mMinute, false);
+        timePickerDialog.show();
     }
 
 }

@@ -21,11 +21,16 @@ import com.kapp.rxabin.kuadrilapp.R;
  */
 public class CreateEventFragment extends Fragment {
 
-    private Spinner spinner;
     private EditText title;
     private EditText desc;
     private ImageView imageView;
     private TextView eventType;
+    private TextView tvdate;
+    private TextView tvtime;
+    private static String date;
+    private static String time;
+    private static boolean datetimeSet;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,10 +42,41 @@ public class CreateEventFragment extends Fragment {
         desc = (EditText) iv.findViewById(R.id.etDesc);
         imageView = (ImageView) iv.findViewById(R.id.imageView);
         eventType = (TextView) iv.findViewById(R.id.tvEventType);
+        tvdate = (TextView) iv.findViewById(R.id.tvDate);
+        tvtime = (TextView) iv.findViewById(R.id.tvTime);
+
         eventType.setText(getResources().getStringArray(R.array.eventType)[0].toString());
+        datetimeSet = false;
+
+        date = "";
+        time = "";
 
         return iv;
 
+    }
+
+    public static String getDate(){
+        return date;
+    }
+
+    public void setDate(String dt){
+        date = dt;
+    }
+
+    public static String getTime() {
+        return time;
+    }
+
+    public static void setTime(String time) {
+        CreateEventFragment.time = time;
+    }
+
+    public static boolean isDatetimeSet() {
+        return datetimeSet;
+    }
+
+    public static void setDatetimeSet(boolean datetimeSet) {
+        CreateEventFragment.datetimeSet = datetimeSet;
     }
 
 

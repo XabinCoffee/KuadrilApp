@@ -12,6 +12,18 @@ public class DateVote {
     private String likes;
     private String dislikes;
 
+
+    public DateVote(String creator, String datetime){
+
+        this.creator = creator;
+
+        String[] a = datetime.split(" ");
+        this.date = a[0];
+        this.time = a[1];
+        this.likes= "1";
+        this.dislikes = "0";
+    }
+
     public DateVote(String creator, String date, String time, String likes, String dislikes){
         this.creator = creator;
         this.date = date;
