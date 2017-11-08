@@ -93,7 +93,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             case R.id.nav_settings:
 
 
-
                 if (mCurrentFragment!=null) getSupportFragmentManager()
                         .beginTransaction()
                         .remove(mCurrentFragment)
@@ -138,6 +137,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
                     TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
                     TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
+                    TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
 
 
                     boolean good = true;
@@ -161,7 +161,9 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                                 desc.getText().toString(),
                                 mAuth.getCurrentUser().getUid(),
                                 eventType.getText().toString(),
-                                location.getText().toString());
+                                location.getText().toString(),
+                                date.getText().toString(),
+                                time.getText().toString());
 
                         Toast.makeText(FrontpageActivity.this, getResources().getString(R.string.eventCreated),
                                 Toast.LENGTH_SHORT).show();
@@ -202,7 +204,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        cef.setDate(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        cef.setDate(String.format("%02d",dayOfMonth) + "/" + String.format("%02d",monthOfYear + 1) + "/" + year);
                         Log.d("DATE",cef.getDate());
                         timePicker();
                     }
@@ -211,12 +213,10 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     }
 
     public void timePicker(){
-        // Get Current Time
         final Calendar c = Calendar.getInstance();
         final int mHour = c.get(Calendar.HOUR_OF_DAY);
         final int mMinute = c.get(Calendar.MINUTE);
 
-        // Launch Time Picker Dialog
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {
 

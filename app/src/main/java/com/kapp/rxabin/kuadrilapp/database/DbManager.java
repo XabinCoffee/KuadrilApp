@@ -22,7 +22,7 @@ public class DbManager {
 
     private static DatabaseReference mDatabase;
 
-    public static Boolean createEvent(String name, String desc, String useruid, String type, String location){
+    public static Boolean createEvent(String name, String desc, String useruid, String type, String location, String date, String time){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -32,10 +32,8 @@ public class DbManager {
         users.add(useruid);
         e.setMembers(users);
 
-        /*ArrayList<DateVote> dv = new ArrayList<>();
-        DateVote dtvt = new DateVote(useruid,"1990-00-00","00:00:00","2","3");
-        dv.add(dtvt);
-        e.setDateVotes(dv);*/
+        DateVote dv = new DateVote(useruid, date, time, "1","0");
+        e.getDateVotes().add(dv);
 
         mDatabase.child("events").child(e.getId()).setValue(e);
 

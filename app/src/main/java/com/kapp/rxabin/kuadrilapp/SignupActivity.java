@@ -37,8 +37,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPass;
     private EditText mName;
-
-
+    private EditText mPass2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +49,7 @@ public class SignupActivity extends AppCompatActivity {
 
         mEmail = (EditText) findViewById(R.id.mEmail);
         mPass = (EditText) findViewById(R.id.mPass);
+        mPass2 = (EditText) findViewById(R.id.mPass2);
         mName = (EditText) findViewById(R.id.mName);
 
         mAuth = FirebaseAuth.getInstance();
@@ -68,11 +68,19 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         String password = mPass.getText().toString();
+        String pw2 = mPass2.getText().toString();
+
         if (TextUtils.isEmpty(password)) {
             mPass.setError(getResources().getString(R.string.errorEmpty));
             valid = false;
         } else {
             mPass.setError(null);
+            if (!password.equals(pw2)){
+                mPass.setError(getResources().getString(R.string.diffPasswords));
+                valid = false;
+            } else {
+                mPass.setError(null);
+            }
         }
 
         return valid;
@@ -82,8 +90,6 @@ public class SignupActivity extends AppCompatActivity {
     private void createAccount(String email, String password, String name) {
         Log.d(TAG, "createAccount:" + email);
         if (!validateForm()) {
-            Toast.makeText(SignupActivity.this, "Authentication failed.",
-                    Toast.LENGTH_SHORT).show();
             return;
 
         }
@@ -120,8 +126,6 @@ public class SignupActivity extends AppCompatActivity {
 
                                                 mAuth.signOut();
 
-                                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                                                startActivity(intent);
                                                 finish();
                                             }
                                         }

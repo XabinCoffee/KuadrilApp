@@ -13,7 +13,7 @@ public class DateVote {
     private String dislikes;
 
 
-    public DateVote(String creator, String datetime){
+    /*public DateVote(String creator, String datetime){
 
         this.creator = creator;
 
@@ -22,7 +22,10 @@ public class DateVote {
         this.time = a[1];
         this.likes= "1";
         this.dislikes = "0";
-    }
+    }*/
+
+
+    public DateVote(){}
 
     public DateVote(String creator, String date, String time, String likes, String dislikes){
         this.creator = creator;

@@ -2,6 +2,7 @@
     <string name="app_name">KuadrilApp</string>
     <string name="email">Email</string>
     <string name="password">Pasahitza</string>
+    <string name="password2">Pasahitza errepikatu</string>
     <string name="login">Hasi saioa</string>
     <string name="noaccountyet"><u>Konturik ez? Sortu bat!</u></string>
     <string name="member">Dagoeneko kidea zara? Hasi saioa</string>
@@ -22,7 +23,7 @@
     <string name="noEvents">Oraindik ez duzu ekintzarik, zerren zai zaude? Sortu bat!</string>
     <string name="selectDate">Aukeratu data</string>
 
-
+    <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>
     <string name="errorCredentials">Erabiltzaile / pasahitz okerra</string>
     <string name="errorUnverified">Kontua berifikatu gabe duzu, beste email bat bidali zaizu</string>

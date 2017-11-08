@@ -4,6 +4,7 @@
     <string name="app_name">KuadrilApp</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
+    <string name="password2">Repetir contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="noaccountyet"><u>¿No tienes cuenta? Crea una</u></string>
     <string name="member">¿Ya estás registrad@? Inicia sesión</string>
@@ -24,8 +25,9 @@
     <string name="selectDate">Selecciona fecha</string>
 
 
+    <string name="diffPasswords">Las contraseñas no coinciden</string>
     <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
-    <string name="errorCredentials">El uruario y contraseña no coinciden</string>
+    <string name="errorCredentials">El usuario y contraseña no coinciden</string>
     <string name="errorUnverified">Cuenta sin verificar, se le ha enviado otro email</string>
     <string name="errorEmpty">Este campo es necesario</string>
 

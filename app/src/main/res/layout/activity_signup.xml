@@ -58,10 +58,11 @@
                     android:inputType="textPassword" />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/mPass2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:hint="@string/password2"
                     android:inputType="textPassword" />
 
                 <android.support.v7.widget.AppCompatButton

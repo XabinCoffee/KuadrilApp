@@ -40,6 +40,10 @@ public class Event {
         else return false;
     }
 
+    public int numOfMembers(){
+        return this.members.size();
+    }
+
     public ArrayList<String> getMembers() {
         return members;
     }
