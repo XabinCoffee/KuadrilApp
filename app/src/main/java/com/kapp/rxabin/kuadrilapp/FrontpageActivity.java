@@ -157,7 +157,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                                 eventType.getText().toString(),
                                 location.getText().toString());
 
-                        Toast.makeText(FrontpageActivity.this, "Event created.",
+                        Toast.makeText(FrontpageActivity.this, getResources().getString(R.string.eventCreated),
                                 Toast.LENGTH_SHORT).show();
 
                         navigation.setSelectedItemId(R.id.nav_events);
@@ -198,7 +198,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         cef.setDate(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
                         Log.d("DATE",cef.getDate());
-                        //*************Call Time Picker Here ********************
                         timePicker();
                     }
                 }, mYear, mMonth, mDay);
@@ -219,11 +218,11 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         cef.setTime(String.format("%02d",hourOfDay) + ":" + String.format("%02d",minute));
                         Log.d("DATE",cef.getTime());
-                        cef.setDatetimeSet(true);
                         TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                         TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
                         date.setText(cef.getDate());
                         time.setText(cef.getTime());
+                        cef.setDatetimeSet(true);
                     }
                 }, mHour, mMinute, false);
         timePickerDialog.show();

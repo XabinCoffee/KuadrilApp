@@ -21,6 +21,7 @@
     <string name="save">Guardar</string>
     <string name="eventCreated">El evento ha sido guardado</string>
     <string name="noEvents">Todavia no tiene ningún evento, ¿a que esperas?</string>
+    <string name="selectDate">Selecciona fecha</string>
 
 
     <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
