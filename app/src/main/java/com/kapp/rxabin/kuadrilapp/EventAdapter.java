@@ -5,8 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
@@ -20,9 +22,12 @@ import java.util.List;
 public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Event> eventsList;
+    private Context context;
 
-    public EventAdapter(){
+    public EventAdapter(Context context){
+
         this.eventsList = new ArrayList<>();
+        this.context = context;
     }
 
     @Override
@@ -40,6 +45,8 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             evh.e = e;
             evh.title.setText(e.getName());
             evh.description.setText(e.getDescription());
+            int icon_id = EventHelper.getIcon(e.getIcon());
+            evh.icon.setImageDrawable(context.getResources().getDrawable(icon_id));
             //evh.date.setText(e.getDate());
 
         }
@@ -56,12 +63,14 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         private Event e;
         private TextView title;
         private TextView description;
+        private ImageView icon;
         //private TextView date;
 
         public EventViewHolder(View v){
             super(v);
-            title = v.findViewById(R.id.tvTitle);
-            description = v.findViewById(R.id.tvDescription);
+            title = (TextView) v.findViewById(R.id.tvTitle);
+            description = (TextView) v.findViewById(R.id.tvDescription);
+            icon = (ImageView) v.findViewById(R.id.imgLogo);
             //date = v.findViewById(R.id.tvDate);
 
         }

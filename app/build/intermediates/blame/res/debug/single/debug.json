@@ -532,6 +532,10 @@
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_sports.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_sports.png"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5bf9722dfeeb5104d92fd03117709077/res/layout-v16/notification_template_custom_big.xml"
     },
@@ -670,6 +674,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_coffee.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_coffee.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -982,6 +990,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_abc_expanded_menu_layout.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_beer.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_beer.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
@@ -1300,6 +1312,10 @@
         "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/menu/navigation.xml"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_bigbeer.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_bigbeer.png"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
         "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/activity_main.xml"
     },
@@ -1318,6 +1334,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-xxhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_gaming.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_gaming.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -1438,6 +1458,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_football.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_football.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-v21_abc_edit_text_material.xml.flat",
@@ -1946,6 +1970,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_unknown.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_unknown.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",

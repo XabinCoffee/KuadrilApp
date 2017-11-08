@@ -63,7 +63,7 @@ public class EventsFragment extends Fragment {
 
     public void getUserEvents(){
 
-        final EventAdapter eAdapter = new EventAdapter();
+        final EventAdapter eAdapter = new EventAdapter(getContext());
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         final ArrayList<Event> el = new ArrayList<>();
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()

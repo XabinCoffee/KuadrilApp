@@ -1,5 +1,7 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
@@ -14,7 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
@@ -37,7 +42,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     private BottomNavigationView navigation;
     private CreateEventFragment cef;
     private EventsFragment ef = new EventsFragment();
-
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -121,16 +125,17 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     EditText title =(EditText) cef.getView().findViewById(R.id.etTitle);
                     EditText desc = (EditText) cef.getView().findViewById(R.id.etDesc);
                     EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
-                    Spinner spinner = (Spinner) cef.getView().findViewById(R.id.spinner);
+                    TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
 
                     if (TextUtils.isEmpty(title.getText())) {
                         title.setError(getResources().getString(R.string.errorEmpty));
                     } else {
                         title.setError(null);
+
                         DbManager.createEvent(title.getText().toString(),
                                 desc.getText().toString(),
                                 mAuth.getCurrentUser().getUid(),
-                                spinner.getSelectedItem().toString(),
+                                eventType.getText().toString(),
                                 location.getText().toString());
 
                         Toast.makeText(FrontpageActivity.this, "Event created.",
@@ -142,4 +147,23 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                 break;
         }
     }
+
+
+    public void typeSelect(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.typeEvent));
+        builder.setItems(getResources().getStringArray(R.array.eventType), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
+                String[] types = getResources().getStringArray(R.array.eventType);
+                eventType.setText(types[which]);
+                Log.d("EventType", eventType.getText().toString());
+                ImageView img = (ImageView) cef.getView().findViewById(R.id.imageView);
+                img.setImageDrawable(getResources().getDrawable(EventHelper.getIcon(EventHelper.getType(eventType.getText().toString()))));
+            }
+        });
+        builder.show();
+    }
+
 }
