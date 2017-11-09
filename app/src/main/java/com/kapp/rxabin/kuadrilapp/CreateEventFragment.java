@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
+import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +34,9 @@ public class CreateEventFragment extends Fragment {
     private static String date;
     private static String time;
     private static boolean datetimeSet;
+    private UserAdapter uAdapter;
+    private RecyclerView rv;
+    private RecyclerView.LayoutManager mLayoutManager;
 
 
     @Override
@@ -45,6 +51,12 @@ public class CreateEventFragment extends Fragment {
         eventType = (TextView) iv.findViewById(R.id.tvEventType);
         tvdate = (TextView) iv.findViewById(R.id.tvDate);
         tvtime = (TextView) iv.findViewById(R.id.tvTime);
+        rv = (RecyclerView) iv.findViewById(R.id.rvUser);
+
+        mLayoutManager = new LinearLayoutManager(getContext());
+        rv.setLayoutManager(mLayoutManager);
+        uAdapter = new UserAdapter(getContext());
+        rv.setAdapter(uAdapter);
 
         eventType.setText(getResources().getStringArray(R.array.eventType)[0].toString());
         datetimeSet = false;
@@ -78,6 +90,10 @@ public class CreateEventFragment extends Fragment {
 
     public static void setDatetimeSet(boolean datetimeSet) {
         CreateEventFragment.datetimeSet = datetimeSet;
+    }
+
+    public UserAdapter getUserAdapter(){
+        return this.uAdapter;
     }
 
 

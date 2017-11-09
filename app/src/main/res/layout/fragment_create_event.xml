@@ -193,7 +193,9 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="6dp">
 
                             <TextView
                                 android:id="@+id/textView7"
@@ -219,6 +221,7 @@
                         </RelativeLayout>
 
                         <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvUser"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"

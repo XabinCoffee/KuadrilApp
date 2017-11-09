@@ -9,6 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.EventsFragment;
+import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -54,7 +55,8 @@ public class DbManager {
 
     }
 
-    //======================================================================
+
+
 
     public static void getUserEvents(final EventAdapter eAdapter, final String uid){
 
@@ -82,5 +84,33 @@ public class DbManager {
             }
         });
     }
+
+
+    //
+    public static void getUser(final UserAdapter uAdapter, final String email){
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        User user = new User();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
+                    User u = userDataSnapshot.getValue(User.class);
+
+                    if (u.getEmail().equalsIgnoreCase(email)){
+                        uAdapter.addUser(u);
+                        uAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+
 
 }

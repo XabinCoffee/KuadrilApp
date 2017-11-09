@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
+import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 
@@ -236,18 +237,16 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add member");
 
-// Set up the input
         final EditText input = new EditText(this);
-// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         builder.setView(input);
 
-// Set up the buttons
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String m_Text = input.getText().toString();
-
+                String email = input.getText().toString();
+                Log.d("SKYA",email);
+                DbManager.getUser(cef.getUserAdapter(),email);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

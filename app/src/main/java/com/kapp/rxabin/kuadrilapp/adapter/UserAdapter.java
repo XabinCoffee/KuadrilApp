@@ -68,7 +68,12 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     }
 
-    public void setEvents(List<User> userList) {
+    public void addUser(User u) {
+        this.userList.add(u);
+        notifyDataSetChanged();
+    }
+
+    public void setUsers(List<User> userList) {
         this.userList.clear();
         this.userList.addAll(userList);
         notifyDataSetChanged();
