@@ -73,6 +73,10 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyDataSetChanged();
     }
 
+    public ArrayList<User> getUsers(){
+        return this.userList;
+    }
+
     public void setUsers(List<User> userList) {
         this.userList.clear();
         this.userList.addAll(userList);

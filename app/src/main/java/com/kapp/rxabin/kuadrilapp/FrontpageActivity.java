@@ -28,7 +28,9 @@ import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
+import com.kapp.rxabin.kuadrilapp.obj.User;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -137,6 +139,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                     TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
 
+                    ArrayList<User> ul = cef.getUserAdapter().getUsers();
+
 
                     boolean good = true;
 
@@ -161,7 +165,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                                 eventType.getText().toString(),
                                 location.getText().toString(),
                                 date.getText().toString(),
-                                time.getText().toString());
+                                time.getText().toString(),
+                                ul);
 
                         Toast.makeText(FrontpageActivity.this, getResources().getString(R.string.eventCreated),
                                 Toast.LENGTH_SHORT).show();
@@ -245,7 +250,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String email = input.getText().toString();
-                Log.d("SKYA",email);
                 DbManager.getUser(cef.getUserAdapter(),email);
             }
         });

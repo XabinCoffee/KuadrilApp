@@ -25,16 +25,20 @@ public class DbManager {
 
     private static DatabaseReference mDatabase;
 
-    public static Boolean createEvent(String name, String desc, String useruid, String type, String location, String date, String time){
+    public static Boolean createEvent(String name, String desc, String useruid, String type, String location, String date, String time, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         Event e = new Event(mDatabase.child("events").push().getKey(),useruid,name,desc,location);
         e.setIcon(EventHelper.getType(type));
         ArrayList<String> users = new ArrayList<>();
-        users.add(useruid);
-        e.setMembers(users);
 
+        for (int i = 0; i<ul.size();i++){
+            users.add(ul.get(i).getUid());
+        }
+        if (!users.contains(useruid)) users.add(useruid);
+
+        e.setMembers(users);
         DateVote dv = new DateVote(useruid, date, time, "1","0");
         e.getDateVotes().add(dv);
 
@@ -91,6 +95,7 @@ public class DbManager {
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
+        final ArrayList<User> ul = uAdapter.getUsers();
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
@@ -100,8 +105,10 @@ public class DbManager {
                     User u = userDataSnapshot.getValue(User.class);
 
                     if (u.getEmail().equalsIgnoreCase(email)){
-                        uAdapter.addUser(u);
-                        uAdapter.notifyDataSetChanged();
+                        if (!ul.contains(u)){
+                            uAdapter.addUser(u);
+                            uAdapter.notifyDataSetChanged();
+                        }
                     }
                 }
             }

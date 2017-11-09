@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 09 12:44:10 CET 2017
+#Thu Nov 09 13:01:49 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/color/common_google_signin_btn_text_dark.xml
 14.set=ANDROID_RESOURCE

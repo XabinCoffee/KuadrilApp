@@ -41,4 +41,15 @@ public class User {
         this.uid = uid;
     }
 
+    @Override
+    public boolean equals(Object object){
+        boolean same = false;
+        if(object != null && object instanceof User){
+            User u = (User) object;
+            same = this.uid.equals(u.getUid());
+        }
+
+        return same;
+    }
+
 }

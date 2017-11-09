@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 09 12:44:09 CET 2017
+#Thu Nov 09 13:01:47 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/color-v23/abc_tint_seek_thumb.xml
 14.set=ANDROID_RESOURCE
