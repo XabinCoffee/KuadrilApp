@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
+import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +19,18 @@ import java.util.List;
 
 public class UserDialogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private ArrayList<String> emailList;
-    private Context context;
+    public interface OnUserSelectedListener{
+        void onUserSelected(User userData);
+    }
 
-    public UserDialogAdapter(Context context){
-        this.emailList = new ArrayList<>();
+    private ArrayList<User> userList;
+    private Context context;
+    private OnUserSelectedListener mListener;
+
+    public UserDialogAdapter(Context context, OnUserSelectedListener newListener){
+        this.userList = new ArrayList<>();
         this.context = context;
+        this.mListener = newListener;
     }
 
     @Override
@@ -38,20 +45,34 @@ public class UserDialogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         if (holder instanceof UsernameViewHolder){
             final UsernameViewHolder uvh = (UsernameViewHolder) holder;
 
-            String s = emailList.get(position);
-            uvh.s = s;
-            uvh.name.setText(s);
+            User u = userList.get(position);
+            uvh.u = u;
+            uvh.name.setText(u.getUsername() + " (" +u.getEmail()+")");
+
+            uvh.itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    if (null != mListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        mListener.onUserSelected(uvh.u);
+
+                    }
+                }
+            });
         }
     }
 
     @Override
     public int getItemCount() {
-        if (emailList!=null) return emailList.size(); else return 0;
+        if (userList!=null) return userList.size(); else return 0;
     }
 
     public class UsernameViewHolder  extends RecyclerView.ViewHolder{
 
-        private String s;
+        private User u;
         private TextView name;
 
         public UsernameViewHolder(View v){
@@ -62,18 +83,18 @@ public class UserDialogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     }
 
-    public ArrayList<String> getEmails(){
-        return this.emailList;
+    public ArrayList<User> getUsers(){
+        return this.userList;
     }
 
-    public void setEmails(List<String> emailList) {
-        this.emailList.clear();
-        this.emailList.addAll(emailList);
+    public void setUsers(List<User> userList) {
+        this.userList.clear();
+        this.userList.addAll(userList);
         notifyDataSetChanged();
     }
 
-    public void addEmail(String email) {
-        this.emailList.add(email);
+    public void addUser(User user) {
+        this.userList.add(user);
         notifyDataSetChanged();
     }
 }

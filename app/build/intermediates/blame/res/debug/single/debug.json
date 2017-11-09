@@ -772,6 +772,10 @@
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_activity_read_event.xml.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/activity_read_event.xml"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
     },
@@ -2122,6 +2126,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_light.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_activity_edit_event.xml.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/activity_edit_event.xml"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",

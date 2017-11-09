@@ -37,6 +37,8 @@
         </activity>
         <activity android:name="com.kapp.rxabin.kuadrilapp.SignupActivity" />
         <activity android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity" />
+        <activity android:name="com.kapp.rxabin.kuadrilapp.ReadEventActivity" />
+        <activity android:name="com.kapp.rxabin.kuadrilapp.EditEventActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

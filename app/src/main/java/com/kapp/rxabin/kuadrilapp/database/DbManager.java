@@ -129,7 +129,6 @@ public class DbManager {
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
-        final ArrayList<String> sl = uAdapter.getEmails();
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
@@ -137,8 +136,7 @@ public class DbManager {
 
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
                     User u = userDataSnapshot.getValue(User.class);
-                    uAdapter.addEmail(u.getEmail());
-                    Log.d("AAAAA","UUUUU");
+                    uAdapter.addUser(u);
                     uAdapter.notifyDataSetChanged();
                 }
             }

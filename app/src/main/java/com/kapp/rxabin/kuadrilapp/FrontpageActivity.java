@@ -38,7 +38,7 @@ import com.kapp.rxabin.kuadrilapp.obj.User;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, UserDialogAdapter.OnUserSelectedListener {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -52,6 +52,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private EventAdapter eAdapter;
+
+    private AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -269,18 +271,14 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     }
 
     public void addMember2(View v){
-        /*Dialog d = new Dialog(getApplicationContext());
-        d.setContentView(R.layout.dialog_layout);
-        d.setCanceledOnTouchOutside(true);
-        d.setCancelable(true);
-        d.show();*/
-        UserDialogAdapter uda = new UserDialogAdapter(getApplicationContext());
+
+        UserDialogAdapter uda = new UserDialogAdapter(getApplicationContext(), this);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_layout, null);
         builder.setView(dialogView);
-        AlertDialog alertDialog = builder.create();
+        alertDialog = builder.create();
         alertDialog.show();
 
         RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.rvDialog);
@@ -291,4 +289,10 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
     }
 
+
+    @Override
+    public void onUserSelected(User userData) {
+        DbManager.getUser(cef.getUserAdapter(),userData.getEmail());
+        alertDialog.cancel();
+    }
 }
