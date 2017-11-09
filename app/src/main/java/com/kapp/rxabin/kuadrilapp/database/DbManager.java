@@ -7,6 +7,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
+import com.kapp.rxabin.kuadrilapp.EventsFragment;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -42,7 +44,6 @@ public class DbManager {
     }
 
 
-
     public static void storeUser(String uid, String name, String email){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -51,6 +52,35 @@ public class DbManager {
 
         mDatabase.child("users").child(user.getUid()).setValue(user);
 
+    }
+
+    //======================================================================
+
+    public static void getUserEvents(final EventAdapter eAdapter, final String uid){
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        final ArrayList<Event> el = new ArrayList<>();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.hasMember(uid)){
+                        el.add(e);
+                    }
+                }
+                EventsFragment.updateUI_events(el);
+                eAdapter.setEvents(el);
+                eAdapter.notifyDataSetChanged();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
     }
 
 }

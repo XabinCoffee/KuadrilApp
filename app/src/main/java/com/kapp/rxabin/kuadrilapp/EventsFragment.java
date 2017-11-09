@@ -1,13 +1,10 @@
 package com.kapp.rxabin.kuadrilapp;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 
 public class EventsFragment extends Fragment {
@@ -33,8 +25,8 @@ public class EventsFragment extends Fragment {
     private EventAdapter eAdapter;
     private RecyclerView recyclerView;
     private FirebaseAuth mAuth;
-    private ProgressBar mLoading;
-    private TextView mEmpty;
+    private static ProgressBar mLoading;
+    private static TextView mEmpty;
 
     @Nullable
     @Override
@@ -57,43 +49,22 @@ public class EventsFragment extends Fragment {
 
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        getUserEvents();
+        EventAdapter eAdapter = new EventAdapter(getContext());
+        DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid());
         recyclerView.setAdapter(eAdapter);
+
     }
 
-    public void getUserEvents(){
+    public static void updateUI_events(ArrayList<Event> el){
 
-        final EventAdapter eAdapter = new EventAdapter(getContext());
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
-        final ArrayList<Event> el = new ArrayList<>();
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
-        {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        if (el.size()==0){
+            mEmpty.setVisibility(View.VISIBLE);
+        }else{
+            mEmpty.setVisibility(View.GONE);
+        }
+        mLoading.setVisibility(View.GONE);
 
-                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
-                    Event e = eventDataSnapshot.getValue(Event.class);
-                    if (e.hasMember(mAuth.getCurrentUser().getUid())){
-                        el.add(e);
-                    }
-
-                }
-                if (el.size()==0) {
-                    mLoading.setVisibility(View.GONE);
-                    mEmpty.setVisibility(View.VISIBLE);
-                }
-                else{
-                eAdapter.setEvents(el);
-                recyclerView.setAdapter(eAdapter);
-                mLoading.setVisibility(View.GONE);
-                }
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("onCancelled","DataBase error");
-            }
-        });
     }
+
 
 }

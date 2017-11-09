@@ -4,37 +4,29 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
-import com.kapp.rxabin.kuadrilapp.obj.Event;
-import com.kapp.rxabin.kuadrilapp.obj.User;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -86,8 +78,11 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             case R.id.nav_new:
 
                 if (pf!=null) getFragmentManager().beginTransaction().hide(pf).commit();
-                cef = new CreateEventFragment();
-                switchContent(cef);
+
+                if (!(mCurrentFragment instanceof CreateEventFragment)) {
+                    cef = new CreateEventFragment();
+                    switchContent(cef);
+                }
 
                 return true;
             case R.id.nav_settings:
@@ -99,6 +94,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                         .commit();
 
                 pf = new PrefFragment();
+                mCurrentFragment = null;
                 getFragmentManager().beginTransaction().replace(R.id.fragment, pf).commit();
 
                 return true;

@@ -1,5 +1,7 @@
 package com.kapp.rxabin.kuadrilapp.obj;
 
+import java.util.HashMap;
+
 /**
  * Created by xabinrodriguez on 6/11/17.
  */
@@ -11,6 +13,7 @@ public class DateVote {
     private String time;
     private String likes;
     private String dislikes;
+    private HashMap<String,String> voters;
 
 
     /*public DateVote(String creator, String datetime){
@@ -33,6 +36,13 @@ public class DateVote {
         this.time = time;
         this.likes = likes;
         this.dislikes = dislikes;
+        this.voters = new HashMap<String,String>();
+        this.voters.put(creator,"like");
+    }
+
+
+    public String toString(){
+        return date + " " + time;
     }
 
     public String getCreator() {
@@ -73,5 +83,13 @@ public class DateVote {
 
     public void setDislikes(String dislikes) {
         this.dislikes = dislikes;
+    }
+
+    public HashMap<String, String> getVoters() {
+        return voters;
+    }
+
+    public void setVoters(HashMap<String, String> voters) {
+        this.voters = voters;
     }
 }
