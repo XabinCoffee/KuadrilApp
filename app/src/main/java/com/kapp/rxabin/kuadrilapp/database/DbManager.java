@@ -125,7 +125,7 @@ public class DbManager {
         });
     }
 
-    public static void getUsernames(final UserDialogAdapter uAdapter){
+    public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
@@ -136,9 +136,11 @@ public class DbManager {
 
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
                     User u = userDataSnapshot.getValue(User.class);
-                    uAdapter.addUser(u);
-                    uAdapter.notifyDataSetChanged();
+                    if(!u.getUid().equals(uid)) {
+                        uAdapter.addUser(u);
+                    }
                 }
+                uAdapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

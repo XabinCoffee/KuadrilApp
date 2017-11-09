@@ -285,7 +285,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         rv.setAdapter(uda);
-        DbManager.getUsernames(uda);
+        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid());
 
     }
 
