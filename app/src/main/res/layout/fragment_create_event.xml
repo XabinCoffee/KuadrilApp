@@ -199,8 +199,6 @@
                                 android:id="@+id/textView7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignBaseline="@+id/button2"
-                                android:layout_alignBottom="@+id/button2"
                                 android:layout_alignParentStart="true"
                                 android:layout_weight="1"
                                 android:text="Gonbidatuak" />
@@ -214,14 +212,17 @@
                                 android:layout_marginEnd="26dp"
                                 android:layout_weight="1"
                                 android:clickable="true"
+                                android:onClick="addMember"
                                 android:src="@drawable/ic_add_black_24dp"
                                 app:backgroundTint="@color/background" />
 
                         </RelativeLayout>
 
-                        <ListView
+                        <android.support.v7.widget.RecyclerView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/textView7"
                             android:layout_weight="1" />
 
 

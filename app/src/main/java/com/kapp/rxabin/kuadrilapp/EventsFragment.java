@@ -1,13 +1,17 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -37,7 +41,6 @@ public class EventsFragment extends Fragment {
         mLoading = (ProgressBar) view.findViewById(R.id.loading);
         mEmpty = (TextView) view.findViewById(R.id.empty);
 
-
         mAuth = FirebaseAuth.getInstance();
 
         fillRecyclerView();
@@ -63,7 +66,6 @@ public class EventsFragment extends Fragment {
             mEmpty.setVisibility(View.GONE);
         }
         mLoading.setVisibility(View.GONE);
-
     }
 
 
