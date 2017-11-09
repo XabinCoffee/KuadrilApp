@@ -1,15 +1,21 @@
 package com.kapp.rxabin.kuadrilapp.database;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.EventsFragment;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
+import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -118,6 +124,55 @@ public class DbManager {
             }
         });
     }
+
+    public static void getUsernames(final UserDialogAdapter uAdapter){
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        User user = new User();
+        final ArrayList<String> sl = uAdapter.getEmails();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
+                    User u = userDataSnapshot.getValue(User.class);
+                    uAdapter.addEmail(u.getEmail());
+                    Log.d("AAAAA","UUUUU");
+                    uAdapter.notifyDataSetChanged();
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+    /*public static void getAllUsers(Context context){
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Add member");
+        final ArrayList<String> al = new ArrayList<>();
+
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
+                    User u = userDataSnapshot.getValue(User.class);
+                    al.add(u.getEmail());
+                }
+                builder.setItems(al);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+
+    }*/
 
 
 }

@@ -2,6 +2,7 @@ package com.kapp.rxabin.kuadrilapp;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,15 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,6 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
+import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.User;
@@ -263,5 +268,27 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         builder.show();
     }
 
+    public void addMember2(View v){
+        /*Dialog d = new Dialog(getApplicationContext());
+        d.setContentView(R.layout.dialog_layout);
+        d.setCanceledOnTouchOutside(true);
+        d.setCancelable(true);
+        d.show();*/
+        UserDialogAdapter uda = new UserDialogAdapter(getApplicationContext());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_layout, null);
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.rvDialog);
+        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        rv.setAdapter(uda);
+        DbManager.getUsernames(uda);
+
+    }
 
 }
