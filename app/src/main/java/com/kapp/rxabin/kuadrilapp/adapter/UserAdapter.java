@@ -19,13 +19,19 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public interface OnUserRemovalSelectedListener{
+        void onUserRemovalSelected(User userData);
+    }
+
     private ArrayList<User> userList;
     private Context context;
+    private OnUserRemovalSelectedListener mListener;
 
-    public UserAdapter(Context context){
+    public UserAdapter(Context context, OnUserRemovalSelectedListener newListener){
 
         this.userList = new ArrayList<>();
         this.context = context;
+        this.mListener = newListener;
     }
 
     @Override
@@ -43,6 +49,20 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             User u = userList.get(position);
             uvh.u = u;
             uvh.username.setText(u.getUsername());
+
+            uvh.remove.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    if (null != mListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        mListener.onUserRemovalSelected(uvh.u);
+
+                    }
+                }
+            });
         }
     }
 

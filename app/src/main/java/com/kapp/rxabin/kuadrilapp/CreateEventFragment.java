@@ -19,11 +19,12 @@ import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
+import com.kapp.rxabin.kuadrilapp.obj.User;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CreateEventFragment extends Fragment {
+public class CreateEventFragment extends Fragment implements UserAdapter.OnUserRemovalSelectedListener {
 
     private EditText title;
     private EditText desc;
@@ -55,7 +56,7 @@ public class CreateEventFragment extends Fragment {
 
         mLayoutManager = new LinearLayoutManager(getContext());
         rv.setLayoutManager(mLayoutManager);
-        uAdapter = new UserAdapter(getContext());
+        uAdapter = new UserAdapter(getContext(), this);
         rv.setAdapter(uAdapter);
 
         eventType.setText(getResources().getStringArray(R.array.eventType)[0].toString());
@@ -94,6 +95,12 @@ public class CreateEventFragment extends Fragment {
 
     public UserAdapter getUserAdapter(){
         return this.uAdapter;
+    }
+
+    @Override
+    public void onUserRemovalSelected(User userData) {
+        getUserAdapter().getUsers().remove(userData);
+        getUserAdapter().notifyDataSetChanged();
     }
 
 

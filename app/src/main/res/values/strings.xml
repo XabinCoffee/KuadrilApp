@@ -23,6 +23,9 @@
     <string name="noEvents">Oraindik ez duzu ekintzarik, zerren zai zaude? Sortu bat!</string>
     <string name="selectDate">Aukeratu data</string>
     <string name="participants">Partaideak</string>
+    <string name="delete">Ezabatu</string>
+    <string name="inviteUser">Erabiltzailea gonbidatu</string>
+    <string name="cancel">Atzera</string>
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

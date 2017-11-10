@@ -278,21 +278,28 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_layout, null);
         builder.setView(dialogView);
+        builder.setTitle(R.string.inviteUser);
+        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                alertDialog.cancel();
+            }
+        });
         alertDialog = builder.create();
+
         alertDialog.show();
 
         RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.rvDialog);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         rv.setAdapter(uda);
-        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid());
+        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),cef.getUserAdapter());
 
     }
-
 
     @Override
     public void onUserSelected(User userData) {
         DbManager.getUser(cef.getUserAdapter(),userData.getEmail());
         alertDialog.cancel();
     }
+
 }

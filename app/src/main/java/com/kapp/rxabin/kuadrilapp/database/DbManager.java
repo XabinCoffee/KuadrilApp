@@ -125,10 +125,11 @@ public class DbManager {
         });
     }
 
-    public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid){
+    public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid, UserAdapter uAdapter2){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
+        final ArrayList<User> usersOnScreen = uAdapter2.getUsers();
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
@@ -136,7 +137,7 @@ public class DbManager {
 
                 for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
                     User u = userDataSnapshot.getValue(User.class);
-                    if(!u.getUid().equals(uid)) {
+                    if(!u.getUid().equals(uid) && !usersOnScreen.contains(u)) {
                         uAdapter.addUser(u);
                     }
                 }
