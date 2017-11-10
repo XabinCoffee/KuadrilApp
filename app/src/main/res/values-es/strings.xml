@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">KuadrilApp</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="password2">Repetir contraseña</string>
@@ -27,6 +29,10 @@
     <string name="delete">Borrar</string>
     <string name="inviteUser">Invitar usuario</string>
     <string name="cancel">Cancelar</string>
+    <string name="confirmDeleteEventTitle">Borrar evento</string>
+    <string name="confirmDeleteEvent">¿Quieres borrar este evento?</string>
+    <string name="leaveEventTitle">Abandonar evento</string>
+    <string name="leaveEvent">¿Quieres abandonar el evento?</string>
 
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
@@ -57,5 +63,6 @@
         <item>es</item>
     </string-array>
     <string name="location">Lugar</string>
+    <string name="hello_blank_fragment">Gah</string>
 
 </resources>

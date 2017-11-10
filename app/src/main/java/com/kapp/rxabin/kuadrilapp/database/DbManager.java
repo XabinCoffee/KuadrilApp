@@ -170,5 +170,26 @@ public class DbManager {
         });
     }
 
+    public static void removeMember(final String id, final String useruid){
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.getId().equals(id)){
+                        e.getMembers().remove(useruid);
+                        mDatabase.child(e.getId()).setValue(e);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+
 
 }

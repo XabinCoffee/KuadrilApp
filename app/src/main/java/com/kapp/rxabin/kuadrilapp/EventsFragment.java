@@ -73,26 +73,44 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
     @Override
     public void onEventLongClick(final Event eventData) {
-
-        Log.d("OnTouch","LongClicc");
+        
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Delet htis?");
-        builder.setTitle("deletio");
-        builder.setPositiveButton("\uD83C\uDD71️", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                DbManager.deleteEvent(eventData.getId());
-                Event ee = eventData;
-                eAdapter.removeEvent(ee);
-            }
-        });
-        builder.setNegativeButton("pls no", new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int which){
-                alertDialog.cancel();
-            }
-        });
-        alertDialog = builder.create();
+        final String currentUid = mAuth.getCurrentUser().getUid();
+        if (eventData.getOwner().equals(currentUid)) {
+            builder.setMessage(getResources().getString(R.string.confirmDeleteEvent));
+            builder.setTitle(getResources().getString(R.string.confirmDeleteEventTitle));
+            builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    DbManager.deleteEvent(eventData.getId());
+                    eAdapter.removeEvent(eventData);
+                }
+            });
+            builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    alertDialog.cancel();
+                }
+            });
+            alertDialog = builder.create();
 
-        alertDialog.show();
+            alertDialog.show();
+        } else {
+            builder.setMessage(getResources().getString(R.string.leaveEvent));
+            builder.setTitle(getResources().getString(R.string.leaveEventTitle));
+            builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    DbManager.removeMember(eventData.getId(),currentUid);
+                    eAdapter.removeEvent(eventData);
+                }
+            });
+            builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    alertDialog.cancel();
+                }
+            });
+            alertDialog = builder.create();
+
+            alertDialog.show();
+        }
     }
 
     @Override

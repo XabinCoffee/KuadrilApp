@@ -1,4 +1,4 @@
-#Fri Nov 10 11:45:02 CET 2017
+#Fri Nov 10 12:08:49 CET 2017
 base.0=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/196
 renamed.0=classes.dex
 file.0=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/196/classes.dex
