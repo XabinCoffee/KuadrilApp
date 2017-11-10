@@ -8,8 +8,11 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/grey_100"
         app:cardCornerRadius="3dp"
-        app:cardElevation="2dp">
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,6 +61,13 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                     <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle"
+                        android:text="Date" />
+
+                    <TextView
                         android:id="@+id/tvDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -69,24 +79,26 @@
                         android:id="@+id/tvMembers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@id/textView"
+                        android:layout_below="@id/tvDate"
                         android:text="0" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_toStartOf="@+id/tvMembers"
-                        android:text="Members: " />
+                        android:layout_below="@id/tvDate"
+                        android:layout_toEndOf="@id/tvLocation"
+                        android:text="Partaideak:"
+                        android:paddingRight="4dp"/>
 
                     <TextView
                         android:id="@+id/tvLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTitle"
-                        android:text="Location" />
+                        android:layout_below="@id/tvDate"
+                        android:text="Location"
+                        android:paddingRight="10dp"/>
                 </RelativeLayout>
 
             </LinearLayout>

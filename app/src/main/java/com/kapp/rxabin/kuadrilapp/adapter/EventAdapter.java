@@ -10,9 +10,15 @@ import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
+import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -62,6 +68,8 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             evh.icon.setImageDrawable(context.getResources().getDrawable(icon_id));
             evh.members.setText(Integer.toString(e.numOfMembers()));
             evh.location.setText(e.getLocation());
+            e.sortDateList();
+            evh.date.setText(e.getDateVotes().get(0).toString());
             evh.itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
@@ -111,7 +119,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         private ImageView icon;
         private TextView members;
         private TextView location;
-        //private TextView date;
+        private TextView date;
 
         public EventViewHolder(View v){
             super(v);
@@ -120,10 +128,9 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             icon = (ImageView) v.findViewById(R.id.imgLogo);
             members = (TextView) v.findViewById(R.id.tvMembers);
             location = (TextView) v.findViewById(R.id.tvLocation);
-            //date = v.findViewById(R.id.tvDate);
+            date = v.findViewById(R.id.tvDate);
 
         }
-
     }
 
     public void removeEvent(Event e){
@@ -135,6 +142,26 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.eventsList.clear();
         this.eventsList.addAll(eventList);
         notifyDataSetChanged();
+    }
+
+
+
+    public void sortListByDate() {
+
+        Collections.sort(this.eventsList, new Comparator<Event>() {
+            DateFormat f = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+
+            @Override
+            public int compare(Event o1, Event o2) {
+                try {
+                    o1.sortDateList();
+                    o2.sortDateList();
+                    return f.parse(o2.getDateVotes().get(0).toString()).compareTo(f.parse(o1.getDateVotes().get(0).toString()));
+                } catch (ParseException e) {
+                    throw new IllegalArgumentException(e);
+                }
+            }
+        });
     }
 
 }

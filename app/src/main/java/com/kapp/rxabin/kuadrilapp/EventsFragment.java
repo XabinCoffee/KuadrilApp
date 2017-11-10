@@ -73,7 +73,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
     @Override
     public void onEventLongClick(final Event eventData) {
-        
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         final String currentUid = mAuth.getCurrentUser().getUid();
         if (eventData.getOwner().equals(currentUid)) {

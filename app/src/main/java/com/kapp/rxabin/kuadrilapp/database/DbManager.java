@@ -85,6 +85,7 @@ public class DbManager {
                 }
                 EventsFragment.updateUI_events(el);
                 eAdapter.setEvents(el);
+                eAdapter.sortListByDate();
                 eAdapter.notifyDataSetChanged();
 
             }
