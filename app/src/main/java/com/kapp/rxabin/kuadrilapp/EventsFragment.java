@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 import java.util.ArrayList;
 
 
-public class EventsFragment extends Fragment {
+public class EventsFragment extends Fragment implements EventAdapter.OnEventLongClickListener, EventAdapter.OnEventSelectedListener{
 
     private RecyclerView.LayoutManager mLayoutManager;
     private EventAdapter eAdapter;
@@ -31,6 +32,7 @@ public class EventsFragment extends Fragment {
     private FirebaseAuth mAuth;
     private static ProgressBar mLoading;
     private static TextView mEmpty;
+    private AlertDialog alertDialog;
 
     @Nullable
     @Override
@@ -52,7 +54,7 @@ public class EventsFragment extends Fragment {
 
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        EventAdapter eAdapter = new EventAdapter(getContext());
+        eAdapter = new EventAdapter(getContext(),this,this);
         DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid());
         recyclerView.setAdapter(eAdapter);
 
@@ -69,4 +71,33 @@ public class EventsFragment extends Fragment {
     }
 
 
+    @Override
+    public void onEventLongClick(final Event eventData) {
+
+        Log.d("OnTouch","LongClicc");
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("Delet htis?");
+        builder.setTitle("deletio");
+        builder.setPositiveButton("\uD83C\uDD71️", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                DbManager.deleteEvent(eventData.getId());
+                Event ee = eventData;
+                eAdapter.removeEvent(ee);
+            }
+        });
+        builder.setNegativeButton("pls no", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                alertDialog.cancel();
+            }
+        });
+        alertDialog = builder.create();
+
+        alertDialog.show();
+    }
+
+    @Override
+    public void onEventSelected(Event eventData) {
+        //TODO
+        Log.d("OnTouch","Event Selected");
+    }
 }

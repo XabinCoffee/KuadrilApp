@@ -22,13 +22,25 @@ import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public interface OnEventLongClickListener{
+        void onEventLongClick(Event eventData);
+    }
+
+    public interface OnEventSelectedListener{
+        void onEventSelected(Event eventData);
+    }
+
     private ArrayList<Event> eventsList;
     private Context context;
+    private OnEventLongClickListener longListener;
+    private OnEventSelectedListener mListener;
 
-    public EventAdapter(Context context){
+    public EventAdapter(Context context, OnEventLongClickListener newLongListener, OnEventSelectedListener newListener){
 
         this.eventsList = new ArrayList<>();
         this.context = context;
+        this.longListener = newLongListener;
+        this.mListener = newListener;
     }
 
     @Override
@@ -50,7 +62,36 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             evh.icon.setImageDrawable(context.getResources().getDrawable(icon_id));
             evh.members.setText(Integer.toString(e.numOfMembers()));
             evh.location.setText(e.getLocation());
+            evh.itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    if (null != mListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        mListener.onEventSelected(evh.e);
+
+                    }
+                }
+            });
+
+            evh.itemView.setOnLongClickListener(new View.OnLongClickListener(){
+
+                @Override
+                public boolean onLongClick(View view) {
+
+                    if (null != longListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        longListener.onEventLongClick(evh.e);
+                    }
+                    return true;
+                }
+            });
+
             //evh.date.setText(e.getDate());
+
 
         }
     }
@@ -83,6 +124,11 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         }
 
+    }
+
+    public void removeEvent(Event e){
+        this.eventsList.remove(e);
+        notifyDataSetChanged();
     }
 
     public void setEvents(List<Event> eventList) {

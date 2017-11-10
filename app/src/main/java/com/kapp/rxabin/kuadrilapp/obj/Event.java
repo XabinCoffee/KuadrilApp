@@ -1,13 +1,18 @@
 package com.kapp.rxabin.kuadrilapp.obj;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 /**
  * Created by xabinrodriguez on 3/11/17.
  */
 
-public class Event {
+public class Event implements Parcelable {
 
     private String id;
     private String owner;
@@ -35,6 +40,18 @@ public class Event {
         this.userRole = new HashMap<>();
     }
 
+    public Event(Parcel in){
+        this.id = in.readString();
+        this.owner = in.readString();
+        this.name = in.readString();
+        this.description = in.readString();
+        this.dateVotes= in.readArrayList(ArrayList.class.getClassLoader());
+        this.location = in.readString();
+        this.members = in.readArrayList(ArrayList.class.getClassLoader());
+        this.icon = in.readString();
+        in.readMap(userRole,String.class.getClassLoader());
+    }
+
     public boolean hasMember(String uid){
         if (this.members.contains(uid)) return true;
         else return false;
@@ -43,6 +60,30 @@ public class Event {
     public int numOfMembers(){
         return this.members.size();
     }
+
+    @Override
+    public boolean equals(Object o){
+        boolean same = false;
+        if(o != null && o instanceof Event){
+            Event e = (Event) o;
+            same = this.id.equals(e.getId());
+        }
+        return same;
+    }
+
+
+    private void sortDateList(ArrayList<DateVote> list) {
+        Collections.sort(list, new Comparator<DateVote>() {
+            public int compare(DateVote dv1, DateVote dv2) {
+                // avoiding NullPointerException in case name is null
+                Integer l1 = Integer.parseInt(dv1.getLikes());
+                Integer l2 = Integer.parseInt(dv1.getLikes());
+                return l1.compareTo(l2);
+            }
+        });
+    }
+
+
 
     public ArrayList<String> getMembers() {
         return members;
@@ -113,4 +154,38 @@ public class Event {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeString(id);
+        dest.writeString(owner);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeList(dateVotes);
+        dest.writeString(location);
+        dest.writeList(members);
+        dest.writeString(icon);
+        dest.writeMap(userRole);
+
+    }
+
+    public static final Creator CREATOR = new Creator() {
+
+        public Event createFromParcel(Parcel in) {
+            return new Event(in);
+        }
+
+        @Override
+        public Object[] newArray(int i) {
+            return new Object[0];
+        }
+
+    };
+
 }

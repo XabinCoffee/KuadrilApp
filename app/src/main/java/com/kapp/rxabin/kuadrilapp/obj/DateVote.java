@@ -1,12 +1,16 @@
 package com.kapp.rxabin.kuadrilapp.obj;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.support.annotation.NonNull;
+
 import java.util.HashMap;
 
 /**
  * Created by xabinrodriguez on 6/11/17.
  */
 
-public class DateVote {
+public class DateVote implements Parcelable {
 
     private String creator;
     private String date;
@@ -38,6 +42,15 @@ public class DateVote {
         this.dislikes = dislikes;
         this.voters = new HashMap<String,String>();
         this.voters.put(creator,"like");
+    }
+
+    public DateVote(Parcel in){
+        this.creator = in.readString();
+        this.date = in.readString();
+        this.time = in.readString();
+        this.likes = in.readString();
+        this.dislikes = in.readString();
+        in.readMap(voters,String.class.getClassLoader());
     }
 
 
@@ -92,4 +105,32 @@ public class DateVote {
     public void setVoters(HashMap<String, String> voters) {
         this.voters = voters;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(creator);
+        dest.writeString(date);
+        dest.writeString(time);
+        dest.writeString(likes);
+        dest.writeString(dislikes);
+        dest.writeMap(voters);
+    }
+
+    public static final Creator CREATOR = new Creator() {
+
+        public DateVote createFromParcel(Parcel in) {
+            return new DateVote(in);
+        }
+
+        @Override
+        public Object[] newArray(int i) {
+            return new Object[0];
+        }
+
+    };
 }

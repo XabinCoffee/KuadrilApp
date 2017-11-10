@@ -26,6 +26,7 @@
     <string name="delete">Ezabatu</string>
     <string name="inviteUser">Erabiltzailea gonbidatu</string>
     <string name="cancel">Atzera</string>
+    <string name="confirmDeleteEvent">¿Quieres borrar este evento?</string>
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

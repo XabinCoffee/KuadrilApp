@@ -149,31 +149,26 @@ public class DbManager {
             }
         });
     }
-    /*public static void getAllUsers(Context context){
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
-        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Add member");
-        final ArrayList<String> al = new ArrayList<>();
 
+    public static void deleteEvent(final String id){
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()) {
-                    User u = userDataSnapshot.getValue(User.class);
-                    al.add(u.getEmail());
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.getId().equals(id)){
+                        eventDataSnapshot.getRef().removeValue();
+                    }
                 }
-                builder.setItems(al);
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.d("onCancelled","DataBase error");
             }
         });
-
-    }*/
+    }
 
 
 }
