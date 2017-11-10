@@ -1,9 +1,13 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
@@ -20,6 +24,16 @@ public class ReadEventActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            Drawable background = getResources().getDrawable(R.drawable.kuadrilapp_gradient);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.transparent));
+            window.setNavigationBarColor(getResources().getColor(R.color.transparent));
+            window.setBackgroundDrawable(background);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_event);
 
@@ -56,5 +70,5 @@ public class ReadEventActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    
+
 }
