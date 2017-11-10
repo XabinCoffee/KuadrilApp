@@ -33,6 +33,7 @@
     <string name="confirmDeleteEvent">¿Quieres borrar este evento?</string>
     <string name="leaveEventTitle">Abandonar evento</string>
     <string name="leaveEvent">¿Quieres abandonar el evento?</string>
+    <string name="members">Participantes</string>
 
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>

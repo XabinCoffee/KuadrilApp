@@ -26,19 +26,19 @@
                 android:layout_weight="0"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imgLogo"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:contentDescription="Event logo"
                         app:srcCompat="@drawable/ico_gaming" />
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -71,7 +71,7 @@
                         android:id="@+id/tvDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvLocation"
+                        android:layout_below="@id/textView"
                         android:text="Desc."
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -80,15 +80,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/textView"
-                        android:layout_below="@id/tvDate"
+                        android:layout_below="@id/tvLocation"
                         android:text="0" />
 
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvDate"
-                        android:layout_toEndOf="@id/tvLocation"
+                        android:layout_below="@id/tvLocation"
                         android:text="Partaideak:"
                         android:paddingRight="4dp"/>
 

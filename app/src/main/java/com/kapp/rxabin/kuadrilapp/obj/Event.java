@@ -45,9 +45,9 @@ public class Event implements Parcelable {
         this.owner = in.readString();
         this.name = in.readString();
         this.description = in.readString();
-        this.dateVotes= in.readArrayList(ArrayList.class.getClassLoader());
+        this.dateVotes= in.readArrayList(DateVote.class.getClassLoader());
         this.location = in.readString();
-        this.members = in.readArrayList(ArrayList.class.getClassLoader());
+        this.members = in.readArrayList(String.class.getClassLoader());
         this.icon = in.readString();
         in.readMap(userRole,String.class.getClassLoader());
     }

@@ -2,6 +2,7 @@ package com.kapp.rxabin.kuadrilapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -117,5 +118,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     public void onEventSelected(Event eventData) {
         //TODO
         Log.d("OnTouch","Event Selected");
+        Intent i = new Intent(getContext(),ReadEventActivity.class);
+        i.putExtra("event", eventData);
+        startActivity(i);
     }
 }

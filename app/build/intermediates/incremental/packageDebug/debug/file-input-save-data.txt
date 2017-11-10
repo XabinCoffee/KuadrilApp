@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 10 13:00:34 CET 2017
+#Fri Nov 10 16:13:30 CET 2017
 210.set=DEX
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/drawable/design_snackbar_background.xml
 14.set=ANDROID_RESOURCE
