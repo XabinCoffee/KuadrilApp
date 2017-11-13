@@ -3,6 +3,7 @@ package com.kapp.rxabin.kuadrilapp;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -14,7 +15,6 @@ import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.DatePicker;
@@ -23,14 +23,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.kapp.rxabin.kuadrilapp.adapter.DateVoteAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.Calendar;
-import java.util.HashMap;
 
 public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, UserInEventAdapter.OnAddDateSelectedListener {
 
@@ -40,13 +39,19 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private TextView members;
     private TextView date;
     private TextView time;
-    private RecyclerView rv;
+    private RecyclerView rvUsers;
+    private RecyclerView rvDateVotes;
     private UserInEventAdapter uieAdapter;
+    private DateVoteAdapter dvAdapter;
+    private FirebaseAuth mAuth;
+    private AlertDialog alertDialog;
+    private Context context;
+    private Event e;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -64,22 +69,29 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Event e = getIntent().getParcelableExtra("event");
-        //HashMap<String,String> hm = (HashMap) getIntent().getSerializableExtra("map");
-        //e.setUserRole(hm);
+        e = getIntent().getParcelableExtra("event");
         title = (TextView) findViewById(R.id.tvTitle);
         location = (TextView) findViewById(R.id.tvLocation);
         description = (TextView) findViewById(R.id.tvDescription);
         members = (TextView) findViewById(R.id.tvMembers);
         date = (TextView) findViewById(R.id.tvDate);
         time = (TextView) findViewById(R.id.tvTime);
-        rv = (RecyclerView) findViewById(R.id.rvUsersEvent);
+        rvUsers = (RecyclerView) findViewById(R.id.rvUsersEvent);
+        rvDateVotes = (RecyclerView) findViewById(R.id.rvDateVotes);
+
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        rv.setLayoutManager(mLayoutManager);
+        rvUsers.setLayoutManager(mLayoutManager);
         uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), e,this,this);
         DbManager.getUsernamesFromEvent(uieAdapter,e.getMembers(), mAuth.getCurrentUser().getUid());
-        rv.setAdapter(uieAdapter);
+        rvUsers.setAdapter(uieAdapter);
+
+
+        LinearLayoutManager mLayoutManager2 = new LinearLayoutManager(this);
+        rvDateVotes.setLayoutManager(mLayoutManager2);
+        dvAdapter = new DateVoteAdapter(this);
+        dvAdapter.setDateVotes(e.getDateVotes());
+        rvDateVotes.setAdapter(dvAdapter);
 
 
         title.setText(e.getName().toString());
@@ -90,6 +102,8 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         DateVote dv = e.getDateVotes().get(0);
         date.setText(dv.getDate().toString());
         time.setText(dv.getTime().toString());
+
+        context = this;
 
     }
 
@@ -123,27 +137,52 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         datePickerDialog.show();
     }
 
-    public void timePicker(String date){
+    public void timePicker(final String date){
         final Calendar c = Calendar.getInstance();
         final int mHour = c.get(Calendar.HOUR_OF_DAY);
         final int mMinute = c.get(Calendar.MINUTE);
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+        final TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {
 
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         String time = String.format("%02d",hourOfDay) + ":" + String.format("%02d",minute);
                         Log.d("TIME",time);
+                        openConfirmationDialog(date,time);
                     }
                 }, mHour, mMinute, false);
         timePickerDialog.show();
     }
 
+    public void openConfirmationDialog(final String date, final String time){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(date + " " +time);
+        builder.setTitle("Add datetime?");
+
+        builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Log.d("Sartzen da","Iuju!");
+                DbManager.addDateVote(e,mAuth.getCurrentUser().getUid(),date,time,dvAdapter);
+            }
+        });
+
+        builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                alertDialog.cancel();
+            }
+        });
+
+        alertDialog = builder.create();
+        alertDialog.show();
+
+
+    }
 
     @Override
     public void onEditRoleSelected(String uid, final Event e) {
-        final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
         Log.d("Role","Role Selected");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getResources().getString(R.string.changeRole));
@@ -167,8 +206,4 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         builder.show();
     }
-
-
-
-
 }

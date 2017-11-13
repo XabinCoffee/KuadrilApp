@@ -5,6 +5,8 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by xabinrodriguez on 6/11/17.
@@ -133,4 +135,31 @@ public class DateVote implements Parcelable {
         }
 
     };
+
+    public int countLikes() {
+        Iterator it = this.getVoters().entrySet().iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry) it.next();
+            if (pair.getValue().equals("like")) {
+                i++;
+                it.remove();
+            }
+        }
+        return i;
+    }
+
+    public int countDislikes(){
+        Iterator it = this.getVoters().entrySet().iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry) it.next();
+            if (pair.getValue().equals("dislike")) {
+                i++;
+                it.remove();
+            }
+        }
+        return i;
+    }
+
 }

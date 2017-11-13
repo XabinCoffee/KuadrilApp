@@ -524,6 +524,10 @@
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/layout/abc_action_mode_bar.xml"
     },
     {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/layout_datetime_row.xml.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/layout/datetime_row.xml"
+    },
+    {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/c789ab95392972a275dc909db94975f6/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
     },
@@ -702,6 +706,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5bf9722dfeeb5104d92fd03117709077/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_thumbsdown.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_thumbsdown.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1102,6 +1110,10 @@
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable_ico_thumbsup.png.flat",
+        "source": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/src/main/res/drawable/ico_thumbsup.png"
     },
     {
         "merged": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",

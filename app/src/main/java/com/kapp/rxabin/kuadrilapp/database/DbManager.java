@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kapp.rxabin.kuadrilapp.R;
+import com.kapp.rxabin.kuadrilapp.adapter.DateVoteAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.EventsFragment;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
@@ -230,7 +231,7 @@ public class DbManager {
     }
 
 
-    public static void updateRole(Event e, final String uid, final String newrole, final UserInEventAdapter uieAdapter){
+    public static void updateRole(final Event ev, final String uid, final String newrole, final UserInEventAdapter uieAdapter){
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
@@ -238,7 +239,7 @@ public class DbManager {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
-                    if (e.getId().equals(e.getId())){
+                    if (e.getId().equals(ev.getId())){
                         e.getUserRole().put(uid,newrole);
                         mDatabase.child(e.getId()).child("userRole").setValue(e.getUserRole());
                         uieAdapter.getEvent().getUserRole().put(uid,newrole);
@@ -272,5 +273,31 @@ public class DbManager {
             }
         });
     }
+
+    public static void addDateVote(final Event ev, String userid, String date, String time, final DateVoteAdapter dvAdapter){
+        final DateVote dv = new DateVote(userid,date,time,"1","0");
+        ev.getDateVotes().add(dv);
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.getId().equals(ev.getId())){
+                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
+                        dvAdapter.addDateVote(dv);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+
+
+    }
+
 
 }

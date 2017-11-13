@@ -2,7 +2,6 @@ package com.kapp.rxabin.kuadrilapp.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,7 +127,7 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         public UserInEventViewHolder(View v){
             super(v);
-            username = (TextView) v.findViewById(R.id.tvUsername);
+            username = (TextView) v.findViewById(R.id.tvDate);
             role = (TextView) v.findViewById(R.id.tvRole);
             addDate = (Button) v.findViewById(R.id.btnChoseDatetime);
             editRole = (Button) v.findViewById(R.id.btnSetRole);

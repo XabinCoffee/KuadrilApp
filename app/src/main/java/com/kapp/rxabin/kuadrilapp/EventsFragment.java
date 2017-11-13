@@ -121,7 +121,6 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         Log.d("OnTouch","Event Selected");
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
-        i.putExtra("map", eventData.getUserRole());
         startActivity(i);
     }
 }
