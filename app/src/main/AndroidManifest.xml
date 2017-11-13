@@ -21,7 +21,8 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".FrontpageActivity" />
         <activity android:name=".ReadEventActivity" />
-        <activity android:name=".EditEventActivity"></activity>
+        <activity android:name=".EditEventActivity" />
+        <activity android:name=".EditUsernameActivity"></activity>
     </application>
 
 </manifest>

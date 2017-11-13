@@ -39,6 +39,7 @@
         <activity android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity" />
         <activity android:name="com.kapp.rxabin.kuadrilapp.ReadEventActivity" />
         <activity android:name="com.kapp.rxabin.kuadrilapp.EditEventActivity" />
+        <activity android:name="com.kapp.rxabin.kuadrilapp.EditUsernameActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

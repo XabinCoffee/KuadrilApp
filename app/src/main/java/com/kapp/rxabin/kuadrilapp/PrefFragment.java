@@ -38,8 +38,21 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
         SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
         lPref = (ListPreference) findPreference("listLang");
 
-        Preference pref = findPreference("logout");
-        pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        Preference usernamepref = findPreference("editusername");
+        usernamepref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                Intent intent = new Intent(getActivity(), EditUsernameActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
+
+
+        Preference logoutpref = findPreference("logout");
+        logoutpref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
             @Override
             public boolean onPreferenceClick(Preference preference) {

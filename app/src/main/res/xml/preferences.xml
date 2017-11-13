@@ -10,10 +10,15 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/language" />
+    
+    <Preference
+        android:key="editusername"
+        android:title="@string/editusername"/>
 
     <Preference
         android:key="logout"
         android:title="@string/logout"/>
+
 
 
 </PreferenceScreen>

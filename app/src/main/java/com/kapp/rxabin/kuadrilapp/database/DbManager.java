@@ -253,4 +253,24 @@ public class DbManager {
         });
     }
 
+    public static void updateUser(final String uid, final String newname){
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
+                    User u = userDataSnapshot.getValue(User.class);
+                    if (u.getUid().equals(uid)){
+                        mDatabase.child(uid).child("username").setValue(newname);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+
 }

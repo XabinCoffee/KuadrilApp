@@ -33,7 +33,8 @@
     <string name="members">Partaideak</string>
     <string name="proposeDate">Data berria\nproposatu</string>
     <string name="changeRole">Rola aldatu</string>
-
+    <string name="editusername">Erabiltzaile izena aldatu</string>
+    <string name="createaccount">Kontua sortu</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
