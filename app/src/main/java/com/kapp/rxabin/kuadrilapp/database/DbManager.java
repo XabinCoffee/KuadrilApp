@@ -16,6 +16,7 @@ import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.EventsFragment;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
+import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -150,6 +151,38 @@ public class DbManager {
             }
         });
     }
+
+
+    public static void getUsernamesFromEvent(final UserInEventAdapter uieAdapter, final ArrayList<String> members, final String uid){
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        User user = new User();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
+                    User u = userDataSnapshot.getValue(User.class);
+                    if(members.contains(u.getUid())) {
+                        if (u.getUid().equals(uid)){
+                            uieAdapter.addUserInFront(u);
+                        }else {
+                            uieAdapter.addUser(u);
+                        }
+                    }
+                }
+                uieAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+
+
+
 
     public static void deleteEvent(final String id){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");

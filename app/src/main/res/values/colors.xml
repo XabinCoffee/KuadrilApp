@@ -9,5 +9,6 @@
 
     <color name="link">#13b7d4</color>
     <color name="background">#f7fff4</color>
+    <color name="memberbackground">#fffbe3</color>
     <color name="transparent">#00ffffff</color>
 </resources>

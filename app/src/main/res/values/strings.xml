@@ -31,6 +31,10 @@
     <string name="confirmDeleteEvent">Ekintza hau ezabatu nahi duzu?</string>
     <string name="leaveEvent">Ekintza honetatik irtetea nahi al duzu?</string>
     <string name="members">Partaideak</string>
+    <string name="proposeDate">Data berria\nproposatu</string>
+    <string name="changeRole">Rola aldatu</string>
+
+
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

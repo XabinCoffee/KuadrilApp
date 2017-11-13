@@ -34,6 +34,10 @@
     <string name="leaveEventTitle">Abandonar evento</string>
     <string name="leaveEvent">¿Quieres abandonar el evento?</string>
     <string name="members">Participantes</string>
+    <string name="location">Lugar</string>
+    <string name="hello_blank_fragment">Gah</string>
+    <string name="proposeDate">Proponer nueva\nfecha</string>
+    <string name="changeRole">Cambiar rol</string>
 
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
@@ -63,7 +67,6 @@
         <item>eu</item>
         <item>es</item>
     </string-array>
-    <string name="location">Lugar</string>
-    <string name="hello_blank_fragment">Gah</string>
+
 
 </resources>

@@ -5,11 +5,17 @@ import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
+import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
@@ -21,9 +27,12 @@ public class ReadEventActivity extends AppCompatActivity {
     private TextView members;
     private TextView date;
     private TextView time;
+    private RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -48,6 +57,14 @@ public class ReadEventActivity extends AppCompatActivity {
         members = (TextView) findViewById(R.id.tvMembers);
         date = (TextView) findViewById(R.id.tvDate);
         time = (TextView) findViewById(R.id.tvTime);
+        rv = (RecyclerView) findViewById(R.id.rvUsersEvent);
+
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        rv.setLayoutManager(mLayoutManager);
+        UserInEventAdapter uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), e.getUserRole());
+        DbManager.getUsernamesFromEvent(uieAdapter,e.getMembers(), mAuth.getCurrentUser().getUid());
+        rv.setAdapter(uieAdapter);
+
 
         title.setText(e.getName().toString());
         location.setText(e.getLocation().toString());
