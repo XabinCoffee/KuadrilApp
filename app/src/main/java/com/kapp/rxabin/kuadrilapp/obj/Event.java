@@ -49,7 +49,7 @@ public class Event implements Parcelable {
         this.location = in.readString();
         this.members = in.readArrayList(String.class.getClassLoader());
         this.icon = in.readString();
-        in.readMap(userRole,String.class.getClassLoader());
+        this.userRole=in.readHashMap(HashMap.class.getClassLoader());
     }
 
     public boolean hasMember(String uid){

@@ -23,6 +23,7 @@ import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class EventsFragment extends Fragment implements EventAdapter.OnEventLongClickListener, EventAdapter.OnEventSelectedListener{
@@ -120,6 +121,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         Log.d("OnTouch","Event Selected");
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
+        i.putExtra("map", eventData.getUserRole());
         startActivity(i);
     }
 }

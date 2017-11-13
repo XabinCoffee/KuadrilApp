@@ -23,6 +23,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by xabinrodriguez on 6/11/17.
@@ -48,6 +49,9 @@ public class DbManager {
         e.setMembers(users);
         DateVote dv = new DateVote(useruid, date, time, "1","0");
         e.getDateVotes().add(dv);
+
+        e.setUserRole(new HashMap<String,String>());
+        e.getUserRole().put(useruid,"Admin");
 
         mDatabase.child("events").child(e.getId()).setValue(e);
 
@@ -225,5 +229,28 @@ public class DbManager {
         });
     }
 
+
+    public static void updateRole(Event e, final String uid, final String newrole, final UserInEventAdapter uieAdapter){
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.getId().equals(e.getId())){
+                        e.getUserRole().put(uid,newrole);
+                        mDatabase.child(e.getId()).child("userRole").setValue(e.getUserRole());
+                        uieAdapter.getEvent().getUserRole().put(uid,newrole);
+                    }
+                    uieAdapter.notifyDataSetChanged();
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
 
 }

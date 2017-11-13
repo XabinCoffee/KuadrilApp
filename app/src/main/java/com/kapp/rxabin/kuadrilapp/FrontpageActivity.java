@@ -163,7 +163,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
                     ArrayList<User> ul = cef.getUserAdapter().getUsers();
 
-
                     boolean good = true;
 
                     if (!cef.isDatetimeSet()){
