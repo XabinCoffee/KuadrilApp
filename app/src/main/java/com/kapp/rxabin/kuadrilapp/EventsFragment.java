@@ -52,6 +52,13 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        fillRecyclerView();
+    }
+
+
     public void fillRecyclerView(){
 
         mLayoutManager = new LinearLayoutManager(getContext());
@@ -114,6 +121,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
             alertDialog.show();
         }
     }
+
 
     @Override
     public void onEventSelected(Event eventData) {
