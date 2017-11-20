@@ -296,6 +296,46 @@ public class DbManager {
             }
         });
 
+    }
+
+    public static void editDateVote(final Event ev, DateVote dv, String uid, final DateVoteAdapter dvAdapter, boolean like){
+        ArrayList<DateVote> dvList = ev.getDateVotes();
+        int i = 0;
+        boolean found = false;
+        while (i<dvList.size() && !found){
+            if (dvList.get(i).getCreator().equals(dv.getCreator())){
+                found = true;
+            }else{
+                i++;
+            }
+        }
+
+        if (like){
+            ev.getDateVotes().get(i).userLikes(uid);
+        } else {
+            ev.getDateVotes().get(i).userDislikes(uid);
+        }
+
+        //TODO
+
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        /*mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.getId().equals(ev.getId())){
+                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
+                        dvAdapter.addDateVote(dv);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });*/
 
     }
 

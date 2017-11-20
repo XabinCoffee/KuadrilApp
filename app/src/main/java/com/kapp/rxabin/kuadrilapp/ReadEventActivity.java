@@ -89,7 +89,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         LinearLayoutManager mLayoutManager2 = new LinearLayoutManager(this);
         rvDateVotes.setLayoutManager(mLayoutManager2);
-        dvAdapter = new DateVoteAdapter(this);
+        dvAdapter = new DateVoteAdapter(this, e,this,this);
         dvAdapter.setDateVotes(e.getDateVotes());
         rvDateVotes.setAdapter(dvAdapter);
 
@@ -208,12 +208,16 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     }
 
     @Override
-    public void onLikeSelected(DateVote dv) {
+    public void onLikeSelected(Event e, DateVote dv) {
 
+        dv.userLikes(dv, mAuth.getCurrentUser().getUid());
+
+        Log.d("DATEVOTE",dv.toStringLong());
     }
 
     @Override
-    public void onDislikeSelected(DateVote dv) {
-
+    public void onDislikeSelected(Event e, DateVote dv) {
+        dv.userDislikes(dv, mAuth.getCurrentUser().getUid());
+        Log.d("DATEVOTE",dv.toStringLong());
     }
 }

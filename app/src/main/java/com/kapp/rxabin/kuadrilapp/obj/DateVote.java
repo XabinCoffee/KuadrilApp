@@ -60,6 +60,10 @@ public class DateVote implements Parcelable {
         return date + " " + time;
     }
 
+    public String toStringLong(){
+        return date + " " + time + ", likes: " + countLikes() + ", dislikes: " + countDislikes();
+    }
+
     public String getCreator() {
         return creator;
     }
@@ -163,7 +167,7 @@ public class DateVote implements Parcelable {
     }
 
 
-    public void userLikes(DateVote dv, String uid){
+    public void userLikes(String uid){
 
         if (this.voters.get(uid)==null) this.voters.put(uid,"like");
 
@@ -174,7 +178,7 @@ public class DateVote implements Parcelable {
     }
 
 
-    public void userDislikes(DateVote dv, String uid){
+    public void userDislikes(String uid){
 
         if (this.voters.get(uid)==null) this.voters.put(uid,"dislike");
 
@@ -183,6 +187,7 @@ public class DateVote implements Parcelable {
             else if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.put(uid, "dislike");
         }
     }
+
 
 
 }

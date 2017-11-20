@@ -2,30 +2,34 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="25"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="METHOD_DELETED"
     plugin-version="3.0.0"
-    timestamp="1511190033044"
+    timestamp="1511191738022"
     token="-166555471587165720"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="949" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="142" />
     <task
         name="verifier"
-        duration="0" />
+        duration="28" />
 
     <artifact
-        location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -70,23 +74,14 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1511189595371"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1511191413560"
         verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
         <artifact
             location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -95,27 +90,35 @@
             location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1511189935497"
-        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="HOT_WARM"
-        timestamp="1511190033044"
-        verifier="COMPATIBLE" >
+        build-mode="COLD"
+        ir-eligibility="METHOD_ADDED"
+        timestamp="1511191641286"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1511191738022"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

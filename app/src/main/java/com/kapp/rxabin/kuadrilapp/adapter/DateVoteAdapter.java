@@ -25,22 +25,26 @@ import java.util.List;
 public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public interface OnLikeListener{
-        void onLikeSelected(DateVote dv);
+        void onLikeSelected(Event e, DateVote dv);
     }
 
     public interface OnDislikeListener{
-        void onDislikeSelected(DateVote dv);
+        void onDislikeSelected(Event e, DateVote dv);
     }
 
     private ArrayList<DateVote> dvList;
+    private Event e;
     private Context context;
     private OnLikeListener likeListener;
     private OnDislikeListener dislikeListener;
 
 
-    public DateVoteAdapter(Context context){
+    public DateVoteAdapter(Context context, Event e, OnLikeListener likelistener, OnDislikeListener dislikelistener){
         this.dvList = new ArrayList<>();
+        this.e = e;
         this.context = context;
+        this.likeListener = likelistener;
+        this.dislikeListener = dislikelistener;
     }
 
     @Override
@@ -69,7 +73,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     if (null != likeListener) {
                         // Notify the active callbacks interface (the activity, if the
                         // fragment is attached to one) that an item has been selected.
-                        likeListener.onLikeSelected(dvh.dv);
+                        likeListener.onLikeSelected(e, dvh.dv);
 
                     }
                 }
@@ -83,7 +87,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     if (null != dislikeListener) {
                         // Notify the active callbacks interface (the activity, if the
                         // fragment is attached to one) that an item has been selected.
-                        dislikeListener.onDislikeSelected(dvh.dv);
+                        dislikeListener.onDislikeSelected(e, dvh.dv);
                     }
                 }
             });
