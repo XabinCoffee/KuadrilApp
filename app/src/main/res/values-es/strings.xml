@@ -69,6 +69,7 @@
         <item>es</item>
     </string-array>
     <string name="editusername">Editar nombre de usuario</string>
+    <string name="dayhour">Día / Hora</string>
 
 
 </resources>

@@ -47,7 +47,7 @@
                 android:layout_marginEnd="12dp"
                 android:layout_toStartOf="@+id/btnLike"
                 android:adjustViewBounds="true"
-                android:backgroundTint="@color/colorAccent"
+                android:backgroundTint="@color/dislike"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ico_thumbsdown" />
 
@@ -61,6 +61,26 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ico_thumbsup" />
+
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/tvTime"
+                android:layout_toEndOf="@+id/btnDislike"
+                android:gravity="center"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/tvDislikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btnDislike"
+                android:layout_alignStart="@+id/btnDislike"
+                android:gravity="center"
+                android:layout_below="@+id/btnDislike"
+                android:text="1" />
 
         </RelativeLayout>
 

@@ -97,11 +97,19 @@
                         android:background="@color/memberbackground"
                         android:layout_below="@id/tvDescription">
 
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dayhour"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/rvDateVotes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="4dp" />
+                            android:layout_margin="4dp"
+                            android:layout_below="@id/textView2"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -110,11 +118,20 @@
                         android:layout_below="@id/layoutDatetimes"
                         android:background="@color/memberbackground">
 
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/participants"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/rvUsersEvent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="4dp" />
+                            android:layout_margin="4dp"
+                            android:layout_below="@id/textView4"/>
                     </RelativeLayout>
 
                 </RelativeLayout>

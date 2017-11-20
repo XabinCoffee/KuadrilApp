@@ -2,12 +2,13 @@
 <resources>
     <color name="colorPrimary">#80da5d</color>
     <color name="colorPrimaryDark">#2ec708</color>
-    <color name="colorAccent">#e65d64</color>
+    <color name="colorAccent">#0ab48a</color>
 
     <color name="grey_100">#fcfcfc</color>
     <color name="grey_300">#f5f5f5</color>
 
     <color name="link">#13b7d4</color>
+    <color name="dislike">#e65d64</color>
     <color name="background">#f7fff4</color>
     <color name="memberbackground">#fffbe3</color>
     <color name="transparent">#00ffffff</color>

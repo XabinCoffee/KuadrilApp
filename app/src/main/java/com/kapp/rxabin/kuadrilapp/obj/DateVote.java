@@ -162,4 +162,27 @@ public class DateVote implements Parcelable {
         return i;
     }
 
+
+    public void userLikes(DateVote dv, String uid){
+
+        if (this.voters.get(uid)==null) this.voters.put(uid,"like");
+
+        else {
+            if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.remove(uid);
+            else if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.put(uid, "like");
+        }
+    }
+
+
+    public void userDislikes(DateVote dv, String uid){
+
+        if (this.voters.get(uid)==null) this.voters.put(uid,"dislike");
+
+        else {
+            if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.remove(uid);
+            else if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.put(uid, "dislike");
+        }
+    }
+
+
 }

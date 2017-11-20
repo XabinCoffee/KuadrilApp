@@ -35,6 +35,7 @@
     <string name="changeRole">Rola aldatu</string>
     <string name="editusername">Erabiltzaile izena aldatu</string>
     <string name="createaccount">Kontua sortu</string>
+    <string name="dayhour">Eguna / ordua</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

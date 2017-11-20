@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Nov 20 15:16:57 CET 2017
+#Mon Nov 20 16:00:38 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/res/debug/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_event_available_black_24dp.png
 14.set=ANDROID_RESOURCE

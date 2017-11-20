@@ -24,9 +24,19 @@ import java.util.List;
 
 public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public interface OnLikeListener{
+        void onLikeSelected(DateVote dv);
+    }
+
+    public interface OnDislikeListener{
+        void onDislikeSelected(DateVote dv);
+    }
 
     private ArrayList<DateVote> dvList;
     private Context context;
+    private OnLikeListener likeListener;
+    private OnDislikeListener dislikeListener;
+
 
     public DateVoteAdapter(Context context){
         this.dvList = new ArrayList<>();
@@ -48,6 +58,37 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             dvh.dv = dv;
             dvh.date.setText(dv.getDate().toString());
             dvh.time.setText(dv.getTime().toString());
+            dvh.likes.setText(dv.getLikes());
+            dvh.dislikes.setText(dv.getDislikes());
+
+            dvh.btnLike.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    if (null != likeListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        likeListener.onLikeSelected(dvh.dv);
+
+                    }
+                }
+            });
+
+            dvh.btnDislike.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    if (null != dislikeListener) {
+                        // Notify the active callbacks interface (the activity, if the
+                        // fragment is attached to one) that an item has been selected.
+                        dislikeListener.onDislikeSelected(dvh.dv);
+                    }
+                }
+            });
+
+
         }
     }
 
@@ -63,6 +104,8 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private TextView time;
         private ImageButton btnLike;
         private ImageButton btnDislike;
+        private TextView likes;
+        private TextView dislikes;
 
 
         public DateVoteViewHolder(View v){
@@ -71,6 +114,8 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             time = (TextView) v.findViewById(R.id.tvTime);
             btnLike = (ImageButton) v.findViewById(R.id.btnLike);
             btnDislike = (ImageButton) v.findViewById(R.id.btnDislike);
+            likes = (TextView) v.findViewById(R.id.tvLikes);
+            dislikes = (TextView) v.findViewById(R.id.tvDislikes);
         }
     }
 

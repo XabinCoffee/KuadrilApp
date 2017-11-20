@@ -31,7 +31,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.Calendar;
 
-public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, UserInEventAdapter.OnAddDateSelectedListener {
+public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, UserInEventAdapter.OnAddDateSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
 
     private TextView title;
     private TextView location;
@@ -205,5 +205,15 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         });
 
         builder.show();
+    }
+
+    @Override
+    public void onLikeSelected(DateVote dv) {
+
+    }
+
+    @Override
+    public void onDislikeSelected(DateVote dv) {
+
     }
 }

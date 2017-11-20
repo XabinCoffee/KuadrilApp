@@ -87,8 +87,8 @@ public final class R {
         public static final int right_side = 0x7f090096;
         public static final int text = 0x7f0900c5;
         public static final int text2 = 0x7f0900c6;
-        public static final int time = 0x7f0900d0;
-        public static final int title = 0x7f0900d1;
+        public static final int time = 0x7f0900d2;
+        public static final int title = 0x7f0900d3;
     }
     public static final class integer {
         public static final int status_bar_notification_info_maxnum = 0x7f0a000a;
@@ -102,7 +102,7 @@ public final class R {
         public static final int notification_template_part_time = 0x7f0b0042;
     }
     public static final class string {
-        public static final int status_bar_notification_info_overflow = 0x7f0e0069;
+        public static final int status_bar_notification_info_overflow = 0x7f0e006a;
     }
     public static final class style {
         public static final int TextAppearance_Compat_Notification = 0x7f0f0105;

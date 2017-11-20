@@ -1,11 +1,15 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -26,13 +30,22 @@ public class EditUsernameActivity extends AppCompatActivity {
 
 
     public void updateName(View v){
-        String name = username.getText().toString();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        final String name = username.getText().toString();
+        final FirebaseUser currentUser = mAuth.getCurrentUser();
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(name)
                 .build();
 
-        DbManager.updateUser(currentUser.getUid(),name);
+        currentUser.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d("UserUpdate", "User profile updated.");
+                    DbManager.updateUser(currentUser.getUid(),name);
+                }
+            }
+        });
+
         finish();
 
     }
