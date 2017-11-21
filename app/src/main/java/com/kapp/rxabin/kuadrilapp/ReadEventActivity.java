@@ -97,10 +97,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         LinearLayoutManager mLayoutManager2 = new LinearLayoutManager(this);
         rvDateVotes.setLayoutManager(mLayoutManager2);
         dvAdapter = new DateVoteAdapter(this, event,this,this);
-        dvAdapter.setDateVotes();
         rvDateVotes.setAdapter(dvAdapter);
-        Log.d("dvAdapter", String.valueOf(dvAdapter.getEvent().getDateVotes().get(0).getVoters().values()));
-
 
         title.setText(event.getName().toString());
         location.setText(event.getLocation().toString());
@@ -110,6 +107,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         DateVote dv = dvAdapter.getEvent().getDateVotes().get(0);
         date.setText(dv.getDate().toString());
         time.setText(dv.getTime().toString());
+
 
         if (dvAdapter.getEvent().getDateVote(mAuth.getCurrentUser().getUid())!=null){
             addDate.setText(getResources().getString(R.string.editdatetime));
@@ -195,7 +193,6 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     @Override
     public void onEditRoleSelected(String uid, final Event e) {
 
-        Log.d("dvAdapter", String.valueOf(dvAdapter.getEvent().getDateVotes().get(0).getVoters().values()));
         Log.d("Role","Role Selected");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getResources().getString(R.string.changeRole));

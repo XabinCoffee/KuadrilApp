@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,9 +19,11 @@ public class DateVote implements Parcelable {
     private String creator;
     private String date;
     private String time;
-    private String likes;
-    private String dislikes;
-    private HashMap<String,String> voters;
+    private ArrayList<String> likes;
+    private ArrayList<String> dislikes;
+
+
+    //private HashMap<String,String> voters;
 
 
     /*public DateVote(String creator, String datetime){
@@ -37,23 +40,21 @@ public class DateVote implements Parcelable {
 
     public DateVote(){}
 
-    public DateVote(String creator, String date, String time, String likes, String dislikes){
+    public DateVote(String creator, String date, String time){
         this.creator = creator;
         this.date = date;
         this.time = time;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.voters = new HashMap<String,String>();
-        this.voters.put(creator,"like");
+        this.likes = new ArrayList<>();
+        this.dislikes = new ArrayList<>();
+        this.likes.add(creator);
     }
 
     public DateVote(Parcel in){
         this.creator = in.readString();
         this.date = in.readString();
         this.time = in.readString();
-        this.likes = in.readString();
-        this.dislikes = in.readString();
-        this.voters= in.readHashMap(HashMap.class.getClassLoader());
+        this.likes = in.readArrayList(String.class.getClassLoader());
+        this.dislikes = in.readArrayList(String.class.getClassLoader());
     }
 
 
@@ -89,29 +90,10 @@ public class DateVote implements Parcelable {
         this.time = time;
     }
 
-    public String getLikes() {
-        return likes;
-    }
+    public ArrayList<String> getLikes() {return this.likes;}
 
-    public void setLikes(String likes) {
-        this.likes = likes;
-    }
+    public ArrayList<String> getDislikes() {return this.dislikes;}
 
-    public String getDislikes() {
-        return dislikes;
-    }
-
-    public void setDislikes(String dislikes) {
-        this.dislikes = dislikes;
-    }
-
-    public HashMap<String, String> getVoters() {
-        return voters;
-    }
-
-    public void setVoters(HashMap<String, String> voters) {
-        this.voters = voters;
-    }
 
     @Override
     public int describeContents() {
@@ -123,9 +105,8 @@ public class DateVote implements Parcelable {
         dest.writeString(creator);
         dest.writeString(date);
         dest.writeString(time);
-        dest.writeString(likes);
-        dest.writeString(dislikes);
-        dest.writeMap(voters);
+        dest.writeList(likes);
+        dest.writeList(dislikes);
     }
 
     public static final Creator CREATOR = new Creator() {
@@ -142,34 +123,19 @@ public class DateVote implements Parcelable {
     };
 
     public int countLikes() {
-        Iterator it = this.getVoters().entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            if (pair.getValue().equals("like")) {
-                i++;
-                it.remove();
-            }
-        }
-        return i;
+       if (this.likes != null) return this.likes.size(); else return 0;
     }
 
     public int countDislikes(){
-        Iterator it = this.getVoters().entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            if (pair.getValue().equals("dislike")) {
-                i++;
-                it.remove();
-            }
-        }
-        return i;
+        if (this.dislikes != null) return this.dislikes.size(); else return 0;
     }
 
 
     public void userLikes(String uid){
 
+        //TODO
+
+    /*
         if (this.voters == null) this.voters = new HashMap<String,String>();
 
         if (this.voters.get(uid)==null) this.voters.put(uid,"like");
@@ -178,11 +144,15 @@ public class DateVote implements Parcelable {
             if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.remove(uid);
             else if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.put(uid, "like");
         }
+        */
     }
 
 
     public void userDislikes(String uid){
 
+        //TODO
+
+        /*
         if (this.voters == null) this.voters = new HashMap<String,String>();
 
         if (this.voters.get(uid)==null) this.voters.put(uid,"dislike");
@@ -190,7 +160,7 @@ public class DateVote implements Parcelable {
         else {
             if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.remove(uid);
             else if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.put(uid, "dislike");
-        }
+        }*/
     }
 
 

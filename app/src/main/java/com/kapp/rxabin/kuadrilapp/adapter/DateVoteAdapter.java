@@ -2,6 +2,7 @@ package com.kapp.rxabin.kuadrilapp.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
     public DateVoteAdapter(Context context, Event e, OnLikeListener likelistener, OnDislikeListener dislikelistener){
-        this.dvList = new ArrayList<>();
+        this.dvList = e.getDateVotes();
         this.e = e;
         this.context = context;
         this.likeListener = likelistener;
@@ -58,12 +59,19 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         if (holder instanceof DateVoteViewHolder){
             final DateVoteViewHolder dvh = (DateVoteViewHolder) holder;
-            DateVote dv = dvList.get(position);
-            dvh.dv = dv;
-            dvh.date.setText(dv.getDate().toString());
-            dvh.time.setText(dv.getTime().toString());
-            dvh.likes.setText(Integer.toString(dv.countLikes()));
-            dvh.dislikes.setText(Integer.toString(dv.countDislikes()));
+
+            dvh.dv = dvList.get(position);
+            dvh.date.setText(dvh.dv.getDate().toString());
+            dvh.time.setText(dvh.dv.getTime().toString());
+            dvh.likes.setText(Integer.toString(dvh.dv.countLikes()));
+            dvh.dislikes.setText(Integer.toString(dvh.dv.countDislikes()));
+
+            dvh.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("onClickDV",dvh.dv.getDate() + " " + dvh.dv.getTime());
+                }
+            });
 
             dvh.btnLike.setOnClickListener(new View.OnClickListener(){
 
@@ -123,11 +131,11 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public void setDateVotes() {
+    /*public void setDateVotes() {
         this.dvList.clear();
         this.dvList.addAll(e.getDateVotes());
         notifyDataSetChanged();
-    }
+    }*/
 
     public ArrayList<DateVote> getDateVotes(){
         return this.dvList;

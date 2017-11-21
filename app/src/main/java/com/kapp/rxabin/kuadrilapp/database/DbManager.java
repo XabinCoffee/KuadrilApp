@@ -48,7 +48,8 @@ public class DbManager {
         if (!users.contains(useruid)) users.add(useruid);
 
         e.setMembers(users);
-        DateVote dv = new DateVote(useruid, date, time, "1","0");
+        DateVote dv = new DateVote(useruid, date, time);
+        System.out.println(dv.getLikes().size());
         e.getDateVotes().add(dv);
 
         e.setUserRole(new HashMap<String,String>());
@@ -276,9 +277,10 @@ public class DbManager {
 
     public static void addDateVote(final Event ev, String userid, String date, String time, final DateVoteAdapter dvAdapter){
 
+        //FIXME new DateVote format
         DateVote dv = null;
         if (ev.getDateVote(userid)==null) {
-            dv = new DateVote(userid, date, time, "1", "0");
+            dv = new DateVote(userid, date, time);
             ev.getDateVotes().add(dv);
             dvAdapter.getDateVotes().add(dv);
             dvAdapter.notifyDataSetChanged();
@@ -288,8 +290,8 @@ public class DbManager {
             ev.getDateVotes().remove(dv);
             dv.setDate(date);
             dv.setTime(time);
-            dv.setVoters(new HashMap<String, String>());
-            dv.getVoters().put(userid,"like");
+           // dv.setVoters(new HashMap<String, String>());
+            // dv.getVoters().put(userid,"like");
             ev.getDateVotes().add(dv);
             dvAdapter.getDateVotes().add(dv);
             dvAdapter.notifyDataSetChanged();
@@ -320,13 +322,13 @@ public class DbManager {
 
     public static void rateDateVote(final Event ev, String userid, DateVote dv, final DateVoteAdapter dvAdapter, boolean like){
 
+        //FIXME new DateVote format
         ev.getDateVotes().remove(dv);
         if (like) dv.userLikes(userid);
         else dv.userDislikes(userid);
 
         ev.getDateVotes().add(dv);
         ev.sortDateList();
-        dvAdapter.setDateVotes();
         dvAdapter.notifyDataSetChanged();
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
