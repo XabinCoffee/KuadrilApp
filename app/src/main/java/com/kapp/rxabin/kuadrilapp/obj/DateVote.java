@@ -3,6 +3,7 @@ package com.kapp.rxabin.kuadrilapp.obj;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -169,6 +170,8 @@ public class DateVote implements Parcelable {
 
     public void userLikes(String uid){
 
+        if (this.voters == null) this.voters = new HashMap<String,String>();
+
         if (this.voters.get(uid)==null) this.voters.put(uid,"like");
 
         else {
@@ -179,6 +182,8 @@ public class DateVote implements Parcelable {
 
 
     public void userDislikes(String uid){
+
+        if (this.voters == null) this.voters = new HashMap<String,String>();
 
         if (this.voters.get(uid)==null) this.voters.put(uid,"dislike");
 

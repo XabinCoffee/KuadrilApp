@@ -123,14 +123,13 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public void addDateVote(DateVote dv){
-        this.dvList.add(0,dv);
-        notifyDataSetChanged();
-    }
-
     public void setDateVotes(List<DateVote> dvl) {
         this.dvList.clear();
         this.dvList.addAll(dvl);
         notifyDataSetChanged();
+    }
+
+    public ArrayList<DateVote> getDateVotes(){
+        return this.dvList;
     }
 }

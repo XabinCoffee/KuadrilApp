@@ -865,6 +865,7 @@
     <string name="delete">Ezabatu</string>
     <string name="desc">Deskripzioa</string>
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
+    <string name="editdatetime">Data editatu</string>
     <string name="editusername">Erabiltzaile izena aldatu</string>
     <string name="email">Email</string>
     <string name="errorCredentials">Erabiltzaile / pasahitz okerra</string>

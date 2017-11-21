@@ -275,8 +275,28 @@ public class DbManager {
     }
 
     public static void addDateVote(final Event ev, String userid, String date, String time, final DateVoteAdapter dvAdapter){
-        final DateVote dv = new DateVote(userid,date,time,"1","0");
-        ev.getDateVotes().add(dv);
+
+        DateVote dv = null;
+        if (ev.getDateVote(userid)==null) {
+            dv = new DateVote(userid, date, time, "1", "0");
+            ev.getDateVotes().add(dv);
+            dvAdapter.getDateVotes().add(dv);
+            dvAdapter.notifyDataSetChanged();
+        } else {
+            dv = ev.getDateVote(userid);
+            dvAdapter.getDateVotes().remove(dv);
+            ev.getDateVotes().remove(dv);
+            dv.setDate(date);
+            dv.setTime(time);
+            dv.setVoters(new HashMap<String, String>());
+            dv.getVoters().put(userid,"like");
+            ev.getDateVotes().add(dv);
+            dvAdapter.getDateVotes().add(dv);
+            dvAdapter.notifyDataSetChanged();
+        }
+
+        final DateVote dv2 = dv;
+
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
@@ -285,8 +305,7 @@ public class DbManager {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
                     if (e.getId().equals(ev.getId())){
-                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
-                        dvAdapter.addDateVote(dv);
+                        mDatabase.child(e.getId()).setValue(ev);
                     }
                 }
             }
@@ -298,36 +317,27 @@ public class DbManager {
 
     }
 
-    public static void editDateVote(final Event ev, DateVote dv, String uid, final DateVoteAdapter dvAdapter, boolean like){
-        ArrayList<DateVote> dvList = ev.getDateVotes();
-        int i = 0;
-        boolean found = false;
-        while (i<dvList.size() && !found){
-            if (dvList.get(i).getCreator().equals(dv.getCreator())){
-                found = true;
-            }else{
-                i++;
-            }
-        }
 
-        if (like){
-            ev.getDateVotes().get(i).userLikes(uid);
-        } else {
-            ev.getDateVotes().get(i).userDislikes(uid);
-        }
+    public static void rateDateVote(final Event ev, String userid, DateVote dv, final DateVoteAdapter dvAdapter, boolean like){
 
-        //TODO
+        ev.getDateVotes().remove(dv);
+        if (like) dv.userLikes(userid);
+        else dv.userDislikes(userid);
+
+        ev.getDateVotes().add(dv);
+        ev.sortDateList();
+        dvAdapter.setDateVotes(ev.getDateVotes());
+        dvAdapter.notifyDataSetChanged();
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
-        /*mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
                     if (e.getId().equals(ev.getId())){
-                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
-                        dvAdapter.addDateVote(dv);
+                        mDatabase.child(e.getId()).setValue(ev);
                     }
                 }
             }
@@ -335,7 +345,7 @@ public class DbManager {
             public void onCancelled(DatabaseError databaseError) {
                 Log.d("onCancelled","DataBase error");
             }
-        });*/
+        });
 
     }
 

@@ -15,8 +15,10 @@ import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,7 +33,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.Calendar;
 
-public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, UserInEventAdapter.OnAddDateSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
+public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
 
     private TextView title;
     private TextView location;
@@ -39,6 +41,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private TextView members;
     private TextView date;
     private TextView time;
+    private Button addDate;
     private RecyclerView rvUsers;
     private RecyclerView rvDateVotes;
     private UserInEventAdapter uieAdapter;
@@ -47,6 +50,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private AlertDialog alertDialog;
     private Context context;
     private Event e;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +82,13 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         time = (TextView) findViewById(R.id.tvTime);
         rvUsers = (RecyclerView) findViewById(R.id.rvUsersEvent);
         rvDateVotes = (RecyclerView) findViewById(R.id.rvDateVotes);
+        addDate = (Button) findViewById(R.id.btnChoseDatetime);
+
 
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         rvUsers.setLayoutManager(mLayoutManager);
-        uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), e,this,this);
+        uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), e,this);
         DbManager.getUsernamesFromEvent(uieAdapter,e.getMembers(), mAuth.getCurrentUser().getUid());
         rvUsers.setAdapter(uieAdapter);
 
@@ -103,6 +109,10 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         date.setText(dv.getDate().toString());
         time.setText(dv.getTime().toString());
 
+        if (e.getDateVote(mAuth.getCurrentUser().getUid())!=null){
+            addDate.setText(getResources().getString(R.string.editdatetime));
+        }
+
         context = this;
 
     }
@@ -118,7 +128,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         return super.onOptionsItemSelected(item);
     }
 
-    public void onAddDateSelected(String uid, Event e) {
+    public void onAddDateSelected(View v) {
         final Calendar c = Calendar.getInstance();
         int mYear = c.get(Calendar.YEAR);
         int mMonth = c.get(Calendar.MONTH);
@@ -210,14 +220,15 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     @Override
     public void onLikeSelected(Event e, DateVote dv) {
 
-        dv.userLikes(dv, mAuth.getCurrentUser().getUid());
+        DbManager.rateDateVote(e, mAuth.getCurrentUser().getUid(),dv,dvAdapter,true);
 
         Log.d("DATEVOTE",dv.toStringLong());
     }
 
     @Override
     public void onDislikeSelected(Event e, DateVote dv) {
-        dv.userDislikes(dv, mAuth.getCurrentUser().getUid());
+
+        DbManager.rateDateVote(e, mAuth.getCurrentUser().getUid(),dv,dvAdapter,false);
         Log.d("DATEVOTE",dv.toStringLong());
     }
 }

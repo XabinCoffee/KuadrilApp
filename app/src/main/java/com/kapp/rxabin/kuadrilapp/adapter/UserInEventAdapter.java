@@ -22,10 +22,6 @@ import java.util.List;
 
 public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    public interface OnAddDateSelectedListener{
-        void onAddDateSelected(String uid, Event e);
-    }
-
     public interface OnEditRoleSelectedListener{
         void onEditRoleSelected(String uid, Event e);
     }
@@ -34,16 +30,14 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private String uid;
     private Context context;
     private HashMap<String,String> roles;
-    private OnAddDateSelectedListener mDateListener;
     private OnEditRoleSelectedListener mRoleListener;
     private Event event;
 
-    public UserInEventAdapter(Context context, String uid, Event e, OnAddDateSelectedListener dateListener, OnEditRoleSelectedListener roleListener){
+    public UserInEventAdapter(Context context, String uid, Event e, OnEditRoleSelectedListener roleListener){
 
         this.userList = new ArrayList<>();
         this.context = context;
         this.uid = uid;
-        this.mDateListener = dateListener;
         this.mRoleListener = roleListener;
         this.event = e;
     }
@@ -71,26 +65,12 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             boolean yourRow = (u.getUid().equals(uid));
 
             if (yourRow){
-                uvh.addDate.setVisibility(View.VISIBLE);
                 uvh.editRole.setVisibility(View.VISIBLE);
 
                 float scale = context.getResources().getDisplayMetrics().density;
                 int dpAsPixels = (int) (25*scale + 0.5f);
                 uvh.role.setPadding(dpAsPixels/5,dpAsPixels,dpAsPixels/5,dpAsPixels/4);
 
-                uvh.addDate.setOnClickListener(new View.OnClickListener(){
-
-                    @Override
-                    public void onClick(View view) {
-
-                        if (null != mDateListener) {
-                            // Notify the active callbacks interface (the activity, if the
-                            // fragment is attached to one) that an item has been selected.
-                            mDateListener.onAddDateSelected(uid,event);
-
-                        }
-                    }
-                });
 
                 uvh.editRole.setOnClickListener(new View.OnClickListener(){
 
@@ -121,7 +101,6 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         private User u;
         private TextView username;
         private TextView role;
-        private Button addDate;
         private Button editRole;
 
 
@@ -129,7 +108,6 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             super(v);
             username = (TextView) v.findViewById(R.id.tvDate);
             role = (TextView) v.findViewById(R.id.tvRole);
-            addDate = (Button) v.findViewById(R.id.btnChoseDatetime);
             editRole = (Button) v.findViewById(R.id.btnSetRole);
         }
 

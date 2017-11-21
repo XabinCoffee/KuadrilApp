@@ -73,14 +73,35 @@ public class Event implements Parcelable {
 
 
     public void sortDateList() {
-        Collections.sort(this.dateVotes, new Comparator<DateVote>() {
-            public int compare(DateVote dv1, DateVote dv2) {
-                // avoiding NullPointerException in case name is null
-                Integer l1 = Integer.parseInt(dv1.getLikes());
-                Integer l2 = Integer.parseInt(dv1.getLikes());
-                return l1.compareTo(l2);
+        if (this.dateVotes != null) {
+            Collections.sort(this.dateVotes, new Comparator<DateVote>() {
+                public int compare(DateVote dv1, DateVote dv2) {
+                    // avoiding NullPointerException in case name is null
+                    Integer l1 = Integer.parseInt(dv1.getLikes());
+                    Integer l2 = Integer.parseInt(dv1.getLikes());
+                    return l1.compareTo(l2);
+                }
+            });
+        }
+    }
+
+    public DateVote getDateVote(String uid){
+
+        boolean found = false;
+        DateVote dv = null;
+
+        int i = 0;
+        while (i<this.dateVotes.size() && !found){
+            if (this.dateVotes.get(i).getCreator().equals(uid)){
+                dv = this.dateVotes.get(i);
+                found=true;
             }
-        });
+            else{
+                i++;
+            }
+        }
+
+        return dv;
     }
 
 
