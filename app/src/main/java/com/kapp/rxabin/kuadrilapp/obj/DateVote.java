@@ -53,7 +53,7 @@ public class DateVote implements Parcelable {
         this.time = in.readString();
         this.likes = in.readString();
         this.dislikes = in.readString();
-        this.voters=in.readHashMap(String.class.getClassLoader());
+        this.voters= in.readHashMap(HashMap.class.getClassLoader());
     }
 
 

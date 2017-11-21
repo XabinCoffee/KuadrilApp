@@ -31,7 +31,9 @@ import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
 
@@ -49,7 +51,8 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private FirebaseAuth mAuth;
     private AlertDialog alertDialog;
     private Context context;
-    private Event e;
+    private Event event;
+    private HashMap<String,String> voters;
 
 
     @Override
@@ -73,7 +76,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        e = getIntent().getParcelableExtra("event");
+        event = getIntent().getParcelableExtra("event");
         title = (TextView) findViewById(R.id.tvTitle);
         location = (TextView) findViewById(R.id.tvLocation);
         description = (TextView) findViewById(R.id.tvDescription);
@@ -85,31 +88,30 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         addDate = (Button) findViewById(R.id.btnChoseDatetime);
 
 
-
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         rvUsers.setLayoutManager(mLayoutManager);
-        uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), e,this);
-        DbManager.getUsernamesFromEvent(uieAdapter,e.getMembers(), mAuth.getCurrentUser().getUid());
+        uieAdapter = new UserInEventAdapter(this,mAuth.getCurrentUser().getUid(), event,this);
+        DbManager.getUsernamesFromEvent(uieAdapter,event.getMembers(), mAuth.getCurrentUser().getUid());
         rvUsers.setAdapter(uieAdapter);
-
 
         LinearLayoutManager mLayoutManager2 = new LinearLayoutManager(this);
         rvDateVotes.setLayoutManager(mLayoutManager2);
-        dvAdapter = new DateVoteAdapter(this, e,this,this);
-        dvAdapter.setDateVotes(e.getDateVotes());
+        dvAdapter = new DateVoteAdapter(this, event,this,this);
+        dvAdapter.setDateVotes();
         rvDateVotes.setAdapter(dvAdapter);
+        Log.d("dvAdapter", String.valueOf(dvAdapter.getEvent().getDateVotes().get(0).getVoters().values()));
 
 
-        title.setText(e.getName().toString());
-        location.setText(e.getLocation().toString());
-        description.setText(e.getDescription().toString());
-        members.setText(Integer.toString(e.numOfMembers()));
-        e.sortDateList();
-        DateVote dv = e.getDateVotes().get(0);
+        title.setText(event.getName().toString());
+        location.setText(event.getLocation().toString());
+        description.setText(event.getDescription().toString());
+        members.setText(Integer.toString(event.numOfMembers()));
+        dvAdapter.getEvent().sortDateList();
+        DateVote dv = dvAdapter.getEvent().getDateVotes().get(0);
         date.setText(dv.getDate().toString());
         time.setText(dv.getTime().toString());
 
-        if (e.getDateVote(mAuth.getCurrentUser().getUid())!=null){
+        if (dvAdapter.getEvent().getDateVote(mAuth.getCurrentUser().getUid())!=null){
             addDate.setText(getResources().getString(R.string.editdatetime));
         }
 
@@ -174,7 +176,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("Sartzen da","Iuju!");
-                DbManager.addDateVote(e,mAuth.getCurrentUser().getUid(),date,time,dvAdapter);
+                DbManager.addDateVote(event,mAuth.getCurrentUser().getUid(),date,time,dvAdapter);
             }
         });
 
@@ -193,6 +195,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     @Override
     public void onEditRoleSelected(String uid, final Event e) {
 
+        Log.d("dvAdapter", String.valueOf(dvAdapter.getEvent().getDateVotes().get(0).getVoters().values()));
         Log.d("Role","Role Selected");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getResources().getString(R.string.changeRole));
@@ -218,9 +221,9 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     }
 
     @Override
-    public void onLikeSelected(Event e, DateVote dv) {
+    public void onLikeSelected(Event ev, DateVote dv) {
 
-        DbManager.rateDateVote(e, mAuth.getCurrentUser().getUid(),dv,dvAdapter,true);
+        DbManager.rateDateVote(ev, mAuth.getCurrentUser().getUid(),dv,dvAdapter,true);
 
         Log.d("DATEVOTE",dv.toStringLong());
     }

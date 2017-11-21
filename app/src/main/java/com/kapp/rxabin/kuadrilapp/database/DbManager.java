@@ -305,7 +305,7 @@ public class DbManager {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
                     if (e.getId().equals(ev.getId())){
-                        mDatabase.child(e.getId()).setValue(ev);
+                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
                     }
                 }
             }
@@ -326,7 +326,7 @@ public class DbManager {
 
         ev.getDateVotes().add(dv);
         ev.sortDateList();
-        dvAdapter.setDateVotes(ev.getDateVotes());
+        dvAdapter.setDateVotes();
         dvAdapter.notifyDataSetChanged();
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
@@ -337,7 +337,7 @@ public class DbManager {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
                     if (e.getId().equals(ev.getId())){
-                        mDatabase.child(e.getId()).setValue(ev);
+                        mDatabase.child(ev.getId()).child("dateVotes").setValue(ev.getDateVotes());
                     }
                 }
             }

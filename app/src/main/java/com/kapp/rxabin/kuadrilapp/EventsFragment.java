@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ import java.util.HashMap;
 
 public class EventsFragment extends Fragment implements EventAdapter.OnEventLongClickListener, EventAdapter.OnEventSelectedListener{
 
+    public static ArrayList<DateVote> little_trick;
+
     private RecyclerView.LayoutManager mLayoutManager;
     private EventAdapter eAdapter;
     private RecyclerView recyclerView;
@@ -35,6 +38,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     private static ProgressBar mLoading;
     private static TextView mEmpty;
     private AlertDialog alertDialog;
+
 
     @Nullable
     @Override
@@ -127,6 +131,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     public void onEventSelected(Event eventData) {
         //TODO
         Log.d("OnTouch","Event Selected");
+        //little_trick = eventData.getDateVotes();
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
         startActivity(i);

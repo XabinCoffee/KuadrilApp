@@ -4,7 +4,7 @@
             "outputFile": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1345d91afde0a5688a66963d1b77e692/res/values-v23/values-v23.xml",
+                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/04387d188149018899dd8ae15ac4bc95/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/34a20511a7ca598490428c7acea7bc83/res/values-v23/values-v23.xml",
+                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/5e7ec6179ef08939ccb0edcbbc9f1d52/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

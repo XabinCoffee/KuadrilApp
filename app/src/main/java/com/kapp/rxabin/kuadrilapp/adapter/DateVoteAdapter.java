@@ -62,8 +62,8 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             dvh.dv = dv;
             dvh.date.setText(dv.getDate().toString());
             dvh.time.setText(dv.getTime().toString());
-            dvh.likes.setText(dv.getLikes());
-            dvh.dislikes.setText(dv.getDislikes());
+            dvh.likes.setText(Integer.toString(dv.countLikes()));
+            dvh.dislikes.setText(Integer.toString(dv.countDislikes()));
 
             dvh.btnLike.setOnClickListener(new View.OnClickListener(){
 
@@ -123,13 +123,19 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public void setDateVotes(List<DateVote> dvl) {
+    public void setDateVotes() {
         this.dvList.clear();
-        this.dvList.addAll(dvl);
+        this.dvList.addAll(e.getDateVotes());
         notifyDataSetChanged();
     }
 
     public ArrayList<DateVote> getDateVotes(){
         return this.dvList;
     }
+
+    public Event getEvent(){
+        return this.e;
+    }
+
+
 }
