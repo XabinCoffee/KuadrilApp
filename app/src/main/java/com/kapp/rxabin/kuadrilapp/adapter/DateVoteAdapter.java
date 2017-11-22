@@ -60,8 +60,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             dvh.dv = e.getDateVotes().get(position);
             dvh.date.setText(dvh.dv.getDate().toString());
-            //dvh.time.setText(dvh.dv.getTime().toString());
-            dvh.time.setText("" + dvh.dv.calculateValue());
+            dvh.time.setText(dvh.dv.getTime().toString());
             dvh.likes.setText(Integer.toString(dvh.dv.countLikes()));
             dvh.dislikes.setText(Integer.toString(dvh.dv.countDislikes()));
             dvh.username.setText(dvh.dv.getCreator_name());

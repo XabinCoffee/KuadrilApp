@@ -85,22 +85,23 @@ public class Event implements Parcelable {
         }
     }
 
-    public DateVote getDateVote(String uid){
+    public int getDateVote(String uid){
 
         boolean found = false;
-        DateVote dv = null;
+
+        int pos = -1;
 
         int i = 0;
         while (i<this.dateVotes.size() && !found){
             if (this.dateVotes.get(i).getCreator().equals(uid)){
-                dv = this.dateVotes.get(i);
+                pos = i;
                 found=true;
             }
             else{
                 i++;
             }
         }
-        return dv;
+        return i;
     }
 
 

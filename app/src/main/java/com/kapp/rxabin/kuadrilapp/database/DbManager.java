@@ -279,17 +279,18 @@ public class DbManager {
 
         DateVote dv;
 
-        if (dvAdapter.getEvent().getDateVote(userid)==null) {
+        if (dvAdapter.getEvent().getDateVote(userid)==-1) {
             dv = new DateVote(userid, date, time, username);
             dvAdapter.getDateVotes().add(dv);
+            dvAdapter.getEvent().sortDateList();
             dvAdapter.notifyDataSetChanged();
         } else {
-            Log.d("Size ","" + dvAdapter.getDateVotes().size());
-            dv = dvAdapter.getEvent().getDateVote(userid);
-            dvAdapter.getDateVotes().remove(dv);
+            int position = dvAdapter.getEvent().getDateVote(userid);
+            dv = dvAdapter.getEvent().getDateVotes().get(position);
+            dvAdapter.getDateVotes().remove(position);
             dv.setDate(date);
             dv.setTime(time);
-            dvAdapter.getDateVotes().add(dv);
+            dvAdapter.getDateVotes().add(position,dv);
             //dvAdapter.getEvent().sortDateList();
             dvAdapter.notifyDataSetChanged();
         }
@@ -318,12 +319,13 @@ public class DbManager {
     public static void rateDateVote(final DateVoteAdapter dvAdapter, DateVote dv, String userid, boolean like){
 
 
-        dvAdapter.getDateVotes().remove(dv);
+        int pos = dvAdapter.getEvent().getDateVote(dv.getCreator());
+        dvAdapter.getDateVotes().remove(pos);
 
         if (like) dv.userLikes(userid);
         else dv.userDislikes(userid);
 
-        dvAdapter.getDateVotes().add(dv);
+        dvAdapter.getDateVotes().add(pos,dv);
         //dvAdapter.getEvent().sortDateList();
         dvAdapter.notifyDataSetChanged();
 

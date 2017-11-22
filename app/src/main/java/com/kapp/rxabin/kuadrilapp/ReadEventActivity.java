@@ -111,7 +111,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         time.setText(dv.getTime().toString());
 
 
-        if (dvAdapter.getEvent().getDateVote(mAuth.getCurrentUser().getUid())!=null){
+        if (dvAdapter.getEvent().getDateVote(mAuth.getCurrentUser().getUid())!=-1){
             addDate.setText(getResources().getString(R.string.editdatetime));
         }
 
