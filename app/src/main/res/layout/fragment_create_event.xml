@@ -203,6 +203,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
+                                android:layout_margin="8dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                                 android:layout_weight="1"
                                 android:text="@string/participants" />
 
