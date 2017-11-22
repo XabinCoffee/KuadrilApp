@@ -21,32 +21,19 @@ public class DateVote implements Parcelable {
     private String time;
     private ArrayList<String> likes;
     private ArrayList<String> dislikes;
-
-
-    //private HashMap<String,String> voters;
-
-
-    /*public DateVote(String creator, String datetime){
-
-        this.creator = creator;
-
-        String[] a = datetime.split(" ");
-        this.date = a[0];
-        this.time = a[1];
-        this.likes= "1";
-        this.dislikes = "0";
-    }*/
+    private String creator_name;
 
 
     public DateVote(){}
 
-    public DateVote(String creator, String date, String time){
+    public DateVote(String creator, String date, String time, String creator_name){
         this.creator = creator;
         this.date = date;
         this.time = time;
         this.likes = new ArrayList<>();
         this.dislikes = new ArrayList<>();
         this.likes.add(creator);
+        this.creator_name = creator_name;
     }
 
     public DateVote(Parcel in){
@@ -55,6 +42,7 @@ public class DateVote implements Parcelable {
         this.time = in.readString();
         this.likes = in.readArrayList(String.class.getClassLoader());
         this.dislikes = in.readArrayList(String.class.getClassLoader());
+        this.creator_name = in.readString();
     }
 
 
@@ -94,6 +82,14 @@ public class DateVote implements Parcelable {
 
     public ArrayList<String> getDislikes() {return this.dislikes;}
 
+    public String getCreator_name(){
+        return this.creator_name;
+    }
+
+    public void setCreator_name(String creator_name){
+        this.creator_name = creator_name;
+    }
+
 
     @Override
     public int describeContents() {
@@ -107,6 +103,7 @@ public class DateVote implements Parcelable {
         dest.writeString(time);
         dest.writeList(likes);
         dest.writeList(dislikes);
+        dest.writeString(creator_name);
     }
 
     public static final Creator CREATOR = new Creator() {
@@ -133,34 +130,35 @@ public class DateVote implements Parcelable {
 
     public void userLikes(String uid){
 
-        //TODO
+        if (this.likes == null) this.likes = new ArrayList<>();
+        if (this.dislikes == null) this.dislikes = new ArrayList();
 
-    /*
-        if (this.voters == null) this.voters = new HashMap<String,String>();
-
-        if (this.voters.get(uid)==null) this.voters.put(uid,"like");
-
-        else {
-            if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.remove(uid);
-            else if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.put(uid, "like");
+        if (this.likes.contains(uid)) {
+            this.likes.remove(uid);
+        } else {
+            if (this.dislikes.contains(uid)) this.dislikes.remove(uid);
+            this.likes.add(uid);
         }
-        */
+
     }
 
 
     public void userDislikes(String uid){
 
-        //TODO
+        if (this.likes == null) this.likes = new ArrayList<>();
+        if (this.dislikes == null) this.dislikes = new ArrayList();
 
-        /*
-        if (this.voters == null) this.voters = new HashMap<String,String>();
+        if (this.dislikes.contains(uid)) {
+            this.dislikes.remove(uid);
+        } else {
+            if (this.likes.contains(uid)) this.likes.remove(uid);
+            this.dislikes.add(uid);
+        }
 
-        if (this.voters.get(uid)==null) this.voters.put(uid,"dislike");
+    }
 
-        else {
-            if (this.voters.get(uid).equalsIgnoreCase("dislike")) this.voters.remove(uid);
-            else if (this.voters.get(uid).equalsIgnoreCase("like")) this.voters.put(uid, "dislike");
-        }*/
+    public int calculateValue(){
+        return (this.countLikes() * 10) - (this.countDislikes()*15);
     }
 
 

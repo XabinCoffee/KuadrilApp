@@ -129,9 +129,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
     @Override
     public void onEventSelected(Event eventData) {
-        //TODO
+
         Log.d("OnTouch","Event Selected");
-        //little_trick = eventData.getDateVotes();
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
         startActivity(i);

@@ -33,16 +33,14 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         void onDislikeSelected(Event e, DateVote dv);
     }
 
-    private ArrayList<DateVote> dvList;
     private Event e;
     private Context context;
     private OnLikeListener likeListener;
     private OnDislikeListener dislikeListener;
 
 
-    public DateVoteAdapter(Context context, Event e, OnLikeListener likelistener, OnDislikeListener dislikelistener){
-        this.dvList = e.getDateVotes();
-        this.e = e;
+    public DateVoteAdapter(Context context, Event event, OnLikeListener likelistener, OnDislikeListener dislikelistener){
+        this.e = event;
         this.context = context;
         this.likeListener = likelistener;
         this.dislikeListener = dislikelistener;
@@ -60,18 +58,20 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (holder instanceof DateVoteViewHolder){
             final DateVoteViewHolder dvh = (DateVoteViewHolder) holder;
 
-            dvh.dv = dvList.get(position);
+            dvh.dv = e.getDateVotes().get(position);
             dvh.date.setText(dvh.dv.getDate().toString());
-            dvh.time.setText(dvh.dv.getTime().toString());
+            //dvh.time.setText(dvh.dv.getTime().toString());
+            dvh.time.setText("" + dvh.dv.calculateValue());
             dvh.likes.setText(Integer.toString(dvh.dv.countLikes()));
             dvh.dislikes.setText(Integer.toString(dvh.dv.countDislikes()));
+            dvh.username.setText(dvh.dv.getCreator_name());
 
-            dvh.itemView.setOnClickListener(new View.OnClickListener() {
+            /*dvh.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.d("onClickDV",dvh.dv.getDate() + " " + dvh.dv.getTime());
                 }
-            });
+            });*/
 
             dvh.btnLike.setOnClickListener(new View.OnClickListener(){
 
@@ -99,14 +99,12 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 }
             });
-
-
         }
     }
 
     @Override
     public int getItemCount() {
-        if (dvList!=null) return dvList.size(); else return 0;
+        if (this.e.getDateVotes()!=null) return this.e.getDateVotes().size(); else return 0;
     }
 
     public class DateVoteViewHolder extends RecyclerView.ViewHolder{
@@ -118,6 +116,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private ImageButton btnDislike;
         private TextView likes;
         private TextView dislikes;
+        private TextView username;
 
 
         public DateVoteViewHolder(View v){
@@ -128,17 +127,12 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             btnDislike = (ImageButton) v.findViewById(R.id.btnDislike);
             likes = (TextView) v.findViewById(R.id.tvLikes);
             dislikes = (TextView) v.findViewById(R.id.tvDislikes);
+            username = (TextView) v.findViewById(R.id.tvUsername);
         }
     }
 
-    /*public void setDateVotes() {
-        this.dvList.clear();
-        this.dvList.addAll(e.getDateVotes());
-        notifyDataSetChanged();
-    }*/
-
     public ArrayList<DateVote> getDateVotes(){
-        return this.dvList;
+        return this.e.getDateVotes();
     }
 
     public Event getEvent(){

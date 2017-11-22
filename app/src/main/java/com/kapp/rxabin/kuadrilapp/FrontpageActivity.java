@@ -183,6 +183,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                         DbManager.createEvent(title.getText().toString(),
                                 desc.getText().toString(),
                                 mAuth.getCurrentUser().getUid(),
+                                mAuth.getCurrentUser().getDisplayName(),
                                 eventType.getText().toString(),
                                 location.getText().toString(),
                                 date.getText().toString(),

@@ -34,7 +34,7 @@ public class DbManager {
 
     private static DatabaseReference mDatabase;
 
-    public static Boolean createEvent(String name, String desc, String useruid, String type, String location, String date, String time, ArrayList<User> ul){
+    public static Boolean createEvent(String name, String desc, String useruid, String username, String type, String location, String date, String time, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -48,8 +48,7 @@ public class DbManager {
         if (!users.contains(useruid)) users.add(useruid);
 
         e.setMembers(users);
-        DateVote dv = new DateVote(useruid, date, time);
-        System.out.println(dv.getLikes().size());
+        DateVote dv = new DateVote(useruid, date, time, username);
         e.getDateVotes().add(dv);
 
         e.setUserRole(new HashMap<String,String>());
@@ -275,29 +274,25 @@ public class DbManager {
         });
     }
 
-    public static void addDateVote(final Event ev, String userid, String date, String time, final DateVoteAdapter dvAdapter){
+    public static void addDateVote(final DateVoteAdapter dvAdapter, String userid, String username, String date, String time){
 
-        //FIXME new DateVote format
-        DateVote dv = null;
-        if (ev.getDateVote(userid)==null) {
-            dv = new DateVote(userid, date, time);
-            ev.getDateVotes().add(dv);
+
+        DateVote dv;
+
+        if (dvAdapter.getEvent().getDateVote(userid)==null) {
+            dv = new DateVote(userid, date, time, username);
             dvAdapter.getDateVotes().add(dv);
             dvAdapter.notifyDataSetChanged();
         } else {
-            dv = ev.getDateVote(userid);
+            Log.d("Size ","" + dvAdapter.getDateVotes().size());
+            dv = dvAdapter.getEvent().getDateVote(userid);
             dvAdapter.getDateVotes().remove(dv);
-            ev.getDateVotes().remove(dv);
             dv.setDate(date);
             dv.setTime(time);
-           // dv.setVoters(new HashMap<String, String>());
-            // dv.getVoters().put(userid,"like");
-            ev.getDateVotes().add(dv);
             dvAdapter.getDateVotes().add(dv);
+            //dvAdapter.getEvent().sortDateList();
             dvAdapter.notifyDataSetChanged();
         }
-
-        final DateVote dv2 = dv;
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
@@ -306,8 +301,8 @@ public class DbManager {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
-                    if (e.getId().equals(ev.getId())){
-                        mDatabase.child(e.getId()).child("dateVotes").setValue(ev.getDateVotes());
+                    if (e.getId().equals(dvAdapter.getEvent().getId())){
+                        mDatabase.child(e.getId()).child("dateVotes").setValue(dvAdapter.getEvent().getDateVotes());
                     }
                 }
             }
@@ -320,15 +315,16 @@ public class DbManager {
     }
 
 
-    public static void rateDateVote(final Event ev, String userid, DateVote dv, final DateVoteAdapter dvAdapter, boolean like){
+    public static void rateDateVote(final DateVoteAdapter dvAdapter, DateVote dv, String userid, boolean like){
 
-        //FIXME new DateVote format
-        ev.getDateVotes().remove(dv);
+
+        dvAdapter.getDateVotes().remove(dv);
+
         if (like) dv.userLikes(userid);
         else dv.userDislikes(userid);
 
-        ev.getDateVotes().add(dv);
-        ev.sortDateList();
+        dvAdapter.getDateVotes().add(dv);
+        //dvAdapter.getEvent().sortDateList();
         dvAdapter.notifyDataSetChanged();
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
@@ -338,8 +334,8 @@ public class DbManager {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
-                    if (e.getId().equals(ev.getId())){
-                        mDatabase.child(ev.getId()).child("dateVotes").setValue(ev.getDateVotes());
+                    if (e.getId().equals(dvAdapter.getEvent().getId())){
+                        mDatabase.child(e.getId()).child("dateVotes").setValue(dvAdapter.getEvent().getDateVotes());
                     }
                 }
             }

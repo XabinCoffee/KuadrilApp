@@ -77,6 +77,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         event = getIntent().getParcelableExtra("event");
+        event.sortDateList();
         title = (TextView) findViewById(R.id.tvTitle);
         location = (TextView) findViewById(R.id.tvLocation);
         description = (TextView) findViewById(R.id.tvDescription);
@@ -103,7 +104,8 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         location.setText(event.getLocation().toString());
         description.setText(event.getDescription().toString());
         members.setText(Integer.toString(event.numOfMembers()));
-        dvAdapter.getEvent().sortDateList();
+        //dvAdapter.getEvent().sortDateList();
+        //dvAdapter.notifyDataSetChanged();
         DateVote dv = dvAdapter.getEvent().getDateVotes().get(0);
         date.setText(dv.getDate().toString());
         time.setText(dv.getTime().toString());
@@ -173,8 +175,8 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                Log.d("Sartzen da","Iuju!");
-                DbManager.addDateVote(event,mAuth.getCurrentUser().getUid(),date,time,dvAdapter);
+                Log.d("I'm in","Iuju!");
+                DbManager.addDateVote(dvAdapter,mAuth.getCurrentUser().getUid(), mAuth.getCurrentUser().getDisplayName(),date,time);
             }
         });
 
@@ -220,7 +222,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     @Override
     public void onLikeSelected(Event ev, DateVote dv) {
 
-        DbManager.rateDateVote(ev, mAuth.getCurrentUser().getUid(),dv,dvAdapter,true);
+        DbManager.rateDateVote(dvAdapter, dv, mAuth.getCurrentUser().getUid(),true);
 
         Log.d("DATEVOTE",dv.toStringLong());
     }
@@ -228,7 +230,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     @Override
     public void onDislikeSelected(Event e, DateVote dv) {
 
-        DbManager.rateDateVote(e, mAuth.getCurrentUser().getUid(),dv,dvAdapter,false);
+        DbManager.rateDateVote(dvAdapter, dv, mAuth.getCurrentUser().getUid(),false);
         Log.d("DATEVOTE",dv.toStringLong());
     }
 }
