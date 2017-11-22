@@ -15,7 +15,7 @@
     <string name="settings">Ezarpenak</string>
     <string name="name">Izen-Abizenak</string>
     <string name="signupheader">Kontua sortu</string>
-    <string name="title">Titulua</string>
+    <string name="title">Izenburua</string>
     <string name="desc">Deskripzioa</string>
     <string name="typeEvent">Ekintza mota</string>
     <string name="verificationSent">Helbide elektronikora berifikazio mezu bat bidali da</string>
@@ -38,6 +38,7 @@
     <string name="dayhour">Eguna / ordua</string>
     <string name="editdatetime">Data editatu</string>
     <string name="editevent">Ekintza editatu</string>
+    <string name="invite">Gonbidatu</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

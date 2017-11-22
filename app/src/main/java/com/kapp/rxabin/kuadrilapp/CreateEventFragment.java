@@ -59,7 +59,7 @@ public class CreateEventFragment extends Fragment implements UserAdapter.OnUserR
         uAdapter = new UserAdapter(getContext(), this);
         rv.setAdapter(uAdapter);
 
-        eventType.setText(getResources().getStringArray(R.array.eventType)[0].toString());
+        //eventType.setText(getResources().getStringArray(R.array.eventType)[0].toString());
         datetimeSet = false;
 
         date = "";

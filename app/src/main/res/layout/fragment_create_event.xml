@@ -12,241 +12,170 @@
         android:layout_height="match_parent"
         android:fillViewport="false">
 
-        <LinearLayout
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
 
-            <android.support.v7.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="3dp"
-                app:cardElevation="2dp">
+                android:layout_margin="8dp">
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ems="10"
+                    android:hint="@string/title"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/etLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/etTitle"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ems="10"
+                    android:hint="@string/location"
+                    android:inputType="textPersonName" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/textView8"
+                    android:layout_toEndOf="@+id/etLocation"
+                    android:adjustViewBounds="true"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ico_restaurant" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imageButton"
+                    android:layout_alignStart="@+id/imageButton"
+                    android:layout_below="@+id/etTitle"
+                    android:gravity="center"
+                    android:text="@string/typeEvent" />
+
+                <Button
+                    android:id="@+id/btnSelectDate"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/etLocation"
+                    android:layout_below="@+id/etLocation"
+                    android:onClick="setDate"
+                    android:text="@string/selectDate" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnSelectDate"
+                    android:layout_below="@+id/btnSelectDate"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toStartOf="@+id/imageButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tvDate"
+                    android:layout_below="@+id/tvDate"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/tvEventType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDate"
+                    android:layout_marginStart="27dp"
+                    android:layout_toEndOf="@+id/tvDate"
+                    android:text="Jatordua" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/etDesc"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/btnSelectDate"
+                    android:layout_below="@id/view"
+                    android:paddingTop="4dp"
+                    android:text="@string/participants"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <Button
+                    android:id="@+id/btnAddUser"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/textView11"
+                    android:onClick="addMember2"
+                    android:text="@string/invite" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvUser"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/textView11"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                </android.support.v7.widget.RecyclerView>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:orientation="vertical">
+                <Button
+                    android:id="@+id/btn_create_event"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/rvUser"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/kuadrilapp_gradient"
+                    android:onClick="onClick"
+                    android:text="@string/save" />
 
-                            <TextView
-                                android:id="@+id/tvIcon"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/typeEvent"
-                                android:layout_marginBottom="4dp"/>
+                <EditText
+                    android:id="@+id/etDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/etTitle"
+                    android:layout_alignStart="@+id/textView11"
+                    android:layout_below="@+id/tvTime"
+                    android:ems="10"
+                    android:hint="@string/desc"
+                    android:inputType="textPersonName" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:onClick="typeSelect"
-                                android:orientation="vertical">
+            </RelativeLayout>
 
-                                <TextView
-                                    android:id="@+id/tvEventType"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="- - - -"
-                                    android:layout_marginBottom="10dp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                                <ImageView
-                                    android:id="@+id/imageView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="80dp"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/ico_restaurant"
-                                    android:layout_marginBottom="6dp"/>
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <RelativeLayout
-                                android:id="@+id/layoutDate"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1">
-
-                                <TextView
-                                    android:id="@+id/tvTitle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/title" />
-
-                                <EditText
-                                    android:id="@+id/etTitle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentStart="true"
-                                    android:layout_below="@+id/tvTitle"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:inputType="textPersonName" />
-
-                                <RelativeLayout
-                                    android:id="@+id/relLay"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_below="@id/etTitle"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/textView3"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentStart="true"
-                                        android:layout_weight="1"
-                                        android:text="Data" />
-
-                                    <TextView
-                                        android:id="@+id/tvDate"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_below="@id/textView3"
-                                        android:layout_weight="1"
-                                        android:text="@string/selectDate"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                                    <TextView
-                                        android:id="@+id/tvTime"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_below="@id/tvDate"
-                                        android:layout_weight="1"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                                    <android.support.design.widget.FloatingActionButton
-                                        android:id="@+id/floatingActionButton"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:layout_centerVertical="true"
-                                        android:layout_marginEnd="52dp"
-                                        android:clickable="true"
-                                        android:onClick="setDate"
-                                        android:src="@android:drawable/ic_menu_edit"
-                                        app:backgroundTint="@color/background" />
-                                </RelativeLayout>
-
-                            </RelativeLayout>
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvDescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/desc" />
-
-                        <EditText
-                            android:id="@+id/etDesc"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:inputType="textPersonName" />
-
-                        <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/location" />
-
-                        <EditText
-                            android:id="@+id/etLocation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:inputType="textPersonName" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="75dp"
-                            android:layout_weight="1"
-                            android:paddingBottom="6dp"
-                            android:paddingTop="2dp">
-
-                            <TextView
-                                android:id="@+id/textView7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:layout_margin="8dp"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                                android:layout_weight="1"
-                                android:text="@string/participants" />
-
-                            <android.support.design.widget.FloatingActionButton
-                                android:id="@+id/floatingActionButton2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="48dp"
-                                android:layout_weight="1"
-                                android:clickable="true"
-                                android:onClick="addMember2"
-                                android:src="@drawable/ic_add_black_24dp"
-                                app:backgroundTint="@color/background" />
-
-                        </RelativeLayout>
-
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/rvUser"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentBottom="true"
-                            android:layout_toEndOf="@+id/textView7"
-                            android:layout_weight="1" />
-
-
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btn_create_event"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="onClick"
-                        android:text="@string/save" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
+        </android.support.v7.widget.CardView>
 
     </ScrollView>
+
 </RelativeLayout>

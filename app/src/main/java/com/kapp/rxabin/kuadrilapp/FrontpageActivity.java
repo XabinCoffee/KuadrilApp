@@ -36,6 +36,7 @@ import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
@@ -186,8 +187,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                                 mAuth.getCurrentUser().getDisplayName(),
                                 eventType.getText().toString(),
                                 location.getText().toString(),
-                                date.getText().toString(),
-                                time.getText().toString(),
+                                cef.getDate(),
+                                cef.getTime(),
                                 ul);
 
                         Toast.makeText(FrontpageActivity.this, getResources().getString(R.string.eventCreated),
@@ -251,7 +252,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                         Log.d("DATE",cef.getTime());
                         TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                         TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
-                        date.setText(cef.getDate());
+                        date.setText(DateHelper.espDate(cef.getDate()));
                         time.setText(cef.getTime());
                         cef.setDatetimeSet(true);
                     }
