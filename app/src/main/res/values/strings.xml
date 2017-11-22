@@ -37,6 +37,7 @@
     <string name="createaccount">Kontua sortu</string>
     <string name="dayhour">Eguna / ordua</string>
     <string name="editdatetime">Data editatu</string>
+    <string name="editevent">Ekintza editatu</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

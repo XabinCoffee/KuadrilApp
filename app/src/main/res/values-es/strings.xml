@@ -71,6 +71,7 @@
     <string name="editusername">Editar nombre de usuario</string>
     <string name="dayhour">Día / Hora</string>
     <string name="editdatetime">Editar fecha</string>
+    <string name="editevent">Editar evento</string>
 
 
 </resources>

@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
@@ -14,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -120,12 +122,24 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        if (dvAdapter.getEvent().getOwner().equals(mAuth.getCurrentUser().getUid())) getMenuInflater().inflate(R.menu.editevent, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 finish();
+                return true;
 
+            case R.id.editevent:
+                Intent i = new Intent(this,EditEventActivity.class);
+                i.putExtra("event",event);
+                startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
