@@ -39,6 +39,8 @@
     <string name="editdatetime">Data editatu</string>
     <string name="editevent">Ekintza editatu</string>
     <string name="invite">Gonbidatu</string>
+    <string name="restaurant">Jatordua</string>
+    <string name="adddatetime">Data berria gehitu?</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

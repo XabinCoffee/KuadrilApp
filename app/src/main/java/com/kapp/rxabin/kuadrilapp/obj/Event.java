@@ -101,7 +101,7 @@ public class Event implements Parcelable {
                 i++;
             }
         }
-        return i;
+        return pos;
     }
 
 

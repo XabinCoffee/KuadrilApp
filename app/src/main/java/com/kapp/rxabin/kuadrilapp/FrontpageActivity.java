@@ -22,10 +22,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -33,7 +32,6 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
-import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
@@ -53,10 +51,6 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     private BottomNavigationView navigation;
     private CreateEventFragment cef;
     private EventsFragment ef = new EventsFragment();
-
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private EventAdapter eAdapter;
 
     private AlertDialog alertDialog;
 
@@ -212,8 +206,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                 String[] types = getResources().getStringArray(R.array.eventType);
                 eventType.setText(types[which]);
                 Log.d("EventType", eventType.getText().toString());
-                ImageView img = (ImageView) cef.getView().findViewById(R.id.imageView);
-                img.setImageDrawable(getResources().getDrawable(EventHelper.getIcon(EventHelper.getType(eventType.getText().toString()))));
+                ImageButton img = (ImageButton) cef.getView().findViewById(R.id.imageButton);
+                img.setImageResource(EventHelper.getIcon(EventHelper.getType(eventType.getText().toString())));
             }
         });
         builder.show();

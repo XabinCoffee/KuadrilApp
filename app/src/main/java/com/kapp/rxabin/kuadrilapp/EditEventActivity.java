@@ -29,6 +29,9 @@ public class EditEventActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+
+
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

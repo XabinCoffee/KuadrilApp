@@ -185,12 +185,12 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(date + " " +time);
-        builder.setTitle("Add datetime?");
+        builder.setTitle(getResources().getString(R.string.adddatetime));
 
         builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                Log.d("I'm in","Iuju!");
                 DbManager.addDateVote(dvAdapter,mAuth.getCurrentUser().getUid(), mAuth.getCurrentUser().getDisplayName(),date,time);
+                addDate.setText(getResources().getString(R.string.editdatetime));
             }
         });
 

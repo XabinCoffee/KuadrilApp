@@ -39,6 +39,8 @@
     <string name="proposeDate">Proponer nueva\nfecha</string>
     <string name="changeRole">Cambiar rol</string>
     <string name="createaccount">Crear cuenta</string>
+    <string name="restaurant">Comida</string>
+    <string name="adddatetime">¿Añadir nueva fecha?</string>
 
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
