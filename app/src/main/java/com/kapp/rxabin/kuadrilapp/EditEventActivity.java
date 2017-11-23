@@ -8,8 +8,23 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class EditEventActivity extends AppCompatActivity {
+import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
+import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.obj.Event;
+import com.kapp.rxabin.kuadrilapp.obj.User;
+
+import java.util.ArrayList;
+
+public class EditEventActivity extends AppCompatActivity implements UserAdapter.OnUserRemovalSelectedListener{
+
+    private EditText title;
+    private EditText desc;
+    private EditText location;
+    private TextView eventType;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +40,23 @@ public class EditEventActivity extends AppCompatActivity {
             window.setBackgroundDrawable(background);
         }
 
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        title = (EditText) findViewById(R.id.etTitle);
+        desc = (EditText) findViewById(R.id.etDesc);
+        location = (EditText) findViewById(R.id.etLocation);
+        eventType = (TextView) findViewById(R.id.tvEventType);
 
+
+        Event e = getIntent().getParcelableExtra("event");
+        title.setText(e.getName());
+        desc.setText(e.getDescription());
+        location.setText(e.getLocation());
+        eventType.setText(e.getIcon());
+
+        ArrayList<String> ul = e.getMembers();
+        UserAdapter uAdapter = new UserAdapter(this, this);
 
 
     }
@@ -44,4 +71,8 @@ public class EditEventActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onUserRemovalSelected(User userData) {
+        //TODO
+    }
 }

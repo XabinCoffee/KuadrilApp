@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 23 16:08:00 CET 2017
+#Thu Nov 23 16:30:24 CET 2017
 2.base=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/32
 5.set=DEX
 0.path=classes.dex
