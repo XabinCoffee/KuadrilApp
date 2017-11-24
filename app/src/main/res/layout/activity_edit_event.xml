@@ -56,8 +56,8 @@
                     android:id="@+id/imageButton"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:layout_alignEnd="@+id/etDesc"
                     android:layout_below="@+id/textView8"
+                    android:layout_toEndOf="@+id/etLocation"
                     android:adjustViewBounds="true"
                     android:backgroundTint="@color/colorPrimary"
                     android:scaleType="fitCenter"
@@ -73,36 +73,6 @@
                     android:gravity="center"
                     android:text="@string/typeEvent" />
 
-                <Button
-                    android:id="@+id/btnSelectDate"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/etLocation"
-                    android:layout_below="@+id/etLocation"
-                    android:text="@string/selectDate" />
-
-                <TextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/btnSelectDate"
-                    android:layout_below="@+id/btnSelectDate"
-                    android:layout_marginLeft="4dp"
-                    android:layout_toStartOf="@+id/imageButton"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="16sp"
-                    android:visibility="visible" />
-
-                <TextView
-                    android:id="@+id/tvTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/tvDate"
-                    android:layout_below="@+id/tvDate"
-                    android:textSize="16sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
                 <TextView
                     android:id="@+id/tvEventType"
                     android:layout_width="wrap_content"
@@ -117,7 +87,7 @@
                     android:id="@+id/view"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@id/etDesc"
+                    android:layout_below="@id/tvEventType"
                     android:layout_marginBottom="16dp"
                     android:layout_marginTop="16dp"
                     android:background="#eaeaea" />
@@ -126,7 +96,6 @@
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/btnSelectDate"
                     android:layout_below="@id/view"
                     android:paddingTop="4dp"
                     android:text="@string/participants"
@@ -139,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/textView11"
-                    android:text="@string/invite" />
+                    android:text="@string/invite"
+                    android:onClick="addMember2"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rvUser"
@@ -159,15 +129,15 @@
                     android:layout_below="@id/rvUser"
                     android:layout_marginTop="18dp"
                     android:background="@drawable/kuadrilapp_gradient"
-                    android:text="@string/save" />
+                    android:text="@string/save"
+                    android:onClick="onClick"/>
 
                 <EditText
                     android:id="@+id/etDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/etTitle"
-                    android:layout_alignStart="@+id/textView11"
-                    android:layout_below="@+id/tvTime"
+                    android:layout_alignStart="@+id/etLocation"
+                    android:layout_below="@+id/etLocation"
                     android:ems="10"
                     android:hint="@string/desc"
                     android:inputType="textPersonName" />

@@ -34,7 +34,7 @@ public class DbManager {
 
     private static DatabaseReference mDatabase;
 
-    public static Boolean createEvent(String name, String desc, String useruid, String username, String type, String location, String date, String time, ArrayList<User> ul){
+    public static boolean createEvent(String name, String desc, String useruid, String username, String type, String location, String date, String time, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -59,6 +59,31 @@ public class DbManager {
 
         return true;
     }
+
+    public static boolean editEvent(Event e, String name, String desc, String type, String location, ArrayList<User> ul){
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        e.setName(name);
+        e.setDescription(desc);
+        e.setLocation(location);
+        e.setIcon(EventHelper.getType(type));
+
+        ArrayList<String> users = new ArrayList<>();
+
+        for (int i = 0; i<ul.size();i++){
+            users.add(ul.get(i).getUid());
+        }
+        if (!users.contains(e.getOwner())) users.add(e.getOwner());
+
+        e.setMembers(users);
+
+        mDatabase.child("events").child(e.getId()).setValue(e);
+
+
+        return true;
+    }
+
 
 
     public static void storeUser(String uid, String name, String email){
@@ -346,6 +371,35 @@ public class DbManager {
                 Log.d("onCancelled","DataBase error");
             }
         });
+
+    }
+
+    public static void getEditEventUsers(final Event e, final UserAdapter uAdapter){
+
+        final ArrayList<String> members = e.getMembers();
+        final String editor = e.getOwner();
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userDataSnapshot : dataSnapshot.getChildren()){
+                    User u = userDataSnapshot.getValue(User.class);
+                    if(members.contains(u.getUid())) {
+                        if (!u.getUid().equals(editor)){
+                            uAdapter.addUser(u);
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+
 
     }
 

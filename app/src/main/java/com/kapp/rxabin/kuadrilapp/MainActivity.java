@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadLang(){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String lang = pref.getString("listLang", "");
+        String lang = pref.getString("listLang", "eu");
         Resources res = getApplicationContext().getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         android.content.res.Configuration conf = res.getConfiguration();

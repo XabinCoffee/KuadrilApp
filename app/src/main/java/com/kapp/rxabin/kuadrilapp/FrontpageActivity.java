@@ -255,7 +255,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
     }
 
 
-    public void addMember(View v){
+    /*public void addMember(View v){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add member");
 
@@ -278,7 +278,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         });
 
         builder.show();
-    }
+    }*/
 
     public void addMember2(View v){
 

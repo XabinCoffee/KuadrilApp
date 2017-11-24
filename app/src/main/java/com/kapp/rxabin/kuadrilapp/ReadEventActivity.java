@@ -1,13 +1,16 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +33,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.DateVoteAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
@@ -54,7 +58,9 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private AlertDialog alertDialog;
     private Context context;
     private Event event;
-    private HashMap<String,String> voters;
+    private String lang;
+
+    public static Activity readEvent;
 
 
     @Override
@@ -71,9 +77,13 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
             window.setBackgroundDrawable(background);
         }
 
+        readEvent=this;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_event);
 
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        lang = pref.getString("listLang", "eu");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -184,7 +194,11 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     public void openConfirmationDialog(final String date, final String time){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(date + " " +time);
+        String datetime = "";
+        if (lang.equals("eu")) datetime = DateHelper.eusDate(date) + "\n" + time;
+        else datetime = DateHelper.espDate(date) + "\n" + time;
+
+        builder.setMessage(datetime);
         builder.setTitle(getResources().getString(R.string.adddatetime));
 
         builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
