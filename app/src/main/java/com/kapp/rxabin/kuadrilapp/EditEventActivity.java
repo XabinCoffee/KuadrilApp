@@ -73,6 +73,7 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
             window.setBackgroundDrawable(background);
+            window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         }
 
         ActionBar actionBar = getSupportActionBar();
@@ -92,7 +93,9 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         location.setText(e.getLocation());
         eventType.setText(e.getIcon());
         eventType.setText(EventHelper.getName(e.getIcon(),lang));
-        imgButton.setImageResource(R.drawable.ico_walk);
+        String name = EventHelper.getName(e.getIcon(),lang);
+        String type = EventHelper.getType(name);
+        imgButton.setImageResource(EventHelper.getIcon(type));
 
         mLayoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(mLayoutManager);
@@ -136,7 +139,7 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
                     }
 
                     if (good){
-                        DbManager.editEvent(e,title.getText().toString(),desc.getText().toString(),"Comida",location.getText().toString(),ul);
+                        DbManager.editEvent(e,title.getText().toString(),desc.getText().toString(),location.getText().toString(),ul);
 
                         Toast.makeText(EditEventActivity.this, getResources().getString(R.string.eventCreated),
                                 Toast.LENGTH_SHORT).show();
@@ -147,6 +150,24 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
                     }
 
                 break;
+
+            case R.id.imageButton:
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(getResources().getString(R.string.typeEvent));
+                builder.setItems(getResources().getStringArray(R.array.eventType), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String[] types = getResources().getStringArray(R.array.eventType);
+                        eventType.setText(types[which]);
+                        e.setIcon(EventHelper.getType(types[which]));
+                        Log.d("EventType", eventType.getText().toString());
+                        imgButton.setImageResource(EventHelper.getIcon(EventHelper.getType(eventType.getText().toString())));
+                    }
+                });
+                builder.show();
+                break;
+
         }
     }
 

@@ -54,6 +54,7 @@ public class EventHelper {
 
     }
 
+
     public static String getName(String type, String lang){
         Map<String,String> mapEu = new HashMap<String,String>();
         mapEu.put("food", "Jatordua"); mapEu.put("walk","Paseoa"); mapEu.put("sports","Kirolak"); mapEu.put("videogames","Bideojokuak");

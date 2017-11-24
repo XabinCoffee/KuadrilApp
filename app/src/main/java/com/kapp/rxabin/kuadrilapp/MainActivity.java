@@ -192,8 +192,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.imgView:
 
-                if (wronguser==10){
-                    Toast.makeText(this,"Vale ya eh, vale ya.",Toast.LENGTH_LONG).show();
+                if (wronguser==25){
+                    Toast.makeText(this,"Mira que eres un pesado eh...",Toast.LENGTH_LONG).show();
                     finish();
                 } else wronguser++;
 

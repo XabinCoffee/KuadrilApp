@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/event_bg"
     tools:context="com.kapp.rxabin.kuadrilapp.CreateEventFragment">
 
 
@@ -60,6 +60,7 @@
                     android:layout_toEndOf="@+id/etLocation"
                     android:adjustViewBounds="true"
                     android:backgroundTint="@color/colorPrimary"
+                    android:onClick="onClick"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ico_restaurant" />
 

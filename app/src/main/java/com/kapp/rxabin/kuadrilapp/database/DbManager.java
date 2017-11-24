@@ -60,14 +60,13 @@ public class DbManager {
         return true;
     }
 
-    public static boolean editEvent(Event e, String name, String desc, String type, String location, ArrayList<User> ul){
+    public static boolean editEvent(Event e, String name, String desc, String location, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         e.setName(name);
         e.setDescription(desc);
         e.setLocation(location);
-        e.setIcon(EventHelper.getType(type));
 
         ArrayList<String> users = new ArrayList<>();
 
