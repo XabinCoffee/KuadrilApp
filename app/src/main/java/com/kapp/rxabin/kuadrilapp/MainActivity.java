@@ -93,8 +93,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "signIn:" + email);
 
         if (!validateForm()) {
-            Toast.makeText(MainActivity.this, "Fill all the fields correctly.",
-                    Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "Fill all the fields correctly.",Toast.LENGTH_SHORT).show();
             return;
         }
 
