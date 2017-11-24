@@ -8,28 +8,22 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
-import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class EventsFragment extends Fragment implements EventAdapter.OnEventLongClickListener, EventAdapter.OnEventSelectedListener{
-
-    public static ArrayList<DateVote> little_trick;
 
     private RecyclerView.LayoutManager mLayoutManager;
     private EventAdapter eAdapter;

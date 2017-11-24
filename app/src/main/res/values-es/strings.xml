@@ -41,6 +41,7 @@
     <string name="createaccount">Crear cuenta</string>
     <string name="restaurant">Comida</string>
     <string name="adddatetime">¿Añadir nueva fecha?</string>
+    <string name="cafe">Café</string>
 
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
@@ -50,15 +51,15 @@
     <string name="errorEmpty">Este campo es necesario</string>
 
     <string-array name="eventType">
+        <item>Café</item>
         <item>Comida</item>
+        <item>Paseo</item>
+        <item>Deportes</item>
+        <item>Videojuegos</item>
+        <item>Cañas</item>
+        <item>Música</item>
         <item>Trabajo</item>
         <item>Estudio</item>
-        <item>Partido</item>
-        <item>Videojuegos</item>
-        <item>Deporte</item>
-        <item>Bar</item>
-        <item>Traguito</item>
-        <item>Muchos tragos</item>
     </string-array>
 
     <string-array name="list_preference_entry_titles">

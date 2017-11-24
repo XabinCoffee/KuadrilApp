@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPass;
     private ProgressBar mLoading;
+    private int wronguser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
             window.setBackgroundDrawable(background);
+            window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         }
+
+        wronguser = 0;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -186,6 +190,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
 
+            case R.id.imgView:
+
+                if (wronguser==10){
+                    Toast.makeText(this,"Vale ya eh, vale ya.",Toast.LENGTH_LONG).show();
+                    finish();
+                } else wronguser++;
+
+                break;
         }
     }
 }

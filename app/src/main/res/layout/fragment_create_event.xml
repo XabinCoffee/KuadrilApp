@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context="com.kapp.rxabin.kuadrilapp.CreateEventFragment">
 
 
@@ -62,7 +61,7 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:onClick="typeSelect"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ico_restaurant" />
+                    android:src="@drawable/ico_cafe" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -112,8 +111,8 @@
                     android:layout_alignEnd="@+id/imageButton"
                     android:layout_alignStart="@+id/imageButton"
                     android:layout_below="@+id/imageButton"
-                    android:text="@string/restaurant"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="@string/cafe" />
 
                 <View
                     android:id="@+id/view"

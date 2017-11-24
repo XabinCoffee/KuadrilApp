@@ -12,6 +12,9 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -29,10 +32,11 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
     private BottomNavigationItemView nav;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
+
         addPreferencesFromResource(R.xml.preferences);
 
         SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
@@ -66,7 +70,9 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
             }
         });
 
+        return inflater.inflate(R.layout.pref_layout, group, false);
     }
+
 
     @Override
     public void onResume() {

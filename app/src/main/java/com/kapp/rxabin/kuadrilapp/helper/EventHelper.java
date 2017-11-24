@@ -12,32 +12,33 @@ import java.util.Map;
 public class EventHelper {
 
     public static String getType(String type){
-        if (type.equalsIgnoreCase("comida") || type.equalsIgnoreCase("jatordua")){
-            return "restaurant";
+
+        if (type.equalsIgnoreCase("café") || type.equalsIgnoreCase("kafetxoa")){
+            return "cafe";
         }
-        else if (type.equalsIgnoreCase("lana") || type.equalsIgnoreCase("trabajo")){
-            return "work";
+        else if (type.equalsIgnoreCase("comida") || type.equalsIgnoreCase("jatordua")){
+            return "food";
         }
-        else if (type.equalsIgnoreCase("ikasketa") || type.equalsIgnoreCase("estudio")){
-            return "study";
+        else if (type.equalsIgnoreCase("paseo") || type.equalsIgnoreCase("paseoa")){
+            return "walk";
         }
-        else if (type.equalsIgnoreCase("partido") || type.equalsIgnoreCase("partidua")){
-            return "match";
-        }
-        else if (type.equalsIgnoreCase("videojuegos") || type.equalsIgnoreCase("bideojokoak")){
-            return "gaming";
-        }
-        else if (type.equalsIgnoreCase("deporte") || type.equalsIgnoreCase("kirolak")){
+        else if (type.equalsIgnoreCase("deportes") || type.equalsIgnoreCase("kirolak")){
             return "sports";
         }
-        else if (type.equalsIgnoreCase("bar") || type.equalsIgnoreCase("kafetxoa")){
-            return "coffee";
+        else if (type.equalsIgnoreCase("videojuegos") || type.equalsIgnoreCase("bideojokuak")){
+            return "videogames";
         }
-        else if(type.equalsIgnoreCase("traguito") || type.equalsIgnoreCase("tragotxoa")){
+        else if (type.equalsIgnoreCase("cañas") || type.equalsIgnoreCase("kañak")){
             return "drink";
         }
-        else if (type.equalsIgnoreCase("muchos tragos") || type.equalsIgnoreCase("trago asko")){
-            return "heavy drink";
+        else if (type.equalsIgnoreCase("música") || type.equalsIgnoreCase("musika")){
+            return "music";
+        }
+        else if(type.equalsIgnoreCase("trabajo") || type.equalsIgnoreCase("lana")){
+            return "work";
+        }
+        else if (type.equalsIgnoreCase("estudio") || type.equalsIgnoreCase("ikasketa")){
+            return "study";
         }
         else return "unknown";
 
@@ -45,24 +46,27 @@ public class EventHelper {
 
     public static int getIcon(String type){
         Map<String,Integer> map = new HashMap<String,Integer>();
-        map.put("restaurant", R.drawable.ico_restaurant); map.put("match",R.drawable.ico_football); map.put("gaming",R.drawable.ico_gaming); map.put("sports",R.drawable.ico_sports);
-        map.put("coffee",R.drawable.ico_coffee); map.put("drink",R.drawable.ico_beer); map.put("heavy drink",R.drawable.ico_bigbeer); map.put("unknown",R.drawable.ico_unknown);
-        map.put("work",R.drawable.ico_work); map.put("study",R.drawable.ico_study);
+        map.put("food", R.drawable.ico_food); map.put("walk",R.drawable.ico_walk); map.put("sports",R.drawable.ico_sport); map.put("videogames",R.drawable.ico_games);
+        map.put("cafe",R.drawable.ico_cafe); map.put("drink",R.drawable.ico_beer);  map.put("music",R.drawable.ico_music); map.put("work",R.drawable.ico_work);
+        map.put("study",R.drawable.ico_study); map.put("unknown",R.drawable.ico_unkown);
 
         return map.get(type);
 
     }
 
+    public static String getName(String type, String lang){
+        Map<String,String> mapEu = new HashMap<String,String>();
+        mapEu.put("food", "Jatordua"); mapEu.put("walk","Paseoa"); mapEu.put("sports","Kirolak"); mapEu.put("videogames","Bideojokuak");
+        mapEu.put("cafe","Kafetxoa"); mapEu.put("drink","Kañak");  mapEu.put("music","Musika"); mapEu.put("work","Lana");
+        mapEu.put("study","Ikasketa"); mapEu.put("unknown","Ezezaguna");
 
-    /*public static int getName(String type){
-        Map<String,Integer> map = new HashMap<String,Integer>();
-        map.put("restaurant", R.drawable.ico_restaurant); map.put("match",R.drawable.ico_football); map.put("gaming",R.drawable.ico_gaming); map.put("sports",R.drawable.ico_sports);
-        map.put("coffee",R.drawable.ico_coffee); map.put("drink",R.drawable.ico_beer); map.put("heavy drink",R.drawable.ico_bigbeer); map.put("unknown",R.drawable.ico_unknown);
-        map.put("work",R.drawable.ico_work); map.put("study",R.drawable.ico_study);
+        Map<String,String> mapEs = new HashMap<String,String>();
+        mapEs.put("food", "Comida"); mapEs.put("walk","Paseo"); mapEs.put("sports","Deportes"); mapEs.put("videogames","Videojuegos");
+        mapEs.put("cafe","Café"); mapEs.put("drink","Cañas");  mapEs.put("music","Música"); mapEs.put("work","Trabajo");
+        mapEs.put("study","Estudio"); mapEs.put("unknown","Desconocido");
 
-        return map.get(type);
-
-    }*/
-
+        if (lang.equals("es")) return mapEs.get(type);
+        else return mapEu.get(type);
+    }
 
 }

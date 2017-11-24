@@ -3,8 +3,10 @@ package com.kapp.rxabin.kuadrilapp;
 import android.app.AlertDialog;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
@@ -41,6 +45,10 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
     private LinearLayoutManager mLayoutManager;
     private UserAdapter uAdapter;
     private AlertDialog alertDialog;
+    private ImageButton imgButton;
+
+
+    private String lang;
 
 
     private FirebaseAuth mAuth;
@@ -54,6 +62,9 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         setContentView(R.layout.activity_edit_event);
 
         mAuth = FirebaseAuth.getInstance();
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        lang = pref.getString("listLang", "eu");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -71,6 +82,7 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         desc = (EditText) findViewById(R.id.etDesc);
         location = (EditText) findViewById(R.id.etLocation);
         eventType = (TextView) findViewById(R.id.tvEventType);
+        imgButton = (ImageButton) findViewById(R.id.imageButton);
         rv = (RecyclerView) findViewById(R.id.rvUser);
 
 
@@ -79,6 +91,8 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         desc.setText(e.getDescription());
         location.setText(e.getLocation());
         eventType.setText(e.getIcon());
+        eventType.setText(EventHelper.getName(e.getIcon(),lang));
+        imgButton.setImageResource(R.drawable.ico_walk);
 
         mLayoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(mLayoutManager);

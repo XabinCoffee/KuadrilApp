@@ -17,10 +17,6 @@
     </style>
 
 
-
-
-
-
     <!-- Activity with no Title -->
     <style name="ThemeOverlay.MyNoTitleActivity" parent="AppTheme">
         <item name="windowActionBar">false</item>
