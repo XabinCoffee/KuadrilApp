@@ -1,7 +1,10 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +23,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
+
+import java.util.Locale;
 
 public class EditUsernameActivity extends AppCompatActivity {
 
@@ -45,6 +51,19 @@ public class EditUsernameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_username);
         username = (EditText) findViewById(R.id.mName);
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

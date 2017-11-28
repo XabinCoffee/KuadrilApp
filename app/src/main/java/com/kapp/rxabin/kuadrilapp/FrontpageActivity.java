@@ -4,9 +4,12 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -34,12 +37,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class FrontpageActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, UserDialogAdapter.OnUserSelectedListener {
 
@@ -83,6 +88,19 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
             navigation.setSelectedItemId(R.id.nav_events);
         }
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
 

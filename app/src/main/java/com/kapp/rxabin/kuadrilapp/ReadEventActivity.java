@@ -33,6 +33,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.DateVoteAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -40,6 +41,7 @@ import com.kapp.rxabin.kuadrilapp.obj.Event;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
 
@@ -129,6 +131,19 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         context = this;
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
     @Override

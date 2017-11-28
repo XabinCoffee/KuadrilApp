@@ -1,8 +1,11 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,10 +31,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SIGNUP";
@@ -71,6 +76,19 @@ public class SignupActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
     private boolean validateForm() {

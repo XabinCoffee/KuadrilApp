@@ -93,11 +93,6 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
     {
         if(key.equals("listLang")){
             if(sharedPreferences.getString("listLang","").equals("es")){
-                Resources res = getActivity().getApplicationContext().getResources();
-                DisplayMetrics dm = res.getDisplayMetrics();
-                android.content.res.Configuration conf = res.getConfiguration();
-                conf.setLocale(new Locale("es"));
-                res.updateConfiguration(conf, dm);
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.putExtra("settings", true);
@@ -106,12 +101,6 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
 
             }
             else{
-                Resources res = getActivity().getApplicationContext().getResources();
-                DisplayMetrics dm = res.getDisplayMetrics();
-                android.content.res.Configuration conf = res.getConfiguration();
-                conf.setLocale(new Locale("eu"));
-                res.updateConfiguration(conf, dm);
-
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.putExtra("settings", true);

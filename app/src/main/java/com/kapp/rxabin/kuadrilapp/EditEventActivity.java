@@ -2,6 +2,7 @@ package com.kapp.rxabin.kuadrilapp;
 
 import android.app.AlertDialog;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -28,12 +29,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class EditEventActivity extends AppCompatActivity implements UserAdapter.OnUserRemovalSelectedListener, UserDialogAdapter.OnUserSelectedListener{
 
@@ -103,6 +106,19 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         DbManager.getEditEventUsers(e,uAdapter);
         rv.setAdapter(uAdapter);
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
