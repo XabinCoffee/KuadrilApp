@@ -28,6 +28,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.DateVoteAdapter;
@@ -181,7 +182,13 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         String date = String.format("%02d",dayOfMonth) + "/" + String.format("%02d",monthOfYear + 1) + "/" + year;
-                        timePicker(date);
+
+                        if (DateHelper.isOver(date))
+                            Toast.makeText(getApplicationContext(),getApplicationContext().getResources().getString(R.string.datepassed),
+                                    Toast.LENGTH_LONG).show();
+
+                        else timePicker(date);
+
                         Log.d("DATE",date);
                     }
                 }, mYear, mMonth, mDay);

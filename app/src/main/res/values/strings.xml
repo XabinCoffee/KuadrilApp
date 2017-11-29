@@ -43,6 +43,9 @@
     <string name="adddatetime">Data berria gehitu?</string>
     <string name="cafe">Kafetxoa</string>
     <string name="hideold">Ekintza zaharrak ezkutatu</string>
+    <string name="description">Deskripzioa</string>
+    <string name="datepassed">Ezin duzu iraganean ekintza bat sortu</string>
+
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

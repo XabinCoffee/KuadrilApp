@@ -43,6 +43,8 @@
     <string name="adddatetime">¿Añadir nueva fecha?</string>
     <string name="cafe">Café</string>
     <string name="hideold">Ocultar eventos antiguos</string>
+    <string name="description">Descripción</string>
+    <string name="datepassed">No puedes crear un evento en el pasado</string>
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
     <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>

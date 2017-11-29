@@ -45,10 +45,11 @@ public class DateHelper {
 
     public static boolean isOver(String date){
 
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String aux = date + " 23:59:59";
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
         Date startDate = new Date();
         try {
-            startDate = df.parse(date);
+            startDate = df.parse(aux);
             String newDateString = df.format(startDate);
             System.out.println(newDateString);
         } catch (ParseException e) {
@@ -56,7 +57,6 @@ public class DateHelper {
         }
 
         Date now = new Date();
-
         if (now.equals(startDate)) return false;
         else return startDate.before(now);
     }

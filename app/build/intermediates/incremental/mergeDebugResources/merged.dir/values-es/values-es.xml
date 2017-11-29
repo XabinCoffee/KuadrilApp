@@ -63,9 +63,11 @@
     <string name="confirmDeleteEvent">¿Quieres borrar este evento?</string>
     <string name="confirmDeleteEventTitle">Borrar evento</string>
     <string name="createaccount">Crear cuenta</string>
+    <string name="datepassed">No puedes crear un evento en el pasado</string>
     <string name="dayhour">Día / Hora</string>
     <string name="delete">Borrar</string>
     <string name="desc">Descripción</string>
+    <string name="description">Descripción</string>
     <string name="diffPasswords">Las contraseñas no coinciden</string>
     <string name="editdatetime">Editar fecha</string>
     <string name="editevent">Editar evento</string>

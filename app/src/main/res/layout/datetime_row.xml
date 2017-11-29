@@ -48,7 +48,8 @@
                 android:paddingBottom="6dp"
                 android:paddingLeft="12dp"
                 android:text="Username"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:textSize="12sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <ImageButton
                 android:id="@+id/btnDislike"
@@ -89,7 +90,7 @@
                 android:layout_alignEnd="@+id/btnDislike"
                 android:layout_alignStart="@+id/btnDislike"
                 android:gravity="center"
-                android:layout_below="@+id/btnDislike"
+                android:layout_below="@+id/tvTime"
                 android:text="1" />
 
 

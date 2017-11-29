@@ -33,6 +33,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
 
     private EventAdapter eAdapter;
+    private String lang;
     private RecyclerView recyclerView;
     private FirebaseAuth mAuth;
     private static ProgressBar mLoading;
@@ -52,13 +53,14 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
         mAuth = FirebaseAuth.getInstance();
 
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         hideOld = pref.getBoolean("switch_hideold",true);
 
         fillRecyclerView();
 
         return view;
     }
+
 
     @Override
     public void onResume() {

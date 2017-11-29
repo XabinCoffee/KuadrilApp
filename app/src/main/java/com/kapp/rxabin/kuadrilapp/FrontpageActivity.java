@@ -244,7 +244,12 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         cef.setDate(String.format("%02d",dayOfMonth) + "/" + String.format("%02d",monthOfYear + 1) + "/" + year);
                         Log.d("DATE",cef.getDate());
-                        timePicker();
+
+                        if (DateHelper.isOver(cef.getDate()))
+                            Toast.makeText(getApplicationContext(),getApplicationContext().getResources().getString(R.string.datepassed),
+                                    Toast.LENGTH_LONG).show();
+                        
+                        else timePicker();
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
