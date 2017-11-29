@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,7 +31,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     private RecyclerView recyclerView;
     private FirebaseAuth mAuth;
     private static ProgressBar mLoading;
-    private static TextView mEmpty;
+    private static CardView mEmpty;
     private AlertDialog alertDialog;
 
 
@@ -41,7 +42,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
         recyclerView = (RecyclerView) view.findViewById(R.id.rv);
         mLoading = (ProgressBar) view.findViewById(R.id.loading);
-        mEmpty = (TextView) view.findViewById(R.id.empty);
+        mEmpty = (CardView) view.findViewById(R.id.empty);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -90,6 +91,11 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
                 public void onClick(DialogInterface dialog, int which) {
                     DbManager.deleteEvent(eventData.getId());
                     eAdapter.removeEvent(eventData);
+                    if (eAdapter.getItemCount()==0){
+                        mEmpty.setVisibility(View.VISIBLE);
+                    }else{
+                        mEmpty.setVisibility(View.GONE);
+                    }
                 }
             });
             builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
@@ -107,6 +113,13 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
                 public void onClick(DialogInterface dialog, int which) {
                     DbManager.removeMember(eventData.getId(),currentUid);
                     eAdapter.removeEvent(eventData);
+
+                    if (eAdapter.getItemCount()==0){
+                        mEmpty.setVisibility(View.VISIBLE);
+                    }else{
+                        mEmpty.setVisibility(View.GONE);
+                    }
+
                 }
             });
             builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {

@@ -124,12 +124,11 @@
 
                 <Button
                     android:id="@+id/btn_create_event"
-                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_below="@id/rvUser"
                     android:layout_marginTop="18dp"
-                    android:background="@drawable/kuadrilapp_gradient"
+                    style="@style/AppTheme.RoundedCornerMaterialButton"
                     android:text="@string/save"
                     android:onClick="onClick"/>
 

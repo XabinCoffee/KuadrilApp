@@ -264,39 +264,17 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                         Log.d("DATE",cef.getTime());
                         TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                         TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
-                        date.setText(DateHelper.espDate(cef.getDate()));
+                        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        String lang = pref.getString("listLang", "eu");
+                        if (lang.equals("es")) date.setText(DateHelper.espDate(cef.getDate()));
+                        else date.setText(DateHelper.eusDate(cef.getDate()));
                         time.setText(cef.getTime());
                         cef.setDatetimeSet(true);
                     }
                 }, mHour, mMinute, false);
         timePickerDialog.show();
     }
-
-
-    /*public void addMember(View v){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Add member");
-
-        final EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String email = input.getText().toString();
-                DbManager.getUser(cef.getUserAdapter(),email);
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        builder.show();
-    }*/
+    
 
     public void addMember2(View v){
 

@@ -15,10 +15,10 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginTop="12dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -101,8 +101,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/tvDate"
                     android:layout_below="@+id/tvDate"
-                    android:textSize="16sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvEventType"
@@ -155,14 +155,14 @@
 
                 <Button
                     android:id="@+id/btn_create_event"
-                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_below="@id/rvUser"
                     android:layout_marginTop="18dp"
-                    android:background="@drawable/kuadrilapp_gradient"
                     android:onClick="onClick"
-                    android:text="@string/save" />
+                    android:text="@string/save"
+                    style="@style/AppTheme.RoundedCornerMaterialButton"
+                    android:layout_marginBottom="10dp"/>
 
                 <EditText
                     android:id="@+id/etDesc"
