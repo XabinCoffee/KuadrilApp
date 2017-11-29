@@ -203,6 +203,11 @@ public class MainActivity extends AppCompatActivity {
                 } else wronguser++;
 
                 break;
+
+            case R.id.btnwhat:
+
+                Intent aboutintent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(aboutintent);
         }
     }
 }

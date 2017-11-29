@@ -92,7 +92,19 @@
                 android:gravity="center"
                 android:onClick="onClick"
                 android:text="@string/noaccountyet"
+                android:layout_marginBottom="10dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/btnwhat"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:onClick="onClick"
+                android:text="@string/about"
+                tools:text="@string/about" />
 
         </LinearLayout>
     </ScrollView>

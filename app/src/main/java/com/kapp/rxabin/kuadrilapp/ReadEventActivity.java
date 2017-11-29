@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
+import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
@@ -52,6 +54,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
     private TextView members;
     private TextView date;
     private TextView time;
+    private ImageView img;
     private Button addDate;
     private RecyclerView rvUsers;
     private RecyclerView rvDateVotes;
@@ -83,7 +86,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         readEvent=this;
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read_event);
+        setContentView(R.layout.activity_read_event_fancy);
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         lang = pref.getString("listLang", "eu");
@@ -102,6 +105,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         rvUsers = (RecyclerView) findViewById(R.id.rvUsersEvent);
         rvDateVotes = (RecyclerView) findViewById(R.id.rvDateVotes);
         addDate = (Button) findViewById(R.id.btnChoseDatetime);
+        img = (ImageView) findViewById(R.id.imgView);
 
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -119,12 +123,18 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         location.setText(event.getLocation().toString());
         description.setText(event.getDescription().toString());
         members.setText(Integer.toString(event.numOfMembers()));
-        //dvAdapter.getEvent().sortDateList();
-        //dvAdapter.notifyDataSetChanged();
         DateVote dv = dvAdapter.getEvent().getDateVotes().get(0);
-        date.setText(dv.getDate().toString());
+
+        String date_string;
+        if (lang.equals("eu")) date_string = DateHelper.eusDate(dv.getDate().toString());
+        else date_string = DateHelper.espDate(dv.getDate().toString());
+
+        date.setText(date_string);
         time.setText(dv.getTime().toString());
 
+        img.setImageDrawable(getResources().getDrawable(EventHelper.getIcon(event.getIcon())));
+        img.setAlpha(0.2f);
+        img.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
         if (dvAdapter.getEvent().getDateVote(mAuth.getCurrentUser().getUid())!=-1){
             addDate.setText(getResources().getString(R.string.editdatetime));

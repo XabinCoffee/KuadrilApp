@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/ff2adc5997e59f9570f721f3b8489548/res/values-v16/values-v16.xml",

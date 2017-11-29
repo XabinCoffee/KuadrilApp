@@ -45,12 +45,16 @@
     <string name="hideold">Ocultar eventos antiguos</string>
     <string name="description">Descripción</string>
     <string name="datepassed">No puedes crear un evento en el pasado</string>
+    <string name="about">Sobre KuadrilApp</string>
+
+
 
     <string name="diffPasswords">Las contraseñas no coinciden</string>
     <string name="errorSignup">No se ha podido crear la cuenta, compruebe los datos</string>
     <string name="errorCredentials">El usuario y contraseña no coinciden</string>
     <string name="errorUnverified">Cuenta sin verificar, se le ha enviado otro email</string>
     <string name="errorEmpty">Este campo es necesario</string>
+
 
     <string-array name="eventType">
         <item>Café</item>

@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Fri Nov 24 16:30:45 CET 2017
+#Wed Nov 29 16:26:19 CET 2017
 0.baseType=DIRECTORY
-0.base=/Users/xabinrodriguez/AndroidStudioProjects/KuadrilApp/app/build/intermediates/assets/debug
+0.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/assets/debug
 0.path=crashlytics-build.properties
 0.set=ASSET
 count=1

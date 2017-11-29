@@ -1,6 +1,8 @@
 package com.kapp.rxabin.kuadrilapp.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 import com.kapp.rxabin.kuadrilapp.obj.User;
@@ -59,7 +62,12 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final DateVoteViewHolder dvh = (DateVoteViewHolder) holder;
 
             dvh.dv = e.getDateVotes().get(position);
-            dvh.date.setText(dvh.dv.getDate().toString());
+
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            String lang = pref.getString("listLang","eu");
+
+            if (lang.equals("eu")) dvh.date.setText(DateHelper.eusDate(dvh.dv.getDate().toString()));
+            else dvh.date.setText(DateHelper.espDate(dvh.dv.getDate().toString()));
             dvh.time.setText(dvh.dv.getTime().toString());
             dvh.likes.setText(Integer.toString(dvh.dv.countLikes()));
             dvh.dislikes.setText(Integer.toString(dvh.dv.countDislikes()));
