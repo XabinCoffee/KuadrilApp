@@ -274,7 +274,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                 }, mHour, mMinute, false);
         timePickerDialog.show();
     }
-    
+
 
     public void addMember2(View v){
 
@@ -301,6 +301,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),cef.getUserAdapter());
 
     }
+
 
     @Override
     public void onUserSelected(User userData) {

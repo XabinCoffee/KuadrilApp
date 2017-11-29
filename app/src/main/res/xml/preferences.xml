@@ -10,7 +10,11 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/language" />
-    
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="switch_hideold"
+        android:title="@string/hideold" />
     <Preference
         android:key="editusername"
         android:title="@string/editusername"/>

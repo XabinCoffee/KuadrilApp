@@ -42,6 +42,7 @@
     <string name="restaurant">Jatordua</string>
     <string name="adddatetime">Data berria gehitu?</string>
     <string name="cafe">Kafetxoa</string>
+    <string name="hideold">Ekintza zaharrak ezkutatu</string>
 
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>

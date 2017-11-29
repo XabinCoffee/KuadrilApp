@@ -18,6 +18,7 @@ import com.kapp.rxabin.kuadrilapp.EventsFragment;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserInEventAdapter;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -110,7 +111,36 @@ public class DbManager {
                 for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
                     Event e = eventDataSnapshot.getValue(Event.class);
                     if (e.hasMember(uid)){
-                        el.add(e);
+                        e.sortDateList();
+                        if (!DateHelper.isOver(e.getDateVotes().get(0).getDate())) el.add(e);
+                    }
+                }
+                EventsFragment.updateUI_events(el);
+                eAdapter.setEvents(el);
+                eAdapter.sortListByDate();
+                eAdapter.notifyDataSetChanged();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("onCancelled","DataBase error");
+            }
+        });
+    }
+
+    public static void getUserAllEvents(final EventAdapter eAdapter, final String uid){
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
+        final ArrayList<Event> el = new ArrayList<>();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot eventDataSnapshot : dataSnapshot.getChildren()){
+                    Event e = eventDataSnapshot.getValue(Event.class);
+                    if (e.hasMember(uid)){
+                      el.add(e);
                     }
                 }
                 EventsFragment.updateUI_events(el);

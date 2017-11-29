@@ -1,6 +1,7 @@
 package com.kapp.rxabin.kuadrilapp.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
@@ -69,7 +71,8 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             evh.members.setText(Integer.toString(e.numOfMembers()));
             evh.location.setText(e.getLocation());
             e.sortDateList();
-            evh.date.setText(e.getDateVotes().get(0).toString());
+            evh.date.setText(evh.e.getDateVotes().get(0).toString());
+            //if (DateHelper.isOver(evh.e.getDateVotes().get(0).getDate()))evh.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.dislike));
             evh.itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
@@ -120,6 +123,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         private TextView members;
         private TextView location;
         private TextView date;
+        private CardView cardView;
 
         public EventViewHolder(View v){
             super(v);
@@ -129,6 +133,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             members = (TextView) v.findViewById(R.id.tvMembers);
             location = (TextView) v.findViewById(R.id.tvLocation);
             date = v.findViewById(R.id.tvDate);
+            cardView = v.findViewById(R.id.eventcard);
 
         }
     }

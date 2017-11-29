@@ -1,5 +1,9 @@
 package com.kapp.rxabin.kuadrilapp.helper;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,18 +19,6 @@ public class DateHelper {
         return date.split("/");
     }
 
-    public static String getEsMonth(String key){
-
-        Map<String,String> map = new HashMap<String,String>();
-        map.put("01","Ene"); map.put("02","Feb"); map.put("03", "Mar");
-        map.put("04","Abr"); map.put("05","May"); map.put("06","Jun");
-        map.put("07","Jul"); map.put("08", "Ago"); map.put("09","Sep");
-        map.put("10","Oct"); map.put("11", "Nov"); map.put("12", "Dic");
-
-        return map.get(key);
-
-    }
-
     public static String getEsMonthFull(String key){
 
         Map<String,String> map = new HashMap<String,String>();
@@ -34,18 +26,6 @@ public class DateHelper {
         map.put("04","Abril"); map.put("05","Mayo"); map.put("06","Junio");
         map.put("07","Julio"); map.put("08", "Agosto"); map.put("09","Septiembre");
         map.put("10","Octubre"); map.put("11", "Noviembre"); map.put("12", "Diciembre");
-
-        return map.get(key);
-
-    }
-
-    public static String getEuMonth(String key){
-
-        Map<String,String> map = new HashMap<String,String>();
-        map.put("01","Urt"); map.put("02","Ots"); map.put("03", "Mar");
-        map.put("04","Api"); map.put("05","Mai"); map.put("06","Eka");
-        map.put("07","Uzt"); map.put("08", "Abu"); map.put("09","Ira");
-        map.put("10","Urr"); map.put("11", "Aza"); map.put("12", "Abe");
 
         return map.get(key);
 
@@ -63,6 +43,24 @@ public class DateHelper {
 
     }
 
+    public static boolean isOver(String date){
+
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date startDate = new Date();
+        try {
+            startDate = df.parse(date);
+            String newDateString = df.format(startDate);
+            System.out.println(newDateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        Date now = new Date();
+
+        if (now.equals(startDate)) return false;
+        else return startDate.before(now);
+    }
+
     public static String eusDate(String date){
         String[] s = Convert(date);
         return getEuMonthFull(s[1]) + "k " + s[0] + ", " + s[2];
@@ -73,34 +71,5 @@ public class DateHelper {
         String[] s = Convert(date);
         return s[0] + " de " + getEsMonthFull(s[1])+ ", " + s[2];
     }
-
-    //Returns DD-MM-YYYY
-    /*public static String toEsFormat(String date){
-        String[] data = Convert(date);
-        return data[2]+"-"+data[1]+"-"+data[0];
-    }*/
-
-    /*public static String toEsFormatNews(String date){
-        String[] data = date.split("-");
-        return data[2]+"-"+data[1]+"-"+data[0];
-    }*/
-
-    //Returns YYYY-MM-DD
-    /*public static String toEuFormatNotifs(String date){
-        String[] data = date.split("-");
-        return data[2]+"-"+data[1]+"-"+data[0];
-    }*/
-
-    //Returns "monthName DD"
-    /*public static String newsDateEu(String date){
-        String[] s = Convert(date);
-        return getEuMonthFull(s[1]) + " " + s[2];
-    }*/
-
-    //Returns "DD monthName"
-    /*public static String newsDateEs(String date){
-        String[] s = Convert(date);
-        return s[2] + " " + getEsMonthFull(s[1]);
-    }*/
 
 }

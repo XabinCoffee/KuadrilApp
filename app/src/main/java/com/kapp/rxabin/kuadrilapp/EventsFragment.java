@@ -3,7 +3,9 @@ package com.kapp.rxabin.kuadrilapp;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
+import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.util.ArrayList;
@@ -27,12 +30,15 @@ import java.util.ArrayList;
 public class EventsFragment extends Fragment implements EventAdapter.OnEventLongClickListener, EventAdapter.OnEventSelectedListener{
 
     private RecyclerView.LayoutManager mLayoutManager;
+
+
     private EventAdapter eAdapter;
     private RecyclerView recyclerView;
     private FirebaseAuth mAuth;
     private static ProgressBar mLoading;
     private static CardView mEmpty;
     private AlertDialog alertDialog;
+    private boolean hideOld;
 
 
     @Nullable
@@ -46,6 +52,9 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
         mAuth = FirebaseAuth.getInstance();
 
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        hideOld = pref.getBoolean("switch_hideold",true);
+
         fillRecyclerView();
 
         return view;
@@ -54,6 +63,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     @Override
     public void onResume() {
         super.onResume();
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        hideOld = pref.getBoolean("switch_hideold",true);
         fillRecyclerView();
     }
 
@@ -63,7 +74,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         eAdapter = new EventAdapter(getContext(),this,this);
-        DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid());
+        if (hideOld) DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid());
+        else DbManager.getUserAllEvents(eAdapter,mAuth.getCurrentUser().getUid());
         recyclerView.setAdapter(eAdapter);
 
     }
@@ -137,9 +149,25 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     @Override
     public void onEventSelected(Event eventData) {
 
-        Log.d("OnTouch","Event Selected");
+        Log.d("OnTouch","Event Selected " + DateHelper.isOver(eventData.getDateVotes().get(0).getDate()));
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
         startActivity(i);
+    }
+
+    public EventAdapter geteAdapter() {
+        return eAdapter;
+    }
+
+    public void seteAdapter(EventAdapter eAdapter) {
+        this.eAdapter = eAdapter;
+    }
+
+    public RecyclerView getRecyclerView() {
+        return recyclerView;
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView) {
+        this.recyclerView = recyclerView;
     }
 }
