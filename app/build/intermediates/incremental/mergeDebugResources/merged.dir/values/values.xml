@@ -140,9 +140,9 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="colorAccent">#0ab48a</color>
-    <color name="colorPrimary">#80da5d</color>
-    <color name="colorPrimaryDark">#2ec708</color>
+    <color name="colorAccent">#1bb98c</color>
+    <color name="colorPrimary">#60d98e</color>
+    <color name="colorPrimaryDark">#08c758</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
@@ -674,6 +674,7 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -722,6 +723,7 @@
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="fastscroll_default_thickness">8dp</dimen>
     <dimen name="fastscroll_margin">0dp</dimen>
     <dimen name="fastscroll_minimum_range">50dp</dimen>
@@ -835,15 +837,16 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="about">KuadrilApp-i buruz</string>
+    <string name="action_settings">Settings</string>
     <string name="adddatetime">Data berria gehitu?</string>
     <string name="app_name">KuadrilApp</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="cafe">Kafetxoa</string>
     <string name="cancel">Atzera</string>
-    <string name="changeRole">Rola aldatu</string>
+    <string name="changeRole">Iruzkindu</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">0e6684b0-2fcd-44b0-8f92-0677c203c8c9</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">67b378c1-ff48-4232-9d2a-5f11988dc8ac</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -882,6 +885,7 @@
     <string name="eventCreated">Ekintza gorde egin da</string>
     <string name="events">Ekintzak</string>
     <string name="firebase_database_url" translatable="false">https://kuadrilapp.firebaseio.com</string>
+    <string name="forwhatKapp">Zertarako sortu da KuadrilApp?</string>
     <string name="gcm_defaultSenderId" translatable="false">92882951122</string>
     <string name="gcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="google_api_key" translatable="false">AIzaSyAWncIVrrw05NdREkPBWrsMOWlb8C8aeQk</string>
@@ -918,13 +922,20 @@
     <string name="restaurant">Jatordua</string>
     <string name="save">Gorde</string>
     <string name="search_menu_title">Search</string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="selectDate">Aukeratu data</string>
     <string name="settings">Ezarpenak</string>
     <string name="signupheader">Kontua sortu</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="thanks">Mila esker hau garatzen lagundu didazuen guztioi, eskubialdean \"kreditu\" batzuk utzi ditut.</string>
     <string name="title">Izenburua</string>
+    <string name="title_activity_about_kapp">AboutKAppActivity</string>
     <string name="typeEvent">Ekintza mota</string>
     <string name="verificationSent">Helbide elektronikora berifikazio mezu bat bidali da</string>
+    <string name="whatiskapp">Kaixo, Xabin Rodriguez naiz eta hau KuadrilApp da, nire Gradu Amaierako Proiektua (GAP)</string>
+    <string name="whatiskapp2">KuadrilApp-en helburua lagun taldeen arteko komunikazioa erraztea da, afariak, kontzertuak eta bestelako ekintzak antolatu ahal izateko, ekintza sortzaile sinple baten bitartez.</string>
+    <string name="whatiskapp3">Aplikazio hau prototipo bat besterik ez da, ikasle bat besterik ez naiz eta ez daukat baliabiderik ideia hau aplikazio erraldoi batera pasatzeko. Horregatik, ordu limite bat ezarri nion nire buruari, eta hau da oraingoz lortu dudana.</string>
+    <string name="whatiskapp4">Aplikazio honen kodea eskuragarri dago GitHub-en, honako esteka honetan:</string>
     <string name="yes">Bai</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -942,6 +953,12 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/MyActionBar</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/button_style</item>
     </style>

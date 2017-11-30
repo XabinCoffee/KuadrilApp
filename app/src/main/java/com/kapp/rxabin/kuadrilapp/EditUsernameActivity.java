@@ -9,13 +9,18 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +36,7 @@ public class EditUsernameActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText username;
+    private LinearLayout card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,10 @@ public class EditUsernameActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_edit_username);
         username = (EditText) findViewById(R.id.mName);
+        card = (LinearLayout) findViewById(R.id.cardName);
+
+        card.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
+
         mAuth = FirebaseAuth.getInstance();
     }
 

@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btnwhat:
 
-                Intent aboutintent = new Intent(MainActivity.this, AboutActivity.class);
+                Intent aboutintent = new Intent(MainActivity.this, AboutKAppActivity.class);
                 startActivity(aboutintent);
         }
     }

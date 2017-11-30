@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -76,8 +77,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         eAdapter = new EventAdapter(getContext(),this,this);
-        if (hideOld) DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid());
-        else DbManager.getUserAllEvents(eAdapter,mAuth.getCurrentUser().getUid());
+        if (hideOld) DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, getContext());
+        else DbManager.getUserAllEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, getContext());
         recyclerView.setAdapter(eAdapter);
 
     }

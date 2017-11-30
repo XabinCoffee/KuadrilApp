@@ -37,7 +37,7 @@
     <string name="location">Lugar</string>
     <string name="hello_blank_fragment">Gah</string>
     <string name="proposeDate">Proponer nueva\nfecha</string>
-    <string name="changeRole">Cambiar rol</string>
+    <string name="changeRole">Comentar</string>
     <string name="createaccount">Crear cuenta</string>
     <string name="restaurant">Comida</string>
     <string name="adddatetime">¿Añadir nueva fecha?</string>
@@ -46,6 +46,13 @@
     <string name="description">Descripción</string>
     <string name="datepassed">No puedes crear un evento en el pasado</string>
     <string name="about">Sobre KuadrilApp</string>
+
+    <string name="whatiskapp">Hola, soy Xabin Rodriguez, y esto es KuadrilApp, mi proyecto de fin de grado.</string>
+    <string name="forwhatKapp">¿Para qué es KuadrilApp?</string>
+    <string name="whatiskapp2">El objetivo de KuadrilApp es facilitar la coordinación entre amigos y compañeros, presentandoles una forma fácil e intuitiva para planificar eventos.</string>
+    <string name="whatiskapp3">Esta aplicación es un prototipo. Soy un simple estudiante y no dispongo de los recursos ni el tiempo suficiente para poder plasmar el 100% de mi visión en está aplicación. He tenido que establecer un límite de horas para poder darlo por acabado.</string>
+    <string name="whatiskapp4">El código de esta aplicación esta disponible en GitHub en este enlace:</string>
+    <string name="thanks">Muchas gracias a todos los que me ayudaron con este proyecto.</string>
 
 
 

@@ -1,4 +1,4 @@
-#Wed Nov 29 15:41:42 CET 2017
-base.0=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/10
+#Thu Nov 30 09:11:57 CET 2017
+base.0=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/48
 path.0=classes.dex
 renamed.0=classes.dex

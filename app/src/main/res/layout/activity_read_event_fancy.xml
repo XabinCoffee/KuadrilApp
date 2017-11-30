@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="@color/grey_100"
+            app:cardBackgroundColor="#f1ffffff"
             app:cardCornerRadius="3dp"
             app:cardElevation="2dp"
             app:cardUseCompatPadding="true"
@@ -38,6 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvTitle"
                     android:textSize="12sp"
+                    android:layout_marginBottom="-4dp"
                     android:text="@string/location" />
 
                 <TextView
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvLocation"
                     android:textSize="12sp"
+                    android:layout_marginBottom="-4dp"
                     android:text="@string/members" />
 
                 <TextView
@@ -72,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvMembers"
                     android:text="@string/desc"
+                    android:layout_marginBottom="-4dp"
                     android:textSize="12sp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
@@ -104,11 +107,18 @@
                     android:text="Time"
                     android:textAppearance="@style/TextAppearance.AppCompat" />
 
+                <View
+                    android:id="@+id/separatorDateVote"
+                    android:layout_below="@id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#25000000"/>
+
                 <TextView
                     android:id="@+id/tvDayHour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvDescription"
+                    android:layout_below="@id/separatorDateVote"
                     android:paddingTop="6dp"
                     android:text="@string/dayhour"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -130,14 +140,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvDayHour"
-                    android:layout_margin="4dp" />
+                    android:layout_margin="4dp"/>
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/separatorParticipants"
+                    android:layout_below="@id/rvDateVotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#25000000"/>
 
 
                 <TextView
                     android:id="@+id/tvParticipants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rvDateVotes"
+                    android:layout_below="@id/separatorParticipants"
                     android:text="@string/participants"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 

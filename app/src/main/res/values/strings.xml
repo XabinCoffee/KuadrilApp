@@ -32,7 +32,7 @@
     <string name="leaveEvent">Ekintza honetatik irtetea nahi al duzu?</string>
     <string name="members">Partaideak</string>
     <string name="proposeDate">Data berria\nproposatu</string>
-    <string name="changeRole">Rola aldatu</string>
+    <string name="changeRole">Iruzkindu</string>
     <string name="editusername">Erabiltzaile izena aldatu</string>
     <string name="createaccount">Kontua sortu</string>
     <string name="dayhour">Eguna / ordua</string>
@@ -47,6 +47,13 @@
     <string name="datepassed">Ezin duzu iraganean ekintza bat sortu</string>
     <string name="about">KuadrilApp-i buruz</string>
 
+
+    <string name="whatiskapp">Kaixo, Xabin Rodriguez naiz eta hau KuadrilApp da, nire Gradu Amaierako Proiektua (GAP)</string>
+    <string name="forwhatKapp">Zertarako sortu da KuadrilApp?</string>
+    <string name="whatiskapp2">KuadrilApp-en helburua lagun taldeen arteko komunikazioa erraztea da, afariak, kontzertuak eta bestelako ekintzak antolatu ahal izateko, ekintza sortzaile sinple baten bitartez.</string>
+    <string name="whatiskapp3">Aplikazio hau prototipo bat besterik ez da, ikasle bat besterik ez naiz eta ez daukat baliabiderik ideia hau aplikazio erraldoi batera pasatzeko. Horregatik, ordu limite bat ezarri nion nire buruari, eta hau da oraingoz lortu dudana.</string>
+    <string name="whatiskapp4">Aplikazio honen kodea eskuragarri dago GitHub-en, honako esteka honetan:</string>
+    <string name="thanks">Mila esker hau garatzen lagundu didazuen guztioi, eskubialdean \"kreditu\" batzuk utzi ditut.</string>
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>
@@ -82,4 +89,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="confirmDeleteEventTitle">Ekintza ezabatu</string>
     <string name="leaveEventTitle">Ekintza utzi</string>
+    <string name="title_activity_about_kapp">AboutKAppActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

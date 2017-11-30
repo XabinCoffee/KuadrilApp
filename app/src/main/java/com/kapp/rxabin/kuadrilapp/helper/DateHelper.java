@@ -50,8 +50,6 @@ public class DateHelper {
         Date startDate = new Date();
         try {
             startDate = df.parse(aux);
-            String newDateString = df.format(startDate);
-            System.out.println(newDateString);
         } catch (ParseException e) {
             e.printStackTrace();
         }

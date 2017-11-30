@@ -3,6 +3,7 @@ package com.kapp.rxabin.kuadrilapp;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -109,14 +110,14 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         switch (item.getItemId()) {
             case R.id.nav_events:
 
-                if (pf!=null) getFragmentManager().beginTransaction().hide(pf).commit();
+                if (pf!=null) getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).hide(pf).commit();
                 ef = new EventsFragment();
                 switchContent(ef);
 
                 return true;
             case R.id.nav_new:
 
-                if (pf!=null) getFragmentManager().beginTransaction().hide(pf).commit();
+                if (pf!=null) getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).hide(pf).commit();
 
                 if (!(mCurrentFragment instanceof CreateEventFragment)) {
                     cef = new CreateEventFragment();
@@ -128,13 +129,13 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
 
                 if (mCurrentFragment!=null) getSupportFragmentManager()
-                        .beginTransaction()
+                        .beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                         .remove(mCurrentFragment)
                         .commit();
 
                 pf = new PrefFragment();
                 mCurrentFragment = null;
-                getFragmentManager().beginTransaction().replace(R.id.fragment, pf).commit();
+                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).replace(R.id.fragment, pf).commit();
 
                 return true;
 
@@ -146,7 +147,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         mCurrentFragment = fragment;
 
         getSupportFragmentManager()
-                .beginTransaction()
+                .beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .replace(R.id.fragment, fragment)
                 .commit();
 

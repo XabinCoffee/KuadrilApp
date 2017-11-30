@@ -3,7 +3,11 @@ package com.kapp.rxabin.kuadrilapp.database;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.DataSnapshot;
@@ -99,7 +103,7 @@ public class DbManager {
 
 
 
-    public static void getUserEvents(final EventAdapter eAdapter, final String uid){
+    public static void getUserEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         final ArrayList<Event> el = new ArrayList<>();
@@ -119,6 +123,27 @@ public class DbManager {
                 eAdapter.setEvents(el);
                 eAdapter.sortListByDate();
                 eAdapter.notifyDataSetChanged();
+                rv.getViewTreeObserver().addOnPreDrawListener(
+                        new ViewTreeObserver.OnPreDrawListener() {
+
+                            @Override
+                            public boolean onPreDraw() {
+                                rv.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                                int ea = rv.getChildCount();
+                                for (int i = 0; i < rv.getChildCount(); i++) {
+                                    View v = rv.getChildAt(i);
+                                    v.setAlpha(0.0f);
+                                    v.animate().alpha(1.0f)
+                                            .setDuration(200)
+                                            .setStartDelay(i * 70)
+                                            .start();
+                                    v.startAnimation(AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left));
+                                }
+
+                                return true;
+                            }
+                        });
 
             }
             @Override
@@ -128,7 +153,7 @@ public class DbManager {
         });
     }
 
-    public static void getUserAllEvents(final EventAdapter eAdapter, final String uid){
+    public static void getUserAllEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         final ArrayList<Event> el = new ArrayList<>();
@@ -147,6 +172,29 @@ public class DbManager {
                 eAdapter.setEvents(el);
                 eAdapter.sortListByDate();
                 eAdapter.notifyDataSetChanged();
+                rv.getViewTreeObserver().addOnPreDrawListener(
+                        new ViewTreeObserver.OnPreDrawListener() {
+
+                            @Override
+                            public boolean onPreDraw() {
+                                rv.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                                int ea = rv.getChildCount();
+                                for (int i = 0; i < rv.getChildCount(); i++) {
+                                    View v = rv.getChildAt(i);
+                                    v.setAlpha(0.0f);
+                                    v.animate().alpha(1.0f)
+                                            .setDuration(300)
+                                            .setStartDelay(i * 50)
+                                            .start();
+
+                                    v.startAnimation(AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left));
+                                }
+
+                                return true;
+                            }
+                        });
+
 
             }
             @Override
