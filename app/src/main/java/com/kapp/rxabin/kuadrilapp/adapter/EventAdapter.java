@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
-import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
 import java.text.DateFormat;
@@ -137,7 +136,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             icon = (ImageView) v.findViewById(R.id.imgLogo);
             members = (TextView) v.findViewById(R.id.tvMembers);
             location = (TextView) v.findViewById(R.id.tvLocation);
-            date = v.findViewById(R.id.tvDate);
+            date = v.findViewById(R.id.tvCreditsTitle);
             cardView = v.findViewById(R.id.eventcard);
 
         }

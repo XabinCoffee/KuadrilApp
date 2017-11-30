@@ -67,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean previouslyStarted = prefs.getBoolean("firsttime", false);
+        if(!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean("firsttime", Boolean.TRUE);
+            edit.commit();
+            Intent first_i = new Intent(this, AboutKAppActivity.class);
+            startActivity(first_i);
+        }
+
         if (getIntent().getBooleanExtra("settings",false)){
             Intent i = new Intent(MainActivity.this, FrontpageActivity.class);
             i.putExtra("gotosettings",true);

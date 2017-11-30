@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -16,11 +14,8 @@ import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.helper.DateHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
-import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by xabinrodriguez on 13/11/17.
@@ -128,7 +123,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public DateVoteViewHolder(View v){
             super(v);
-            date = (TextView) v.findViewById(R.id.tvDate);
+            date = (TextView) v.findViewById(R.id.tvCreditsTitle);
             time = (TextView) v.findViewById(R.id.tvTime);
             btnLike = (ImageButton) v.findViewById(R.id.btnLike);
             btnDislike = (ImageButton) v.findViewById(R.id.btnDislike);

@@ -10,12 +10,14 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -43,6 +45,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    private CardView card;
     private EditText mEmail;
     private EditText mPass;
     private EditText mName;
@@ -73,6 +76,8 @@ public class SignupActivity extends AppCompatActivity {
         mPass = (EditText) findViewById(R.id.mPass);
         mPass2 = (EditText) findViewById(R.id.mPass2);
         mName = (EditText) findViewById(R.id.mName);
+        card = (CardView) findViewById(R.id.cardSignup);
+        card.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
 
         mAuth = FirebaseAuth.getInstance();
 

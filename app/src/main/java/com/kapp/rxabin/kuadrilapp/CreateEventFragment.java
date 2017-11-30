@@ -1,23 +1,17 @@
 package com.kapp.rxabin.kuadrilapp;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.kapp.rxabin.kuadrilapp.R;
 import com.kapp.rxabin.kuadrilapp.adapter.UserAdapter;
 import com.kapp.rxabin.kuadrilapp.obj.User;
 
@@ -50,7 +44,7 @@ public class CreateEventFragment extends Fragment implements UserAdapter.OnUserR
         desc = (EditText) iv.findViewById(R.id.etDesc);
         imageView = (ImageView) iv.findViewById(R.id.imageView);
         eventType = (TextView) iv.findViewById(R.id.tvEventType);
-        tvdate = (TextView) iv.findViewById(R.id.tvDate);
+        tvdate = (TextView) iv.findViewById(R.id.tvCreditsTitle);
         tvtime = (TextView) iv.findViewById(R.id.tvTime);
         rv = (RecyclerView) iv.findViewById(R.id.rvUser);
 

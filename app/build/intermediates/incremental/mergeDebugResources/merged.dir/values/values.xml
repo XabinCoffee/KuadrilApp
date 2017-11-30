@@ -841,12 +841,13 @@
     <string name="adddatetime">Data berria gehitu?</string>
     <string name="app_name">KuadrilApp</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="backtostart">Hasi</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="cafe">Kafetxoa</string>
     <string name="cancel">Atzera</string>
     <string name="changeRole">Iruzkindu</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">67b378c1-ff48-4232-9d2a-5f11988dc8ac</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">b516c81f-3310-4436-bd61-ad55c8ad44f5</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -926,6 +927,7 @@
     <string name="selectDate">Aukeratu data</string>
     <string name="settings">Ezarpenak</string>
     <string name="signupheader">Kontua sortu</string>
+    <string name="startupLang">Español</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="thanks">Mila esker hau garatzen lagundu didazuen guztioi, eskubialdean \"kreditu\" batzuk utzi ditut.</string>
     <string name="title">Izenburua</string>

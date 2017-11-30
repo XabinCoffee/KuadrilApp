@@ -41,9 +41,7 @@ import com.kapp.rxabin.kuadrilapp.helper.EventHelper;
 import com.kapp.rxabin.kuadrilapp.obj.DateVote;
 import com.kapp.rxabin.kuadrilapp.obj.Event;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Locale;
 
 public class ReadEventActivity extends AppCompatActivity implements UserInEventAdapter.OnEditRoleSelectedListener, DateVoteAdapter.OnLikeListener, DateVoteAdapter.OnDislikeListener {
@@ -100,7 +98,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         location = (TextView) findViewById(R.id.tvLocation);
         description = (TextView) findViewById(R.id.tvDescription);
         members = (TextView) findViewById(R.id.tvMembers);
-        date = (TextView) findViewById(R.id.tvDate);
+        date = (TextView) findViewById(R.id.tvCreditsTitle);
         time = (TextView) findViewById(R.id.tvTime);
         rvUsers = (RecyclerView) findViewById(R.id.rvUsersEvent);
         rvDateVotes = (RecyclerView) findViewById(R.id.rvDateVotes);

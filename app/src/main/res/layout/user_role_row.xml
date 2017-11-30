@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvDate"
+                android:id="@+id/tvCreditsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
@@ -32,7 +32,7 @@
                 android:id="@+id/tvRole"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvDate"
+                android:layout_below="@id/tvCreditsTitle"
                 android:paddingBottom="6dp"
                 android:paddingLeft="12dp"/>
 

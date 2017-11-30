@@ -77,7 +77,7 @@ public class UserDialogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         public UsernameViewHolder(View v){
             super(v);
-            name = (TextView) v.findViewById(R.id.tvDate);
+            name = (TextView) v.findViewById(R.id.tvCreditsTitle);
 
         }
 

@@ -46,6 +46,8 @@
     <string name="description">Descripción</string>
     <string name="datepassed">No puedes crear un evento en el pasado</string>
     <string name="about">Sobre KuadrilApp</string>
+    <string name="backtostart">Comenzar</string>
+    <string name="startupLang">Euskara</string>
 
     <string name="whatiskapp">Hola, soy Xabin Rodriguez, y esto es KuadrilApp, mi proyecto de fin de grado.</string>
     <string name="forwhatKapp">¿Para qué es KuadrilApp?</string>

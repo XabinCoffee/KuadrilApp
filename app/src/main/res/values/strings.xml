@@ -46,6 +46,8 @@
     <string name="description">Deskripzioa</string>
     <string name="datepassed">Ezin duzu iraganean ekintza bat sortu</string>
     <string name="about">KuadrilApp-i buruz</string>
+    <string name="backtostart">Hasi</string>
+    <string name="startupLang">Español</string>
 
 
     <string name="whatiskapp">Kaixo, Xabin Rodriguez naiz eta hau KuadrilApp da, nire Gradu Amaierako Proiektua (GAP)</string>

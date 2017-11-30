@@ -2,7 +2,6 @@ package com.kapp.rxabin.kuadrilapp;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -18,7 +17,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,7 +33,6 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.kapp.rxabin.kuadrilapp.adapter.EventAdapter;
 import com.kapp.rxabin.kuadrilapp.adapter.UserDialogAdapter;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
@@ -172,7 +169,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     EditText desc = (EditText) cef.getView().findViewById(R.id.etDesc);
                     EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
                     TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
-                    TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
+                    TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
                     TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
 
                     ArrayList<User> ul = cef.getUserAdapter().getUsers();
@@ -268,7 +265,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         cef.setTime(String.format("%02d",hourOfDay) + ":" + String.format("%02d",minute));
                         Log.d("DATE",cef.getTime());
-                        TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
+                        TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
                         TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
                         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         String lang = pref.getString("listLang", "eu");

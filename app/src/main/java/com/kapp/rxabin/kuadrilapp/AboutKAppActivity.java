@@ -1,9 +1,12 @@
 package com.kapp.rxabin.kuadrilapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +27,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
+
+import java.util.Locale;
 
 public class AboutKAppActivity extends AppCompatActivity {
 
@@ -58,7 +65,7 @@ public class AboutKAppActivity extends AppCompatActivity {
             window.setBackgroundDrawable(getResources().getDrawable(R.drawable.event_bg));
         }
 
-        
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -76,6 +83,19 @@ public class AboutKAppActivity extends AppCompatActivity {
             }
         });*/
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+
+        //Androiden hizkuntza begiratu, gero honen arabera web zerbitzuari
+        //deiak euskaraz edo erderaz egingo zaizkio.
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang = pref.getString("listLang", "eu");
+        Locale newLocale = new Locale(lang);
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
     }
 
 
@@ -150,8 +170,8 @@ public class AboutKAppActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            if (position==0) return AboutFragment.newInstance("initiate","moisture");
-            else return PlaceholderFragment.newInstance(position + 1);
+            if (position==0) return AboutFragment.newInstance();
+            else return CreditsFragment.newInstance();
         }
 
         @Override
@@ -166,11 +186,37 @@ public class AboutKAppActivity extends AppCompatActivity {
 
         switch(i){
 
+            case R.id.tvLang:
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+                String lang = pref.getString("listLang","eu");
+
+                SharedPreferences.Editor edit = pref.edit();
+
+                if (lang.equals("eu")){
+                    edit.putString("listLang","es");
+                    edit.commit();
+                    Intent restart = new Intent(this, AboutKAppActivity.class);
+                    startActivity(restart);
+                    finish();
+                } else {
+                    edit.putString("listLang","eu");
+                    edit.commit();
+                    Intent restart = new Intent(this, AboutKAppActivity.class);
+                    startActivity(restart);
+                    finish();
+                }
+
+            case R.id.btn_backtostart:
+
+                finish();
+                break;
+
             case R.id.btn_github:
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("https://github.com/XabinCoffee/KuadrilApp"));
                 startActivity(intent);
+                break;
         }
     }
 }

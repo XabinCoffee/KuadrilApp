@@ -106,7 +106,7 @@ public class UserInEventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         public UserInEventViewHolder(View v){
             super(v);
-            username = (TextView) v.findViewById(R.id.tvDate);
+            username = (TextView) v.findViewById(R.id.tvCreditsTitle);
             role = (TextView) v.findViewById(R.id.tvRole);
             editRole = (Button) v.findViewById(R.id.btnSetRole);
         }
