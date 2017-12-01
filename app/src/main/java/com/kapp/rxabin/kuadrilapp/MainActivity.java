@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kapp.rxabin.kuadrilapp.database.DbManager;
 import com.kapp.rxabin.kuadrilapp.helper.ContextWrapper;
+import com.kapp.rxabin.kuadrilapp.jokes.dap;
 
 import java.util.Locale;
 
@@ -208,9 +209,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.imgView:
 
-                if (wronguser==25){
-                    Toast.makeText(this,"Mira que eres un pesado eh...",Toast.LENGTH_LONG).show();
-                    finish();
+                if ((wronguser%25) == 24){
+                    Intent intdap = new Intent(MainActivity.this,dap.class);
+                    startActivity(intdap);
+                    wronguser++;
                 } else wronguser++;
 
                 break;

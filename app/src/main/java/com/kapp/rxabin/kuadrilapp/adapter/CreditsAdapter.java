@@ -31,14 +31,15 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         meme_names = new ArrayList<>();
 
 
+        credit_titles.add("APPLICATION ORIGIN");
         credit_titles.add("CREATED, DIRECTED AND DESIGNED BY");
         credit_titles.add("IDEA BY");
         credit_titles.add("PROGRAMMED BY");
         credit_titles.add("BETA TESTING");
         credit_titles.add("SPECIAL THANKS TO");
-        credit_titles.add("ICONS FROM");
+        credit_titles.add("EVENT ICONS FROM");
 
-
+        names.add("Made in Zestoa");
         names.add("Xabin Rodriguez");
         names.add("Pablo Jimenez");
         names.add("Xabin Rodriguez");
@@ -47,40 +48,25 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         names.add("icons8.com");
 
 
+        meme_titles.add("APPLICATION ORIGIN");
         meme_titles.add("CREATED, DIRECTED AND DESIGNED BY");
         meme_titles.add("IDEA BY");
         meme_titles.add("BETA TESTING");
         meme_titles.add("SPECIAL THANKS TO");
-        meme_titles.add("GOIKO ESKUTERRIAN");
+        meme_titles.add("ORIGINAL SOUNDTRACK COMPOSED BY");
         meme_titles.add("MOTIVATIONAL INSULTS BY");
         meme_titles.add("PLEASE GET A NEW PHONE");
-        meme_titles.add("PANADERO");
-        meme_titles.add("DUST 514 REMOTO BY");
-        meme_titles.add("EVLEDA LEGS BY");
-        meme_titles.add("EVLEDA LEGS NOT BY");
-        meme_titles.add("TOP LITERA RABA BY");
-        meme_titles.add("INGO");
-        meme_titles.add("PASSED CALCULO");
-        meme_titles.add("AYE AYE FAGGOTS");
-        meme_titles.add("CACOPHONIES BY");
+        meme_titles.add("GOIKO ESKUTERRIAN");
 
-
-        meme_names.add("Xabin Rodriguez");
-        meme_names.add("Pablo Jimenez");
-        meme_names.add("Iñaki \"Polter\" Landa\nHaritz Mendizabal\nJonjo Irure\nXabi \"Xixa\" Eceiza\nPablo Jimenez");
-        meme_names.add("Beñat \"Big \uD83C\uDD71\" Zaldua\nXabier Eceiza\nPablo Jimenez\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamilia ta kuadrilla");
-        meme_names.add("Katua errepidian");
+        meme_names.add("Made in Zestoa\nNot Azpeiti\nNot Azkoiti\nNOT Zumaia\nMade in motherfucking Zestoa, bitches");
+        meme_names.add("Xabin \"Raba\" Rodriguez");
+        meme_names.add("Pablo \"Fic\" Jimenez");
+        meme_names.add("Iñaki \"Polter\" Landa\nHaritz \"Akalatxktxk\" Mendizabal\nJonjo \"Chillnation\" Irure\nXabi \"Xixa\" Eceiza\nPablo \"Pero Rody\" Jimenez");
+        meme_names.add("Beñat \"Big \uD83C\uDD71\" Zaldua\nXabier \"Jim Xixare\" Eceiza\nPablo \"Mimosín\" Jimenez\nXabier \"Tot\" Linazasoro\nIñaki \"Tornadus\" Landa\nHaritz \"Creeperator\" Mendizabal\nJonjo \"Remoto\" Irure\nFamilia ta kuadrilla");
+        meme_names.add("Iñaki \"Polter\" Landa");
         meme_names.add("Esther \"The Ripper\" López");
         meme_names.add("Beñat \"Large \uD83C\uDD71\" Zaldua");
-        meme_names.add("Haritz \"Frensis\" Mendizabal");
-        meme_names.add("Jonjo \"Ahotsa zakak\" Irure");
-        meme_names.add("Xabin Rodriguez");
-        meme_names.add("Pablo Jimenez");
-        meme_names.add("Xabin Rodriguez");
-        meme_names.add("Inork ez");
-        meme_names.add("Xabi \"Xixa\" Eceiza");
-        meme_names.add("Xabi \"Az\" Linazasoro");
-        meme_names.add("Iñaki \"Polter\" Landa");
+        meme_names.add("Katua harrapau zian");
 
 
     }
@@ -103,7 +89,7 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             cvh.credits_name.setText(title);
             cvh.users.setText(name);
 
-            if (position==2){
+            if (position==3){
                 cvh.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">KuadrilApp</string>
-    <string name="yes">Gorde</string>
+    <string name="yes">Baieztatu</string>
     <string name="no">Atzera</string>
     <string name="email">Email</string>
     <string name="password">Pasahitza</string>
@@ -50,12 +50,12 @@
     <string name="startupLang">Español</string>
 
 
-    <string name="whatiskapp">Kaixo, Xabin Rodriguez naiz eta hau KuadrilApp da, nire Gradu Amaierako Proiektua (GAP)</string>
-    <string name="forwhatKapp">Zertarako sortu da KuadrilApp?</string>
+    <string name="whatiskapp">Kaixo, Xabin Rodriguez naiz eta hau KuadrilApp da, nire gradu amaierako proiektua.</string>
+    <string name="forwhatKapp">Zer demontretarako da KuadrilApp?</string>
     <string name="whatiskapp2">KuadrilApp-en helburua lagun taldeen arteko komunikazioa erraztea da, afariak, kontzertuak eta bestelako ekintzak antolatu ahal izateko, ekintza sortzaile sinple baten bitartez.</string>
-    <string name="whatiskapp3">Aplikazio hau prototipo bat besterik ez da, ikasle bat besterik ez naiz eta ez daukat baliabiderik ideia hau aplikazio erraldoi batera pasatzeko. Horregatik, ordu limite bat ezarri nion nire buruari, eta hau da oraingoz lortu dudana.</string>
+    <string name="whatiskapp3">Aplikazio hau prototipo bat besterik ez da, ikasle bat besterik ez naiz eta ez daukat baliabiderik: ez denbora eta ez dirurik nik nahi bezalako aplikazio erraldoi bat eraikitzeko. (Aplikazio hau garatzeko 200 bat ordu behar izan ditut...)</string>
     <string name="whatiskapp4">Aplikazio honen kodea eskuragarri dago GitHub-en, honako esteka honetan:</string>
-    <string name="thanks">Mila esker hau garatzen lagundu didazuen guztioi, eskubialdean \"kreditu\" batzuk utzi ditut.</string>
+    <string name="thanks">Nahi izanez gero, kodea berrerabiltzera gonbidatzen zaitut. Zalantzarik baldin baduzu jarri zaitez nirekin kontaktuan Telegram (@xabin) edo email (xabin95@gmail.com) bidez.\nMilesker guztioi!</string>
 
     <string name="diffPasswords">Pasahitzak ez dira berdinak</string>
     <string name="errorSignup">Ezin izan da kontua sortu, informazioa egokia al da?</string>

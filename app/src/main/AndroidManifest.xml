@@ -28,6 +28,8 @@
         <activity
             android:name=".AboutKAppActivity"
             android:label="@string/title_activity_about_kapp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".jokes.dap"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -48,7 +48,6 @@ public class EditUsernameActivity extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
             window.setBackgroundDrawable(background);
-            window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         }
 
         ActionBar actionBar = getSupportActionBar();

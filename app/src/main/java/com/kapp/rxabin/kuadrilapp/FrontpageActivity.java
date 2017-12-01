@@ -248,7 +248,10 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                             Toast.makeText(getApplicationContext(),getApplicationContext().getResources().getString(R.string.datepassed),
                                     Toast.LENGTH_LONG).show();
                         
-                        else timePicker();
+                        else {
+                            TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
+                            timePicker();
+                        }
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
@@ -274,6 +277,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                         else date.setText(DateHelper.eusDate(cef.getDate()));
                         time.setText(cef.getTime());
                         cef.setDatetimeSet(true);
+                        date.setError(null);
                     }
                 }, mHour, mMinute, false);
         timePickerDialog.show();

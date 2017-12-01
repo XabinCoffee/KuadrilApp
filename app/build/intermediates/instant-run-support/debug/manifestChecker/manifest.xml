@@ -48,6 +48,9 @@
             android:name="com.kapp.rxabin.kuadrilapp.AboutKAppActivity"
             android:label="@string/title_activity_about_kapp"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.jokes.dap"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="android.support.VERSION"

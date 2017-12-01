@@ -40,6 +40,9 @@ public class DbManager {
 
     private static DatabaseReference mDatabase;
 
+    /*
+    Takes event data from CreateEventFragment and saves it on the DB
+     */
     public static boolean createEvent(String name, String desc, String useruid, String username, String type, String location, String date, String time, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -66,6 +69,9 @@ public class DbManager {
         return true;
     }
 
+    /*
+    Takes an existing event, and edits it with data from EditEventActivity
+     */
     public static boolean editEvent(Event e, String name, String desc, String location, ArrayList<User> ul){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -91,6 +97,10 @@ public class DbManager {
 
 
 
+    /*
+    When logging in with a new user, store its ID, name and email, used when logging in.
+     */
+
     public static void storeUser(String uid, String name, String email){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -103,6 +113,11 @@ public class DbManager {
 
 
 
+    /*
+    Fills EventFragment's RecyclerView's event adapter with the currently logged in user's events, then animates the view
+
+    This method filters events from the past
+    */
 
     public static void getUserEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
 
@@ -153,6 +168,10 @@ public class DbManager {
             }
         });
     }
+
+    /*
+    Fills EventFragment's RecyclerView's event adapter with the currently logged in user's events, then animates the view
+    */
 
     public static void getUserAllEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
 
@@ -207,7 +226,7 @@ public class DbManager {
 
 
     /*
-    By providing an email and an userAdapter, add the user with the email address to the adapter.
+    By providing an email and an userAdapter, add the user with the email address to the adapter, then animate the RecyclerView
      */
 
     public static void getUser(final UserAdapter uAdapter, final String email, final RecyclerView rv){
@@ -258,7 +277,8 @@ public class DbManager {
 
 
     /*
-    When inviting people in an event show the list of the users who weren't invited excluding yourself
+    When inviting people in an event show the list of the users who weren't invited excluding yourself, also excludes the users than have already been added to the event
+    Used to fill the AlertDialog's RecyclerView.
      */
 
     public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid, UserAdapter uAdapter2, final RecyclerView rv, final Context context, final ProgressBar pb){
@@ -310,6 +330,9 @@ public class DbManager {
     }
 
 
+    /*
+    When seeing an event's details load all its users while keeping the currently logged user on top
+     */
     public static void getUsernamesFromEvent(final UserInEventAdapter uieAdapter, final ArrayList<String> members, final String uid){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
@@ -383,6 +406,9 @@ public class DbManager {
     }
 
 
+    /*
+    When reading an event, edit your own role/comment and update the adapter
+     */
     public static void updateRole(final Event ev, final String uid, final String newrole, final UserInEventAdapter uieAdapter){
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
@@ -406,6 +432,10 @@ public class DbManager {
         });
     }
 
+    /*
+    Edit's currently logged in user's display name
+     */
+
     public static void updateUser(final String uid, final String newname){
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener()
@@ -426,8 +456,12 @@ public class DbManager {
         });
     }
 
-    public static void addDateVote(final DateVoteAdapter dvAdapter, String userid, String username, String date, String time){
 
+
+    /*
+    Adds a new DateVote to the current event on ReadEventActivity
+     */
+    public static void addDateVote(final DateVoteAdapter dvAdapter, String userid, String username, String date, String time){
 
         DateVote dv;
 
@@ -443,7 +477,6 @@ public class DbManager {
             dv.setDate(date);
             dv.setTime(time);
             dvAdapter.getDateVotes().add(position,dv);
-            //dvAdapter.getEvent().sortDateList();
             dvAdapter.notifyDataSetChanged();
         }
 
@@ -467,7 +500,9 @@ public class DbManager {
 
     }
 
-
+    /*
+    Updates the like/dislike counter of a DateVote object
+     */
     public static void rateDateVote(final DateVoteAdapter dvAdapter, DateVote dv, String userid, boolean like){
 
 
@@ -478,7 +513,6 @@ public class DbManager {
         else dv.userDislikes(userid);
 
         dvAdapter.getDateVotes().add(pos,dv);
-        //dvAdapter.getEvent().sortDateList();
         dvAdapter.notifyDataSetChanged();
 
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
