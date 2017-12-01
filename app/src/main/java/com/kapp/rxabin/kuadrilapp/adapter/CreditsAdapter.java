@@ -19,23 +19,69 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private ArrayList<String> credit_titles;
     private ArrayList<String> names;
+    private ArrayList<String> meme_titles;
+    private ArrayList<String> meme_names;
 
 
     public CreditsAdapter(){
+
         credit_titles = new ArrayList<>();
         names = new ArrayList<>();
+        meme_titles = new ArrayList<>();
+        meme_names = new ArrayList<>();
 
-        credit_titles.add("CREATED AND DIRECTED BY");
+
+        credit_titles.add("CREATED, DIRECTED AND DESIGNED BY");
         credit_titles.add("IDEA BY");
-        credit_titles.add("BETA TESTERS");
-        credit_titles.add("MOTIVATIONAL INSULTS");
-        credit_titles.add("SPECIAL THANKS");
+        credit_titles.add("PROGRAMMED BY");
+        credit_titles.add("BETA TESTING");
+        credit_titles.add("SPECIAL THANKS TO");
+        credit_titles.add("ICONS FROM");
+
 
         names.add("Xabin Rodriguez");
         names.add("Pablo Jimenez");
+        names.add("Xabin Rodriguez");
         names.add("Iñaki Landa\nHaritz Mendizabal\nJonjo Irure\nXabi Eceiza\nPablo Jimenez");
-        names.add("Kloroxark\nEsther");
-        names.add("Beñat Zaldua\nXabier Eceiza\nPablo Jimenez\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamily & Kuadrilly");
+        names.add("Beñat Zaldua\nXabier Eceiza\nPablo Jimenez\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamilia ta kuadrilla");
+        names.add("icons8.com");
+
+
+        meme_titles.add("CREATED, DIRECTED AND DESIGNED BY");
+        meme_titles.add("IDEA BY");
+        meme_titles.add("BETA TESTING");
+        meme_titles.add("SPECIAL THANKS TO");
+        meme_titles.add("GOIKO ESKUTERRIAN");
+        meme_titles.add("MOTIVATIONAL INSULTS BY");
+        meme_titles.add("PLEASE GET A NEW PHONE");
+        meme_titles.add("PANADERO");
+        meme_titles.add("DUST 514 REMOTO BY");
+        meme_titles.add("EVLEDA LEGS BY");
+        meme_titles.add("EVLEDA LEGS NOT BY");
+        meme_titles.add("TOP LITERA RABA BY");
+        meme_titles.add("INGO");
+        meme_titles.add("PASSED CALCULO");
+        meme_titles.add("AYE AYE FAGGOTS");
+        meme_titles.add("CACOPHONIES BY");
+
+
+        meme_names.add("Xabin Rodriguez");
+        meme_names.add("Pablo Jimenez");
+        meme_names.add("Iñaki \"Polter\" Landa\nHaritz Mendizabal\nJonjo Irure\nXabi \"Xixa\" Eceiza\nPablo Jimenez");
+        meme_names.add("Beñat \"Big \uD83C\uDD71\" Zaldua\nXabier Eceiza\nPablo Jimenez\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamilia ta kuadrilla");
+        meme_names.add("Katua errepidian");
+        meme_names.add("Esther \"The Ripper\" López");
+        meme_names.add("Beñat \"Large \uD83C\uDD71\" Zaldua");
+        meme_names.add("Haritz \"Frensis\" Mendizabal");
+        meme_names.add("Jonjo \"Ahotsa zakak\" Irure");
+        meme_names.add("Xabin Rodriguez");
+        meme_names.add("Pablo Jimenez");
+        meme_names.add("Xabin Rodriguez");
+        meme_names.add("Inork ez");
+        meme_names.add("Xabi \"Xixa\" Eceiza");
+        meme_names.add("Xabi \"Az\" Linazasoro");
+        meme_names.add("Iñaki \"Polter\" Landa");
+
 
     }
 
@@ -56,6 +102,15 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             cvh.credits_name.setText(title);
             cvh.users.setText(name);
+
+            if (position==2){
+                cvh.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        toggleMemeMode();
+                    }
+                });
+            }
         }
     }
 
@@ -78,5 +133,16 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
     }
+
+
+    public void toggleMemeMode(){
+
+        credit_titles = meme_titles;
+        names = meme_names;
+        notifyDataSetChanged();
+
+    }
+
+
 
 }

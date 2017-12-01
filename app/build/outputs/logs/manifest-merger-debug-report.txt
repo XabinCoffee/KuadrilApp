@@ -183,7 +183,7 @@ MERGED from [com.google.firebase:firebase-iid-license:11.6.0] /Users/xabinrodrig
 	android:label
 		ADDED from /Users/xabinrodriguez/Desktop/KuadrilApp/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /Users/xabinrodriguez/Desktop/KuadrilApp/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/xabinrodriguez/Desktop/KuadrilApp/app/src/main/AndroidManifest.xml:11:9-48
 	android:icon
 		ADDED from /Users/xabinrodriguez/Desktop/KuadrilApp/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup

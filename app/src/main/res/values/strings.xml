@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">KuadrilApp</string>
-    <string name="yes">Bai</string>
-    <string name="no">Ez</string>
+    <string name="yes">Gorde</string>
+    <string name="no">Atzera</string>
     <string name="email">Email</string>
     <string name="password">Pasahitza</string>
     <string name="password2">Pasahitza errepikatu</string>

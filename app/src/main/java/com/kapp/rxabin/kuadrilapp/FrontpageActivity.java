@@ -27,6 +27,7 @@ import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -298,10 +299,11 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
         alertDialog.show();
 
         RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.rvDialog);
+        ProgressBar loading = (ProgressBar) dialogView.findViewById(R.id.pbUsers);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         rv.setAdapter(uda);
-        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),cef.getUserAdapter());
+        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),cef.getUserAdapter(), rv, this, loading);
 
     }
 

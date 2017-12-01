@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             edit.commit();
             Intent first_i = new Intent(this, AboutKAppActivity.class);
             startActivity(first_i);
+            finish();
         }
 
         if (getIntent().getBooleanExtra("settings",false)){
@@ -218,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent aboutintent = new Intent(MainActivity.this, AboutKAppActivity.class);
                 startActivity(aboutintent);
+                finish();
         }
     }
 }

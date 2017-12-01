@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -205,7 +206,10 @@ public class DbManager {
     }
 
 
-    //
+    /*
+    By providing an email and an userAdapter, add the user with the email address to the adapter.
+     */
+
     public static void getUser(final UserAdapter uAdapter, final String email){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
@@ -234,7 +238,13 @@ public class DbManager {
         });
     }
 
-    public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid, UserAdapter uAdapter2){
+
+
+    /*
+    When inviting people in an event show the list of the users who weren't invited excluding yourself
+     */
+
+    public static void getUsernamesExceptYourself(final UserDialogAdapter uAdapter, final String uid, UserAdapter uAdapter2, final RecyclerView rv, final Context context, final ProgressBar pb){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
@@ -251,6 +261,29 @@ public class DbManager {
                     }
                 }
                 uAdapter.notifyDataSetChanged();
+                pb.setVisibility(View.GONE);
+                rv.getViewTreeObserver().addOnPreDrawListener(
+                        new ViewTreeObserver.OnPreDrawListener() {
+
+                            @Override
+                            public boolean onPreDraw() {
+                                rv.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                                int ea = rv.getChildCount();
+                                for (int i = 0; i < rv.getChildCount(); i++) {
+                                    View v = rv.getChildAt(i);
+                                    v.setAlpha(0.0f);
+                                    v.animate().alpha(1.0f)
+                                            .setDuration(300)
+                                            .setStartDelay(i * 50)
+                                            .start();
+
+                                    v.startAnimation(AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left));
+                                }
+
+                                return true;
+                            }
+                        });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

@@ -22,6 +22,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -208,9 +209,10 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
 
         RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.rvDialog);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        ProgressBar loading = (ProgressBar) dialogView.findViewById(R.id.pbUsers);
 
         rv.setAdapter(uda);
-        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),uAdapter);
+        DbManager.getUsernamesExceptYourself(uda,mAuth.getCurrentUser().getUid(),uAdapter,rv, this, loading);
 
     }
 

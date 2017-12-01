@@ -192,30 +192,33 @@ public class AboutKAppActivity extends AppCompatActivity {
 
                 SharedPreferences.Editor edit = pref.edit();
 
+                Intent restart = new Intent(this, AboutKAppActivity.class);
+
                 if (lang.equals("eu")){
                     edit.putString("listLang","es");
                     edit.commit();
-                    Intent restart = new Intent(this, AboutKAppActivity.class);
-                    startActivity(restart);
-                    finish();
+
                 } else {
                     edit.putString("listLang","eu");
                     edit.commit();
-                    Intent restart = new Intent(this, AboutKAppActivity.class);
-                    startActivity(restart);
-                    finish();
                 }
+
+                startActivity(restart);
+                finish();
+                break;
 
             case R.id.btn_backtostart:
 
+                Intent intent_start = new Intent(this,MainActivity.class);
+                startActivity(intent_start);
                 finish();
                 break;
 
             case R.id.btn_github:
 
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://github.com/XabinCoffee/KuadrilApp"));
-                startActivity(intent);
+                Intent intent_github = new Intent(Intent.ACTION_VIEW);
+                intent_github.setData(Uri.parse("https://github.com/XabinCoffee/KuadrilApp"));
+                startActivity(intent_github);
                 break;
         }
     }

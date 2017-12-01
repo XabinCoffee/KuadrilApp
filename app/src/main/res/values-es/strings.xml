@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">KuadrilApp</string>
-    <string name="yes">Sí</string>
-    <string name="no">No</string>
+    <string name="yes">Guardar</string>
+    <string name="no">Cancelar</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="password2">Repetir contraseña</string>
