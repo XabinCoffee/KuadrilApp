@@ -44,7 +44,7 @@ public class CreateEventFragment extends Fragment implements UserAdapter.OnUserR
         desc = (EditText) iv.findViewById(R.id.etDesc);
         imageView = (ImageView) iv.findViewById(R.id.imageView);
         eventType = (TextView) iv.findViewById(R.id.tvEventType);
-        tvdate = (TextView) iv.findViewById(R.id.tvCreditsTitle);
+        tvdate = (TextView) iv.findViewById(R.id.tvDate);
         tvtime = (TextView) iv.findViewById(R.id.tvTime);
         rv = (RecyclerView) iv.findViewById(R.id.rvUser);
 

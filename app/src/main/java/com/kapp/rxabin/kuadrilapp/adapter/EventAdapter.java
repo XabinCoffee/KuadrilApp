@@ -136,7 +136,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             icon = (ImageView) v.findViewById(R.id.imgLogo);
             members = (TextView) v.findViewById(R.id.tvMembers);
             location = (TextView) v.findViewById(R.id.tvLocation);
-            date = v.findViewById(R.id.tvCreditsTitle);
+            date = v.findViewById(R.id.tvDate);
             cardView = v.findViewById(R.id.eventcard);
 
         }

@@ -83,7 +83,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public UserViewHolder(View v){
             super(v);
-            username = (TextView) v.findViewById(R.id.tvCreditsTitle);
+            username = (TextView) v.findViewById(R.id.tvDate);
             remove = (ImageButton) v.findViewById(R.id.btnRemove);
         }
 

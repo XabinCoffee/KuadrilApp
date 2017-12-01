@@ -123,7 +123,7 @@ public class DateVoteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public DateVoteViewHolder(View v){
             super(v);
-            date = (TextView) v.findViewById(R.id.tvCreditsTitle);
+            date = (TextView) v.findViewById(R.id.tvDate);
             time = (TextView) v.findViewById(R.id.tvTime);
             btnLike = (ImageButton) v.findViewById(R.id.btnLike);
             btnDislike = (ImageButton) v.findViewById(R.id.btnDislike);

@@ -85,7 +85,7 @@
                     android:text="@string/selectDate" />
 
                 <TextView
-                    android:id="@+id/tvCreditsTitle"
+                    android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/btnSelectDate"
@@ -100,8 +100,8 @@
                     android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/tvCreditsTitle"
-                    android:layout_below="@+id/tvCreditsTitle"
+                    android:layout_alignStart="@+id/tvDate"
+                    android:layout_below="@+id/tvDate"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="16sp" />
 

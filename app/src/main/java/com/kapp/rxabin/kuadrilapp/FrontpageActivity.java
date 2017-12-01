@@ -170,7 +170,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     EditText desc = (EditText) cef.getView().findViewById(R.id.etDesc);
                     EditText location = (EditText) cef.getView().findViewById(R.id.etLocation);
                     TextView eventType = (TextView) cef.getView().findViewById(R.id.tvEventType);
-                    TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
+                    TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                     TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
 
                     ArrayList<User> ul = cef.getUserAdapter().getUsers();
@@ -248,10 +248,8 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                             Toast.makeText(getApplicationContext(),getApplicationContext().getResources().getString(R.string.datepassed),
                                     Toast.LENGTH_LONG).show();
                         
-                        else {
-                            TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
-                            timePicker();
-                        }
+                        else timePicker();
+
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
@@ -269,7 +267,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         cef.setTime(String.format("%02d",hourOfDay) + ":" + String.format("%02d",minute));
                         Log.d("DATE",cef.getTime());
-                        TextView date = (TextView) cef.getView().findViewById(R.id.tvCreditsTitle);
+                        TextView date = (TextView) cef.getView().findViewById(R.id.tvDate);
                         TextView time = (TextView) cef.getView().findViewById(R.id.tvTime);
                         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         String lang = pref.getString("listLang", "eu");

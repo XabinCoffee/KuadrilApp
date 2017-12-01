@@ -99,7 +99,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
         location = (TextView) findViewById(R.id.tvLocation);
         description = (TextView) findViewById(R.id.tvDescription);
         members = (TextView) findViewById(R.id.tvMembers);
-        date = (TextView) findViewById(R.id.tvCreditsTitle);
+        date = (TextView) findViewById(R.id.tvDate);
         time = (TextView) findViewById(R.id.tvTime);
         rvUsers = (RecyclerView) findViewById(R.id.rvUsersEvent);
         rvDateVotes = (RecyclerView) findViewById(R.id.rvDateVotes);

@@ -65,7 +65,6 @@ public class DbManager {
 
         mDatabase.child("events").child(e.getId()).setValue(e);
 
-
         return true;
     }
 
@@ -146,7 +145,6 @@ public class DbManager {
                             public boolean onPreDraw() {
                                 rv.getViewTreeObserver().removeOnPreDrawListener(this);
 
-                                int ea = rv.getChildCount();
                                 for (int i = 0; i < rv.getChildCount(); i++) {
                                     View v = rv.getChildAt(i);
                                     v.setAlpha(0.0f);
@@ -198,8 +196,6 @@ public class DbManager {
                             @Override
                             public boolean onPreDraw() {
                                 rv.getViewTreeObserver().removeOnPreDrawListener(this);
-
-                                int ea = rv.getChildCount();
                                 for (int i = 0; i < rv.getChildCount(); i++) {
                                     View v = rv.getChildAt(i);
                                     v.setAlpha(0.0f);
@@ -207,15 +203,12 @@ public class DbManager {
                                             .setDuration(300)
                                             .setStartDelay(i * 50)
                                             .start();
-
                                     v.startAnimation(AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left));
                                 }
 
                                 return true;
                             }
                         });
-
-
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -253,7 +246,6 @@ public class DbManager {
                                         @Override
                                         public boolean onPreDraw() {
                                             rv.getViewTreeObserver().removeOnPreDrawListener(this);
-
                                             View v = rv.getChildAt(num-1);
                                             v.setAlpha(0.0f);
                                             v.animate().alpha(1.0f)

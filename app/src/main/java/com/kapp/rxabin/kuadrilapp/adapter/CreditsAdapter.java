@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
-import com.kapp.rxabin.kuadrilapp.obj.User;
 
 import java.util.ArrayList;
 
@@ -44,7 +43,7 @@ public class CreditsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         names.add("Pablo Jimenez");
         names.add("Xabin Rodriguez");
         names.add("Iñaki Landa\nHaritz Mendizabal\nJonjo Irure\nXabi Eceiza\nPablo Jimenez");
-        names.add("Beñat Zaldua\nXabier Eceiza\nPablo Jimenez\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamilia ta kuadrilla");
+        names.add("Beñat Zaldua\nXabier Eceiza\nPablo Jimenez\nEsther López\nXabier Linazasoro\nIñaki Landa\nHaritz Mendizabal\nJonjo Irure\nFamilia ta kuadrilla");
         names.add("icons8.com");
 
 
