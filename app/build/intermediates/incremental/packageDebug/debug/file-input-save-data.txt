@@ -1,11 +1,11 @@
 #Internal package file, do not edit.
-#Fri Dec 01 13:56:41 CET 2017
-1.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/113
+#Fri Dec 01 14:26:36 CET 2017
+1.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/assets/debug
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
 count=2
-1.set=DEX
-0.path=crashlytics-build.properties
-0.set=ASSET
-0.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/assets/debug
-1.path=classes.dex
+1.set=ASSET
+0.path=classes.dex
+0.set=DEX
+0.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/151
+1.path=crashlytics-build.properties
