@@ -13,24 +13,31 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateVisible|adjustPan">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".FrontpageActivity" />
-        <activity android:name=".ReadEventActivity" />
-        <activity android:name=".EditEventActivity" />
-        <activity android:name=".EditUsernameActivity" />
+        <activity android:name=".SignupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FrontpageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ReadEventActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EditEventActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EditUsernameActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AboutKAppActivity"
             android:label="@string/title_activity_about_kapp"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name=".jokes.dap"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

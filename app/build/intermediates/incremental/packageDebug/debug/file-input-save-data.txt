@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Dec 01 15:41:37 CET 2017
+#Fri Dec 01 16:20:11 CET 2017
 2.base=/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/transforms/dexMerger/debug/164
 5.set=ASSET
 0.path=classes.dex

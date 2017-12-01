@@ -32,6 +32,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.kapp.rxabin.kuadrilapp.MainActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,17 +40,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.kapp.rxabin.kuadrilapp.SignupActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.ReadEventActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.EditEventActivity" />
-        <activity android:name="com.kapp.rxabin.kuadrilapp.EditUsernameActivity" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.FrontpageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.ReadEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.EditEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.kapp.rxabin.kuadrilapp.EditUsernameActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.kapp.rxabin.kuadrilapp.AboutKAppActivity"
             android:label="@string/title_activity_about_kapp"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.kapp.rxabin.kuadrilapp.jokes.dap"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
