@@ -218,7 +218,7 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
 
     @Override
     public void onUserSelected(User userData) {
-        DbManager.getUser(uAdapter,userData.getEmail());
+        DbManager.getUser(uAdapter,userData.getEmail(),rv);
         alertDialog.cancel();
     }
 }

@@ -210,7 +210,7 @@ public class DbManager {
     By providing an email and an userAdapter, add the user with the email address to the adapter.
      */
 
-    public static void getUser(final UserAdapter uAdapter, final String email){
+    public static void getUser(final UserAdapter uAdapter, final String email, final RecyclerView rv){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
         User user = new User();
@@ -227,6 +227,23 @@ public class DbManager {
                         if (!ul.contains(u)){
                             uAdapter.addUser(u);
                             uAdapter.notifyDataSetChanged();
+                            final int num = uAdapter.getItemCount();
+                            rv.getViewTreeObserver().addOnPreDrawListener(
+                                    new ViewTreeObserver.OnPreDrawListener() {
+
+                                        @Override
+                                        public boolean onPreDraw() {
+                                            rv.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                                            View v = rv.getChildAt(num-1);
+                                            v.setAlpha(0.0f);
+                                            v.animate().alpha(1.0f)
+                                                    .setDuration(300)
+                                                    .start();
+
+                                            return true;
+                                        }
+                                    });
                         }
                     }
                 }

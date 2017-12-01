@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kapp.rxabin.kuadrilapp.R;
@@ -77,13 +78,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private User u;
         private TextView username;
-        private TextView remove;
+        private ImageButton remove;
 
 
         public UserViewHolder(View v){
             super(v);
             username = (TextView) v.findViewById(R.id.tvCreditsTitle);
-            remove = (TextView) v.findViewById(R.id.tvRemove);
+            remove = (ImageButton) v.findViewById(R.id.btnRemove);
         }
 
     }

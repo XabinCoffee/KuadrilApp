@@ -97,5 +97,10 @@ public class CreateEventFragment extends Fragment implements UserAdapter.OnUserR
         getUserAdapter().notifyDataSetChanged();
     }
 
+    public RecyclerView getRv() {
+        return rv;
+    }
+
+
 
 }

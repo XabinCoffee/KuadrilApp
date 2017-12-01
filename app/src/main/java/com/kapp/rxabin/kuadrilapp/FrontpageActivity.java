@@ -310,7 +310,7 @@ public class FrontpageActivity extends AppCompatActivity implements BottomNaviga
 
     @Override
     public void onUserSelected(User userData) {
-        DbManager.getUser(cef.getUserAdapter(),userData.getEmail());
+        DbManager.getUser(cef.getUserAdapter(),userData.getEmail(), cef.getRv());
         alertDialog.cancel();
     }
 
