@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\Xabin Rodriguez\\Desktop\\KuadrilApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/b0e1a5cee838887033fd84f2045fad02/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "C:\\Users\\Xabin Rodriguez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b545c9cbb16d3d89e2f265d5dd945a12\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -9,6 +9,7 @@ public class User {
     private String username;
     private String email;
 
+
     public User(){}
 
     public User(String uid, String username, String email){

@@ -20,12 +20,6 @@ import com.kapp.rxabin.kuadrilapp.obj.User;
  */
 public class CreateEventFragment extends Fragment implements UserAdapter.OnUserRemovalSelectedListener {
 
-    private EditText title;
-    private EditText desc;
-    private ImageView imageView;
-    private TextView eventType;
-    private TextView tvdate;
-    private TextView tvtime;
     private static String date;
     private static String time;
     private static boolean datetimeSet;
@@ -39,13 +33,6 @@ public class CreateEventFragment extends Fragment implements UserAdapter.OnUserR
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View iv = inflater.inflate(R.layout.fragment_create_event, container, false);
-
-        title = (EditText) iv.findViewById(R.id.etTitle);
-        desc = (EditText) iv.findViewById(R.id.etDesc);
-        imageView = (ImageView) iv.findViewById(R.id.imageView);
-        eventType = (TextView) iv.findViewById(R.id.tvEventType);
-        tvdate = (TextView) iv.findViewById(R.id.tvDate);
-        tvtime = (TextView) iv.findViewById(R.id.tvTime);
         rv = (RecyclerView) iv.findViewById(R.id.rvUser);
 
         mLayoutManager = new LinearLayoutManager(getContext());

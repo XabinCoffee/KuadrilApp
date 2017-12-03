@@ -16,5 +16,5 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="keygen"
-        app:srcCompat="@drawable/dapqunt" />
+        app:srcCompat="@drawable/cat" />
 </RelativeLayout>

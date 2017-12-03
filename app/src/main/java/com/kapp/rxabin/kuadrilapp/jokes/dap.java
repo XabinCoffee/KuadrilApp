@@ -13,6 +13,9 @@ import com.kapp.rxabin.kuadrilapp.R;
 
 public class dap extends AppCompatActivity {
 
+    private MediaPlayer mp;
+    private boolean funny = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,9 @@ public class dap extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
             }
+        mp = MediaPlayer.create(this, R.raw.keygen);
+        mp.start();
+        funny = true;
     }
 
 
@@ -31,12 +37,41 @@ public class dap extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             Drawable background = getResources().getDrawable(R.drawable.kuadrilapp_gradient);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.transparent));
-            window.setNavigationBarColor(getResources().getColor(R.color.transparent));
-            window.setBackgroundDrawable(background);
-            //final MediaPlayer mp = MediaPlayer.create(this, R.raw.keygen);
-            //mp.start();
+            Drawable transparent = getResources().getDrawable(R.color.transparent);
+
+            if (funny) {
+                window.setBackgroundDrawable(background);
+                funny = !funny;
+            } else {
+                window.setBackgroundDrawable(transparent);
+                funny = !funny;
+            }
         }
+    }
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        if (mp.isPlaying()){
+            mp.pause();
+        }
+
+
+    }
+
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if (funny) mp.start();
+    }
+
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mp.stop();
+
     }
 }

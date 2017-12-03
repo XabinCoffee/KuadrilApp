@@ -5,132 +5,90 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="R_CLASS_CHANGE"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1512141602625"
-    token="-1592209767120482062"
+    timestamp="1512311588373"
+    token="2962184114627539673"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1523" />
+        duration="753" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="91" />
+        duration="68" />
     <task
         name="verifier"
-        duration="27" />
+        duration="31" />
 
     <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/outputs/apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1512137655884"
+        timestamp="1512310867375"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/outputs/apk/debug/app-debug.apk"
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
         ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1512141602625"
+        timestamp="1512311404720"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/outputs/apk/debug/app-debug.apk"
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1512311588373"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Xabin Rodriguez\Desktop\KuadrilApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>
