@@ -70,6 +70,18 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
             }
         });
 
+
+        Preference aboutpref = findPreference("about");
+        aboutpref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getActivity(), AboutKAppActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+                return true;
+            }
+        });
+
         return inflater.inflate(R.layout.pref_layout, group, false);
     }
 

@@ -20,6 +20,10 @@
         android:title="@string/editusername"/>
 
     <Preference
+        android:key="about"
+        android:title="@string/about"/>
+
+    <Preference
         android:key="logout"
         android:title="@string/logout"/>
 
