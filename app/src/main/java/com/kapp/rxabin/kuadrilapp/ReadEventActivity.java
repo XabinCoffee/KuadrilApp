@@ -75,11 +75,10 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
-            Drawable background = getResources().getDrawable(R.drawable.kuadrilapp_gradient);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
-            window.setBackgroundDrawable(background);
+            window.setBackgroundDrawable(getResources().getDrawable(R.drawable.event_bg));
         }
 
         readEvent=this;
@@ -266,6 +265,7 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 DbManager.updateRole(e,mAuth.getCurrentUser().getUid(),input.getText().toString(), uieAdapter);
+
             }
         });
         builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
@@ -275,10 +275,9 @@ public class ReadEventActivity extends AppCompatActivity implements UserInEventA
             }
         });
 
-        builder.show();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        dialog.show();
     }
 
     @Override

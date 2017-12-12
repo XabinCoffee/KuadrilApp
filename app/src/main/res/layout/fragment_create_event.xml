@@ -173,6 +173,7 @@
                     android:layout_alignStart="@+id/textView11"
                     android:layout_below="@+id/tvTime"
                     android:ems="10"
+                    android:imeOptions="actionDone"
                     android:hint="@string/desc"
                     android:inputType="textPersonName" />
 

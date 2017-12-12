@@ -49,12 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
-            Drawable background = getResources().getDrawable(R.drawable.kuadrilapp_gradient);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.transparent));
             window.setNavigationBarColor(getResources().getColor(R.color.transparent));
-            window.setBackgroundDrawable(background);
             window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+            window.setBackgroundDrawable(getResources().getDrawable(R.drawable.main_bg));
         }
 
         wronguser = 0;

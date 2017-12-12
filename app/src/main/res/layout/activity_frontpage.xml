@@ -11,8 +11,7 @@
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@drawable/event_bg">
+        android:layout_weight="1">
 
     </FrameLayout>
 

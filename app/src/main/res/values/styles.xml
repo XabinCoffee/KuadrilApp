@@ -11,9 +11,9 @@
 
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/kuadrilapp_gradient</item>
+        <item name="android:background">@color/transparent</item>
         <!-- Support library compatibility -->
-        <item name="background">@drawable/kuadrilapp_gradient</item>
+        <item name="background">@color/transparent</item>
     </style>
 
 

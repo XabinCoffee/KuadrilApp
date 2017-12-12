@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/xabinrodriguez/Desktop/KApp/KuadrilApp/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-bn/values-bn.xml",
+            "outputFile": "/Users/xabinrodriguez/Desktop/KuadrilApp/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-bn/values-bn.xml",
             "map": [
                 {
                     "source": "/Users/xabinrodriguez/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.0.aar/ef3342278f39881d23711b86b847c883/res/values-bn/values.xml",

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/event_bg"
     tools:context="com.kapp.rxabin.kuadrilapp.CreateEventFragment">
 
 
@@ -38,7 +37,8 @@
                     android:layout_marginRight="8dp"
                     android:ems="10"
                     android:hint="@string/title"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionDone"/>
 
                 <EditText
                     android:id="@+id/etLocation"
@@ -51,7 +51,8 @@
                     android:layout_marginRight="8dp"
                     android:ems="10"
                     android:hint="@string/location"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionDone"/>
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -141,7 +142,8 @@
                     android:layout_below="@+id/etLocation"
                     android:ems="10"
                     android:hint="@string/desc"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionDone"/>
 
             </RelativeLayout>
 
