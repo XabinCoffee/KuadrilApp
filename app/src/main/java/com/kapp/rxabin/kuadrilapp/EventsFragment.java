@@ -54,10 +54,14 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
 
         mAuth = FirebaseAuth.getInstance();
 
+
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         hideOld = pref.getBoolean("switch_hideold",true);
 
-        fillRecyclerView();
+        if (mAuth.getCurrentUser()!=null) {
+            fillRecyclerView();
+        }
 
         return view;
     }
