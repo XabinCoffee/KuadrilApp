@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KuadrilApp.iml" filepath="$PROJECT_DIR$/KuadrilApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KApp.iml" filepath="$PROJECT_DIR$/KApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

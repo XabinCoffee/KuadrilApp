@@ -8,8 +8,8 @@ android {
         applicationId "com.kapp.rxabin.kuadrilapp"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 5
-        versionName "1.2"
+        versionCode 7
+        versionName "1.2.1_invite_all_edition"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.kapp.rxabin.kuadrilapp"
-      android:versionCode="5"
-      android:versionName="1.2"
+      android:versionCode="7"
+      android:versionName="1.2.1_invite_all_edition"
       split="lib_slice_1_apk">
 </manifest>

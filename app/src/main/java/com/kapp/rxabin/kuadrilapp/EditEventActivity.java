@@ -190,7 +190,7 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
 
     public void addMember2(View v){
 
-        UserDialogAdapter uda = new UserDialogAdapter(this, this);
+        final UserDialogAdapter uda = new UserDialogAdapter(this, this);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
@@ -200,6 +200,16 @@ public class EditEventActivity extends AppCompatActivity implements UserAdapter.
         builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int which){
                 alertDialog.cancel();
+            }
+        });
+
+        builder.setPositiveButton(getResources().getString(R.string.inviteall), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                for (int j = 0; j<uda.getUsers().size(); j++){
+                    User u = uda.getUsers().get(j);
+                    DbManager.getUser(uAdapter,u.getEmail(), rv);
+                }
             }
         });
         alertDialog = builder.create();
