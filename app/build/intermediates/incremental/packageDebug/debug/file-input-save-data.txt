@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Dec 17 13:38:42 CET 2017
+#Sun Dec 17 14:03:42 CET 2017
 2.base=C\:\\Users\\Xabin Rodriguez\\Desktop\\KApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 5.set=DEX
 0.path=classes.dex

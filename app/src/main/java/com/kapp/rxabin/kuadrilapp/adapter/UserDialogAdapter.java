@@ -47,7 +47,7 @@ public class UserDialogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
             User u = userList.get(position);
             uvh.u = u;
-            uvh.name.setText(u.getUsername() + " (" +u.getEmail()+")");
+            uvh.name.setText(u.getUsername());
 
             uvh.itemView.setOnClickListener(new View.OnClickListener(){
 
