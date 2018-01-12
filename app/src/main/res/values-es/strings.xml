@@ -49,6 +49,7 @@
     <string name="backtostart">Comenzar</string>
     <string name="startupLang">Euskara</string>
     <string name="inviteall">Invitar a todos</string>
+    <string name="orderEvents">Eventos futuros primero</string>
 
     <string name="whatiskapp">Hola, soy Xabin Rodriguez, y esto es KuadrilApp, mi proyecto de fin de grado.</string>
     <string name="forwhatKapp">¿Para qué es KuadrilApp?</string>

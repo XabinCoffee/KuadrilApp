@@ -118,7 +118,7 @@ public class DbManager {
     This method filters events from the past
     */
 
-    public static void getUserEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
+    public static void getUserEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final boolean flip, final Context context){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         final ArrayList<Event> el = new ArrayList<>();
@@ -137,6 +137,7 @@ public class DbManager {
                 EventsFragment.updateUI_events(el);
                 eAdapter.setEvents(el);
                 eAdapter.sortListByDate();
+                if (flip) eAdapter.flipEvents();
                 eAdapter.notifyDataSetChanged();
                 rv.getViewTreeObserver().addOnPreDrawListener(
                         new ViewTreeObserver.OnPreDrawListener() {
@@ -171,7 +172,7 @@ public class DbManager {
     Fills EventFragment's RecyclerView's event adapter with the currently logged in user's events, then animates the view
     */
 
-    public static void getUserAllEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final Context context){
+    public static void getUserAllEvents(final EventAdapter eAdapter, final String uid, final RecyclerView rv, final boolean flip, final Context context){
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("events");
         final ArrayList<Event> el = new ArrayList<>();
@@ -189,6 +190,7 @@ public class DbManager {
                 EventsFragment.updateUI_events(el);
                 eAdapter.setEvents(el);
                 eAdapter.sortListByDate();
+                if (flip) eAdapter.flipEvents();
                 eAdapter.notifyDataSetChanged();
                 rv.getViewTreeObserver().addOnPreDrawListener(
                         new ViewTreeObserver.OnPreDrawListener() {

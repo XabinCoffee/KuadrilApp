@@ -41,6 +41,7 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     private static CardView mEmpty;
     private AlertDialog alertDialog;
     private boolean hideOld;
+    private boolean futureToCurrent;
 
 
     @Nullable
@@ -55,9 +56,9 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         mAuth = FirebaseAuth.getInstance();
 
 
-
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         hideOld = pref.getBoolean("switch_hideold",true);
+        futureToCurrent = pref.getBoolean("switch_futureToCurrent",false);
 
         if (mAuth.getCurrentUser()!=null) {
             fillRecyclerView();
@@ -72,6 +73,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         super.onResume();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
         hideOld = pref.getBoolean("switch_hideold",true);
+        futureToCurrent = pref.getBoolean("switch_futureToCurrent",false);
+
         fillRecyclerView();
     }
 
@@ -81,8 +84,8 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         eAdapter = new EventAdapter(getContext(),this,this);
-        if (hideOld) DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, getContext());
-        else DbManager.getUserAllEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, getContext());
+        if (hideOld) DbManager.getUserEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, futureToCurrent, getContext());
+        else DbManager.getUserAllEvents(eAdapter,mAuth.getCurrentUser().getUid(), recyclerView, futureToCurrent, getContext());
         recyclerView.setAdapter(eAdapter);
 
     }
@@ -156,7 +159,6 @@ public class EventsFragment extends Fragment implements EventAdapter.OnEventLong
     @Override
     public void onEventSelected(Event eventData) {
 
-        Log.d("OnTouch","Event Selected " + DateHelper.isOver(eventData.getDateVotes().get(0).getDate()));
         Intent i = new Intent(getContext(),ReadEventActivity.class);
         i.putExtra("event", eventData);
         startActivity(i);

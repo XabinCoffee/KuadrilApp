@@ -154,6 +154,11 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
 
+    public void flipEvents(){
+        Collections.reverse(this.eventsList);
+        this.notifyDataSetChanged();
+    }
+
 
     public void sortListByDate() {
 
@@ -165,7 +170,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 try {
                     o1.sortDateList();
                     o2.sortDateList();
-                    return f.parse(o2.getDateVotes().get(0).toString()).compareTo(f.parse(o1.getDateVotes().get(0).toString()));
+                    return f.parse(o1.getDateVotes().get(0).toString()).compareTo(f.parse(o2.getDateVotes().get(0).toString()));
                 } catch (ParseException e) {
                     throw new IllegalArgumentException(e);
                 }
